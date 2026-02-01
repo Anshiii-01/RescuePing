@@ -64,7 +64,7 @@ jobs:
       continue-on-error: true
     
     - name: Upload build artifacts
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       if: matrix.node-version == '20.x' && github.ref == 'refs/heads/main'
       with:
         name: production-build
