@@ -1,5 +1,5 @@
 """
-Alert Aid - Simplified Local Backend
+Rescue Ping - Simplified Local Backend
 FastAPI backend without sklearn dependencies for local development
 """
 
@@ -40,7 +40,7 @@ USGS_EARTHQUAKE_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query"
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="Alert Aid API",
+    title="Rescue Ping API",
     description="Real-time disaster management with live APIs and ML predictions",
     version="2.0.0",
     docs_url="/docs",
@@ -147,7 +147,7 @@ def calculate_risk(weather_data: dict) -> dict:
 async def root():
     """Root endpoint with API information"""
     return {
-        "message": "Alert Aid API - Disaster Management System 🚀",
+        "message": "Rescue Ping API - Disaster Management System 🚀",
         "status": "operational",
         "version": "2.0.0-local",
         "timestamp": datetime.now().isoformat(),
@@ -751,7 +751,7 @@ async def fetch_alerts_common(lat: float, lon: float):
     return {
         "alerts": alerts,
         "count": len(alerts),
-        "source": "Alert_Aid_System",
+        "source": "Rescue_Ping_System",
         "is_real": len(earthquakes) > 0,
         "location": {"latitude": lat, "longitude": lon},
         "timestamp": datetime.now().isoformat()
@@ -772,7 +772,7 @@ async def get_alerts(
         return {
             "alerts": [],
             "count": 0,
-            "source": "Alert_Aid_System",
+            "source": "Rescue_Ping_System",
             "is_real": False,
             "error": str(e)
         }
@@ -791,7 +791,7 @@ async def get_active_alerts(
         return {
             "alerts": [],
             "count": 0,
-            "source": "Alert_Aid_System",
+            "source": "Rescue_Ping_System",
             "is_real": False,
             "error": str(e)
         }
@@ -1305,14 +1305,14 @@ async def get_external_apis_status():
 # Startup event
 @app.on_event("startup")
 async def startup_event():
-    logger.info("🚀 Alert Aid Backend Starting...")
+    logger.info("🚀 Rescue Ping Backend Starting...")
     logger.info("✅ Server running on http://localhost:8000")
     logger.info("📊 API documentation: http://localhost:8000/docs")
     logger.info("🔧 Interactive docs: http://localhost:8000/redoc")
 
 # Main entry point
 if __name__ == "__main__":
-    logger.info("🚀 Starting Alert Aid Backend Server...")
+    logger.info("🚀 Starting Rescue Ping Backend Server...")
     uvicorn.run(
         "simple_backend:app",
         host="0.0.0.0",

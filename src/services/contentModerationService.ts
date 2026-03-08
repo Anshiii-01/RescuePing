@@ -388,7 +388,7 @@ class ContentModerationService {
         id: `mod-${(idx + 1).toString().padStart(4, '0')}`,
         userId: `user-mod-${idx + 1}`,
         name: m.name,
-        email: `${m.name.toLowerCase().replace(' ', '.')}@alertaid.com`,
+        email: `${m.name.toLowerCase().replace(' ', '.')}@rescueping.com`,
         role: m.role as Moderator['role'],
         permissions: m.role === 'lead' ? ['approve', 'reject', 'ban', 'escalate', 'manage_rules'] :
                      m.role === 'senior' ? ['approve', 'reject', 'escalate'] :

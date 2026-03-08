@@ -9,7 +9,7 @@ Architecture:
 - Uncertainty quantification via MC Dropout
 - Ensemble with Random Forest for robust predictions
 
-Author: Alert-AID Team
+Author: Rescue Ping Team
 Hackathon: AI for Disaster Management
 """
 

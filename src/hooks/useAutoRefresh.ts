@@ -88,8 +88,8 @@ export const useRefreshSettings = () => {
   
   // Load settings from localStorage
   useEffect(() => {
-    const savedInterval = localStorage.getItem('alertAid.refreshInterval');
-    const savedEnabled = localStorage.getItem('alertAid.autoRefreshEnabled');
+    const savedInterval = localStorage.getItem('rescuePing.refreshInterval');
+    const savedEnabled = localStorage.getItem('rescuePing.autoRefreshEnabled');
     
     if (savedInterval) setRefreshInterval(parseInt(savedInterval));
     if (savedEnabled !== null) setAutoRefreshEnabled(savedEnabled === 'true');
@@ -98,13 +98,13 @@ export const useRefreshSettings = () => {
   // Save settings to localStorage
   const updateInterval = useCallback((minutes: number) => {
     setRefreshInterval(minutes);
-    localStorage.setItem('alertAid.refreshInterval', minutes.toString());
+    localStorage.setItem('rescuePing.refreshInterval', minutes.toString());
   }, []);
 
   const toggleAutoRefresh = useCallback(() => {
     const newState = !autoRefreshEnabled;
     setAutoRefreshEnabled(newState);
-    localStorage.setItem('alertAid.autoRefreshEnabled', newState.toString());
+    localStorage.setItem('rescuePing.autoRefreshEnabled', newState.toString());
   }, [autoRefreshEnabled]);
 
   return {

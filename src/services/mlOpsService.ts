@@ -527,13 +527,13 @@ class MLOpsService {
       const model: Model = {
         id: `model-${(idx + 1).toString().padStart(6, '0')}`,
         name: m.name,
-        description: `${m.name} model for AlertAid platform`,
+        description: `${m.name} model for RescuePing platform`,
         version: `1.${idx}.0`,
         status: m.status,
         type: m.type,
         framework: m.framework,
         artifact: {
-          path: `s3://alertaid-models/${m.name.toLowerCase().replace(' ', '-')}/v1.${idx}.0/model`,
+          path: `s3://rescueping-models/${m.name.toLowerCase().replace(' ', '-')}/v1.${idx}.0/model`,
           format: m.framework === 'tensorflow' ? 'savedmodel' : m.framework === 'pytorch' ? 'pt' : 'joblib',
           size: Math.floor(Math.random() * 500000000) + 10000000,
           checksum: `sha256:${Math.random().toString(36).substr(2, 64)}`,
@@ -547,7 +547,7 @@ class MLOpsService {
         metadata: {
           author: 'ml-team',
           team: 'Data Science',
-          project: 'AlertAid ML',
+          project: 'RescuePing ML',
           trainingDuration: Math.floor(Math.random() * 3600000) + 600000,
           trainingCost: Math.floor(Math.random() * 100) + 10,
           environment: {
@@ -700,8 +700,8 @@ class MLOpsService {
           triggerType: 'schedule',
         })),
         notifications: {
-          onSuccess: ['ml-team@alertaid.com'],
-          onFailure: ['ml-team@alertaid.com', 'oncall@alertaid.com'],
+          onSuccess: ['ml-team@rescueping.com'],
+          onFailure: ['ml-team@rescueping.com', 'oncall@rescueping.com'],
         },
         createdAt: new Date(Date.now() - idx * 30 * 24 * 60 * 60 * 1000),
         updatedAt: new Date(),
@@ -731,7 +731,7 @@ class MLOpsService {
         modelVersion: `1.${idx}.0`,
         status: 'active',
         endpoint: {
-          url: `https://ml.alertaid.com/v1/models/${d.name.toLowerCase().replace(' ', '-')}/predict`,
+          url: `https://ml.rescueping.com/v1/models/${d.name.toLowerCase().replace(' ', '-')}/predict`,
           protocol: 'rest',
           authentication: {
             type: 'apikey',
@@ -874,7 +874,7 @@ class MLOpsService {
     // Initialize feature store
     const featureStore: FeatureStore = {
       id: 'fs-000001',
-      name: 'AlertAid Feature Store',
+      name: 'RescuePing Feature Store',
       description: 'Centralized feature store for all ML models',
       features: [
         { id: 'f1', name: 'user_activity_count', entity: 'user', type: 'numeric', tags: ['user', 'activity'], version: 1, online: true, offline: true, createdAt: new Date(), updatedAt: new Date() },

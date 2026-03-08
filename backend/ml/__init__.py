@@ -1,5 +1,5 @@
 """
-Advanced ML Module for Alert-AID
+Advanced ML Module for Rescue Ping
 Implements ensemble flood forecasting, anomaly detection, and smart alerts
 
 Hackathon Features:

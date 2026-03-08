@@ -268,7 +268,7 @@ const VOICE_COMMANDS: VoiceCommand[] = [
 ];
 
 // Wake words for activation
-const WAKE_WORDS = ['hey alert', 'alert aid', 'help alert', 'emergency'];
+const WAKE_WORDS = ['hey alert', 'rescue ping', 'help alert', 'emergency'];
 
 // Voice Assistant Service Class
 class VoiceAssistantService {

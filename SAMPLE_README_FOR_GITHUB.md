@@ -1,8 +1,8 @@
-# 🚨 Alert-AID
+# 🚨 Rescue Ping
 
 <div align="center">
 
-![Alert-AID Banner](https://img.shields.io/badge/🚨_Alert--AID-AI_Disaster_Management-red?style=for-the-badge)
+![Rescue Ping Banner](https://img.shields.io/badge/🚨_Rescue--Ping-AI_Disaster_Management-red?style=for-the-badge)
 
 [![Status](https://img.shields.io/badge/Status-In_Development-yellow?style=flat-square)]()
 [![Hackathon](https://img.shields.io/badge/Hackathon-AI_for_Disaster_Management-blue?style=flat-square)]()
@@ -18,7 +18,7 @@
 
 ## 🎯 About
 
-**Alert-AID** is an intelligent disaster prediction and emergency response platform that leverages advanced machine learning to provide early warnings for natural disasters including floods, earthquakes, storms, and wildfires.
+**Rescue Ping** is an intelligent disaster prediction and emergency response platform that leverages advanced machine learning to provide early warnings for natural disasters including floods, earthquakes, storms, and wildfires.
 
 > 🚧 **This repository is currently under development for a hackathon submission.**  
 > Full code will be released after the competition.
@@ -97,7 +97,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📬 Contact
 
 - **Developer:** Ayush
-- **Project:** Alert-AID
+- **Project:** Rescue Ping
 - **Email:** [Contact via GitHub]
 
 ---

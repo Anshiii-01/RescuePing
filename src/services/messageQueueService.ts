@@ -422,7 +422,7 @@ class MessageQueueService {
           approximateAge: Math.floor(Math.random() * 60),
         },
         consumers: [],
-        tags: { environment: 'production', service: 'alert-aid' },
+        tags: { environment: 'production', service: 'rescue-ping' },
         metadata: {
           createdAt: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000),
           createdBy: 'admin',
@@ -520,7 +520,7 @@ class MessageQueueService {
             messageRetention: 604800,
             maxDeliveryAttempts: 5,
             pushConfig: i === 1 ? {
-              endpoint: `https://api.alertaid.com/webhooks/${t.name}`,
+              endpoint: `https://api.rescueping.com/webhooks/${t.name}`,
               authentication: { type: 'bearer', token: 'token-xxx' },
             } : undefined,
           },

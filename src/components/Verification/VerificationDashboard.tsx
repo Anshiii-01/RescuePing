@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Card } from '../../styles/components';
 import { useGeolocation } from '../Location/GeolocationManager';
-import { AlertAidAPIService } from '../../services/apiService';
+import { RescuePingAPIService } from '../../services/apiService';
 import { ExternalAPIService } from '../../services/externalAPIs';
 import CoordinateResolver from '../../services/coordinateResolver';
 import { TemperatureConverter } from '../../utils/temperatureConverter';
@@ -133,7 +133,7 @@ const VerificationDashboard: React.FC = () => {
       console.log('🌤️ Testing Weather API...');
       try {
         CoordinateResolver.logCoordinateUsage('Weather API', resolvedCoords);
-        const weatherResponse = await AlertAidAPIService.getEnhancedWeatherData(weatherCoords.lat, weatherCoords.lon);
+        const weatherResponse = await RescuePingAPIService.getEnhancedWeatherData(weatherCoords.lat, weatherCoords.lon);
         const weather = weatherResponse.data;
         results.tests.weather = {
           status: "PASS",
@@ -156,7 +156,7 @@ const VerificationDashboard: React.FC = () => {
         CoordinateResolver.logCoordinateUsage('ML API', resolvedCoords, { 
           locationData: mlLocationData 
         });
-        const prediction = await AlertAidAPIService.predictDisasterRisk(mlLocationData, true);
+        const prediction = await RescuePingAPIService.predictDisasterRisk(mlLocationData, true);
         results.tests.mlModel = {
           status: "PASS",
           data: prediction,
@@ -177,12 +177,12 @@ const VerificationDashboard: React.FC = () => {
       console.log('🚨 Testing Alert System...');
       try {
         CoordinateResolver.logCoordinateUsage('Alerts API', resolvedCoords);
-        const alerts = await AlertAidAPIService.getActiveAlerts(alertsCoords.lat, alertsCoords.lon);
+        const alerts = await RescuePingAPIService.getActiveAlerts(alertsCoords.lat, alertsCoords.lon);
         results.tests.alerts = {
           status: "PASS",
           data: alerts,
           isReal: alerts && typeof alerts.count === 'number',
-          source: "AlertAid API",
+          source: "RescuePing API",
           count: alerts?.count || 0
         };
       } catch (error: any) {
@@ -196,7 +196,7 @@ const VerificationDashboard: React.FC = () => {
       // TEST 5: External APIs (using earthquake data)
       console.log('🌍 Testing External APIs...');
       try {
-        const earthquakes = await AlertAidAPIService.getEarthquakeData(weatherCoords.lat, weatherCoords.lon);
+        const earthquakes = await RescuePingAPIService.getEarthquakeData(weatherCoords.lat, weatherCoords.lon);
         results.tests.externalAPIs = {
           status: "PASS",
           data: earthquakes,
@@ -237,7 +237,7 @@ const VerificationDashboard: React.FC = () => {
   return (
     <VerificationContainer>
       <VerificationCard>
-        <h1>Alert Aid System Verification</h1>
+        <h1>Rescue Ping System Verification</h1>
         <p>Comprehensive diagnostic suite to verify real data integration vs placeholder data</p>
         
         <TestButton onClick={runDiagnostics} disabled={isRunning}>

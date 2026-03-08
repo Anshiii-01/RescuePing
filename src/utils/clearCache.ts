@@ -3,9 +3,9 @@
  * Run this once to clear all cached location and weather data
  */
 
-// Clear all Alert Aid caches
+// Clear all Rescue Ping caches
 export const clearAllCaches = () => {
-  console.log('🗑️ Clearing all Alert Aid caches...');
+  console.log('🗑️ Clearing all Rescue Ping caches...');
   
   try {
     // Clear location cache

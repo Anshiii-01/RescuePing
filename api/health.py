@@ -1,5 +1,5 @@
 """
-Alert Aid - Health Check Endpoint
+Rescue Ping - Health Check Endpoint
 Simple health check for Vercel serverless function
 """
 

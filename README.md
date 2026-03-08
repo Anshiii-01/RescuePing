@@ -1,12 +1,12 @@
-# 🚨 Alert-AID - AI-Powered Disaster Alert System
+# 🚨 Rescue Ping - AI-Powered Disaster Alert System
 
 <div align="center">
 
-![Alert-AID](https://img.shields.io/badge/🚨_Alert--AID-Disaster_Prediction_System-red?style=for-the-badge)
+![Rescue Ping](https://img.shields.io/badge/🚨_Rescue--Ping-Disaster_Prediction_System-red?style=for-the-badge)
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-GitHub_Pages-blue?style=for-the-badge)](https://anshiii-01.github.io/alert-aid)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-GitHub_Pages-blue?style=for-the-badge)](https://anshiii-01.github.io/rescue-ping)
 
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=flat-square)](https://github.com/Anshiii-01/alert-aid)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=flat-square)](https://github.com/Anshiii-01/rescue-ping)
 [![React](https://img.shields.io/badge/React-19.x-61dafb?style=flat-square&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square&logo=python)](https://www.python.org/)
@@ -14,35 +14,11 @@
 
 **A real-time disaster monitoring and emergency response application featuring ML-powered predictions, interactive evacuation maps, and live weather alerts.**
 
-### 🌐 [Live Demo: https://anshiii-01.github.io/alert-aid](https://anshiii-01.github.io/alert-aid)
+### 🌐 [Live Demo: https://anshiii-01.github.io/rescue-ping](https://anshiii-01.github.io/rescue-ping)
 
-[🚀 Quick Start](#-quick-start) • [📸 Screenshots](#-screenshots) • [✨ Features](#-features) • [🛠️ Tech Stack](#-tech-stack)
+[🚀 Quick Start](#-quick-start) • [✨ Features](#-features) • [🛠️ Tech Stack](#-tech-stack)
 
 </div>
-
----
-
-## 📸 Screenshots
-
-### 🏠 Home Page
-> Beautiful animated landing page with live risk status and quick navigation
-
-![Home Page](screenshots/home-page.png)
-
-### 📊 Dashboard
-> Real-time monitoring with animated widgets, 7-day forecast, and live alerts
-
-![Dashboard](screenshots/dashboard.png)
-
-### 🤖 AI/ML Predictions Page
-> Advanced machine learning analysis with real-time hazard predictions
-
-![Predictions](screenshots/predictions.png)
-
-### 🗺️ Evacuation Routes
-> Interactive map with real shelter locations and route planning
-
-![Evacuation Routes](screenshots/evacuation.png)
 
 ---
 
@@ -88,7 +64,7 @@ npm or yarn
 ```bash
 # Clone the repository
 git clone https://github.com/ayushap18/congenial-waddle.git
-cd Alert-AID
+cd RescuePing
 
 # Install frontend dependencies
 npm install
@@ -118,7 +94,7 @@ npm start
 ## 🏗️ Project Structure
 
 ```
-Alert-AID/
+Rescue Ping/
 ├── 📁 src/                     # React Frontend
 │   ├── 📁 components/          # UI Components
 │   │   ├── Dashboard/          # Main dashboard widgets
@@ -208,8 +184,8 @@ Pre-configured with `render.yaml`
 
 ### Docker
 ```bash
-docker build -t alert-aid .
-docker run -p 3000:3000 alert-aid
+docker build -t rescue-ping .
+docker run -p 3000:3000 rescue-ping
 ```
 
 ---

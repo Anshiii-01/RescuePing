@@ -367,7 +367,7 @@ class ImageProcessingService {
     const cdnData = [
       { provider: 'cloudflare', name: 'Cloudflare Images', baseUrl: 'https://imagedelivery.net' },
       { provider: 'cloudinary', name: 'Cloudinary', baseUrl: 'https://res.cloudinary.com' },
-      { provider: 'imgix', name: 'Imgix', baseUrl: 'https://alertaid.imgix.net' },
+      { provider: 'imgix', name: 'Imgix', baseUrl: 'https://rescueping.imgix.net' },
     ];
 
     cdnData.forEach((cdn, idx) => {
@@ -421,7 +421,7 @@ class ImageProcessingService {
       const image: ProcessedImage = {
         id: `img-${(idx + 1).toString().padStart(6, '0')}`,
         originalId: `orig-${(idx + 1).toString().padStart(6, '0')}`,
-        originalUrl: `https://storage.alertaid.com/originals/${img.name}`,
+        originalUrl: `https://storage.rescueping.com/originals/${img.name}`,
         originalMetadata: {
           width: img.width,
           height: img.height,
@@ -442,7 +442,7 @@ class ImageProcessingService {
             format: 'webp',
             quality: 70,
             size: Math.round(img.size * 0.02),
-            url: `https://cdn.alertaid.com/${img.name.replace(/\.\w+$/, '-thumb.webp')}`,
+            url: `https://cdn.rescueping.com/${img.name.replace(/\.\w+$/, '-thumb.webp')}`,
             cdnUrl: `https://imagedelivery.net/thumb/${img.name}`,
             createdAt: new Date(),
           },
@@ -454,7 +454,7 @@ class ImageProcessingService {
             format: 'webp',
             quality: 80,
             size: Math.round(img.size * 0.15),
-            url: `https://cdn.alertaid.com/${img.name.replace(/\.\w+$/, '-medium.webp')}`,
+            url: `https://cdn.rescueping.com/${img.name.replace(/\.\w+$/, '-medium.webp')}`,
             cdnUrl: `https://imagedelivery.net/medium/${img.name}`,
             createdAt: new Date(),
           },
@@ -466,7 +466,7 @@ class ImageProcessingService {
             format: 'webp',
             quality: 85,
             size: Math.round(img.size * 0.35),
-            url: `https://cdn.alertaid.com/${img.name.replace(/\.\w+$/, '-large.webp')}`,
+            url: `https://cdn.rescueping.com/${img.name.replace(/\.\w+$/, '-large.webp')}`,
             cdnUrl: `https://imagedelivery.net/large/${img.name}`,
             createdAt: new Date(),
           },
@@ -487,7 +487,7 @@ class ImageProcessingService {
         lazyLoading: {
           placeholder: `data:image/svg+xml;base64,${btoa('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + img.width + ' ' + img.height + '"><rect fill="#f0f0f0"/></svg>')}`,
           blurhash: 'LEHV6nWB2yk8pyo0adR*.7kCMdnj',
-          lqip: `https://cdn.alertaid.com/${img.name.replace(/\.\w+$/, '-lqip.webp')}`,
+          lqip: `https://cdn.rescueping.com/${img.name.replace(/\.\w+$/, '-lqip.webp')}`,
           dominantColor: ['#4A90D9', '#2ECC71', '#E74C3C', '#9B59B6', '#F39C12'][idx % 5],
         },
         createdAt: new Date(Date.now() - idx * 24 * 60 * 60 * 1000),

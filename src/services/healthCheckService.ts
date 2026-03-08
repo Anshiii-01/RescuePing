@@ -592,7 +592,7 @@ class HealthCheckService {
         target: {
           type: c.type === 'http' || c.type === 'grpc' ? 'service' : c.type === 'database' ? 'database' : c.type === 'cache' ? 'cache' : c.type === 'queue' ? 'queue' : 'endpoint',
           name: c.name.toLowerCase().replace(/\s/g, '-'),
-          host: c.type === 'http' ? `${c.name.toLowerCase().replace(/\s/g, '-')}.alertaid.io` : `${c.name.toLowerCase().replace(/\s/g, '-')}.internal`,
+          host: c.type === 'http' ? `${c.name.toLowerCase().replace(/\s/g, '-')}.rescueping.io` : `${c.name.toLowerCase().replace(/\s/g, '-')}.internal`,
           port: c.type === 'http' ? 443 : c.type === 'database' ? 5432 : c.type === 'cache' ? 6379 : c.type === 'grpc' ? 9090 : 8080,
           path: c.type === 'http' ? '/health' : undefined,
           protocol: c.type === 'http' ? 'https' : c.type === 'grpc' ? 'grpc' : 'tcp',
@@ -813,7 +813,7 @@ class HealthCheckService {
       layout: { columns: 12, rows: 4 },
       refreshInterval: 30,
       filters: { environments: ['production'], services: [], tags: [] },
-      sharing: { public: true, publicUrl: 'https://status.alertaid.io/dashboard' },
+      sharing: { public: true, publicUrl: 'https://status.rescueping.io/dashboard' },
       metadata: { createdAt: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000), createdBy: 'admin', updatedAt: new Date() },
     };
     this.dashboards.set(dashboard.id, dashboard);
@@ -821,9 +821,9 @@ class HealthCheckService {
     // Initialize Status Page
     const statusPage: StatusPage = {
       id: 'status-page-0001',
-      name: 'AlertAid Status',
+      name: 'RescuePing Status',
       description: 'Current system status and incidents',
-      url: 'https://status.alertaid.io',
+      url: 'https://status.rescueping.io',
       status: 'degraded',
       components: servicesData.map((s, idx) => ({
         id: `component-${idx}`,

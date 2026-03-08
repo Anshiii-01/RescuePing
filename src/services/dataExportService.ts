@@ -622,7 +622,7 @@ class DataExportService {
    * Format as Excel-compatible (TSV with metadata)
    */
   private formatAsExcelCompatible(data: Record<string, unknown[]>): string {
-    let content = 'ALERT-AID DATA EXPORT\t\t\t\t\n';
+    let content = 'RESCUE-PING DATA EXPORT\t\t\t\t\n';
     content += `Generated: ${new Date().toISOString()}\t\t\t\t\n\n`;
     
     for (const [category, records] of Object.entries(data)) {

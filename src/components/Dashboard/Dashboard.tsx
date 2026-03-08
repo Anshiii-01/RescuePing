@@ -535,7 +535,7 @@ const Dashboard: React.FC = () => {
     return (
       <DashboardContainer>
         <LoadingOverlay
-          message="Initializing Alert Aid Dashboard..."
+          message="Initializing Rescue Ping Dashboard..."
           fullScreen={false}
         />
         {!dashboardLoaded && <SkeletonDashboard />}

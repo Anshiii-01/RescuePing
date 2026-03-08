@@ -605,8 +605,8 @@ class DistributedTracingService {
         metadata: {
           team: ['platform', 'backend', 'data'][idx % 3],
           owner: `team-${(idx % 3) + 1}`,
-          repository: `https://github.com/alertaid/${s.name}`,
-          documentation: `https://docs.alertaid.com/${s.name}`,
+          repository: `https://github.com/rescueping/${s.name}`,
+          documentation: `https://docs.rescueping.com/${s.name}`,
           firstSeen: new Date(Date.now() - 180 * 24 * 60 * 60 * 1000),
           lastSeen: new Date(),
         },

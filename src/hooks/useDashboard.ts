@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { useDisasterData, useApiHealth } from "./useDisasterData";
 import { useGeolocation } from "../components/Location/GeolocationManager";
 import { ExternalAPIService, EnhancedLocationData } from "../services/externalAPIs";
-import { AlertAidAPIService } from "../services/apiService";
+import { RescuePingAPIService } from "../services/apiService";
 
 /* =========================================================
    FALLBACK DATA
@@ -298,7 +298,7 @@ export function useRunPrediction() {
 
       try {
         const backendPrediction =
-          await AlertAidAPIService.predictDisasterRisk(
+          await RescuePingAPIService.predictDisasterRisk(
             targetLocation as any,
             true as any
           );

@@ -546,7 +546,7 @@ class ServiceRegistryService {
           serviceName: s.name,
           version: '2.1.0',
           status: isHealthy ? 'up' : 'unhealthy',
-          host: `${s.name}-${i + 1}.alertaid.internal`,
+          host: `${s.name}-${i + 1}.rescueping.internal`,
           port: s.type === 'database' ? 5432 : s.type === 'cache' ? 6379 : s.type === 'queue' ? 5672 : 8080,
           protocol: s.type === 'database' || s.type === 'cache' || s.type === 'queue' ? 'tcp' : 'http',
           secure: true,
@@ -605,7 +605,7 @@ class ServiceRegistryService {
         id: serviceId,
         name: s.name,
         displayName: s.displayName,
-        description: `${s.displayName} for Alert Aid platform`,
+        description: `${s.displayName} for Rescue Ping platform`,
         version: '2.1.0',
         status: healthyCount > 0 ? 'up' : 'down',
         type: s.type as RegisteredService['type'],
@@ -648,8 +648,8 @@ class ServiceRegistryService {
           },
         },
         endpoints: {
-          primary: `http://${s.name}.alertaid.internal:8080`,
-          fallback: [`http://${s.name}-fallback.alertaid.internal:8080`],
+          primary: `http://${s.name}.rescueping.internal:8080`,
+          fallback: [`http://${s.name}-fallback.rescueping.internal:8080`],
         },
         dependencies: idx > 0 ? [servicesData[Math.max(0, idx - 1)].name] : [],
         dependents: idx < servicesData.length - 1 ? [servicesData[idx + 1].name] : [],
@@ -677,8 +677,8 @@ class ServiceRegistryService {
           updatedAt: new Date(),
           team: ['platform', 'backend', 'data'][idx % 3],
           owner: `team-${(idx % 3) + 1}`,
-          documentation: `https://docs.alertaid.com/${s.name}`,
-          repository: `https://github.com/alertaid/${s.name}`,
+          documentation: `https://docs.rescueping.com/${s.name}`,
+          repository: `https://github.com/rescueping/${s.name}`,
         },
       };
 
@@ -784,7 +784,7 @@ class ServiceRegistryService {
       const watch: ServiceWatch = {
         id: `watch-${(i + 1).toString().padStart(4, '0')}`,
         serviceName: randomService.name,
-        callback: `https://client-${i + 1}.alertaid.internal/callback`,
+        callback: `https://client-${i + 1}.rescueping.internal/callback`,
         filters: {
           events: ['health_changed', 'registered', 'deregistered'],
           zones: ['ap-south-1a', 'ap-south-1b'],

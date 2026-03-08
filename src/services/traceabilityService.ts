@@ -559,7 +559,7 @@ class TraceabilityService {
           tags: [
             { key: 'http.method', type: 'string', value: 'GET' },
             { key: 'http.status_code', type: 'int64', value: spanHasError ? 500 : 200 },
-            { key: 'http.url', type: 'string', value: `https://${serviceName}.alertaid.io/api/v1` },
+            { key: 'http.url', type: 'string', value: `https://${serviceName}.rescueping.io/api/v1` },
             { key: 'span.kind', type: 'string', value: s === 0 ? 'server' : 'client' },
           ],
           logs: spanHasError ? [{ timestamp: spanEndTime, fields: [{ key: 'event', type: 'string', value: 'error' }, { key: 'message', type: 'string', value: 'Connection timeout' }] }] : [],

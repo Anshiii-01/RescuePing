@@ -1,8 +1,8 @@
 #!/bin/bash
-# Alert Aid - Local Development Script
+# Rescue Ping - Local Development Script
 # This script starts both the backend and frontend for local development
 
-echo "🚀 Starting Alert Aid Development Environment..."
+echo "🚀 Starting Rescue Ping Development Environment..."
 
 # Colors for output
 RED='\033[0;31m'

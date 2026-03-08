@@ -59,7 +59,7 @@ if SENTRY_AVAILABLE and os.getenv("SENTRY_DSN"):
     )
     sentry_sdk.init(
         dsn=os.getenv("SENTRY_DSN"),
-        release="alert-aid-backend-enhanced@1.0.0",
+        release="rescue-ping-backend-enhanced@1.0.0",
         environment="production",
         integrations=[
             sentry_logging,
@@ -74,7 +74,7 @@ warnings.filterwarnings('ignore')
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="Alert Aid Production ML Backend",
+    title="Rescue Ping Production ML Backend",
     version="2.0.0",
     description="Production-grade disaster prediction system with real ML models and external APIs",
     docs_url="/docs",
@@ -95,8 +95,8 @@ app.add_middleware(
         "http://localhost:3001",  # React dev server
         "http://localhost:3000", 
         "http://localhost:4200",
-        "https://alert-aid.netlify.app",  # Example production domain
-        "https://alert-aid.vercel.app"
+        "https://rescue-ping.netlify.app",  # Example production domain
+        "https://rescue-ping.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -801,7 +801,7 @@ external_service = ExternalDataService()
 @app.on_event("startup")
 async def startup_event():
     """Initialize the application"""
-    logger.info("Starting Alert Aid ML Backend...")
+    logger.info("Starting Rescue Ping ML Backend...")
     
     # Create directories
     Config.MODEL_PATH.mkdir(exist_ok=True)
@@ -813,7 +813,7 @@ async def startup_event():
 @app.on_event("shutdown") 
 async def shutdown_event():
     """Clean up resources"""
-    logger.info("Shutting down Alert Aid ML Backend...")
+    logger.info("Shutting down Rescue Ping ML Backend...")
     await external_service.close_session()
 
 async def initialize_models():
@@ -829,7 +829,7 @@ async def initialize_models():
 async def root():
     """Health check endpoint"""
     return {
-        "service": "Alert Aid ML Backend",
+        "service": "Rescue Ping ML Backend",
         "version": "2.0.0",
         "status": "running",
         "timestamp": datetime.now().isoformat()
@@ -1261,7 +1261,7 @@ async def websocket_alerts(websocket: WebSocket):
         # Send initial connection confirmation
         await websocket.send_json({
             "type": "connection_established",
-            "message": "Connected to Alert Aid real-time alerts",
+            "message": "Connected to Rescue Ping real-time alerts",
             "timestamp": datetime.now().isoformat()
         })
 
@@ -1331,7 +1331,7 @@ async def alert_broadcast_task():
 @app.on_event("startup")
 async def startup_event():
     """Initialize the application"""
-    logger.info("Starting Alert Aid ML Backend...")
+    logger.info("Starting Rescue Ping ML Backend...")
 
     # Create directories
     Config.MODEL_PATH.mkdir(exist_ok=True)

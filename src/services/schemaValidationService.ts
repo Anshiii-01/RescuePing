@@ -447,7 +447,7 @@ class SchemaValidationService {
     const schemasData = [
       {
         name: 'alert',
-        namespace: 'com.alertaid.events',
+        namespace: 'com.rescueping.events',
         properties: {
           id: { type: 'string' as DataType, format: 'uuid' },
           type: { type: 'string' as DataType, enum: ['info', 'warning', 'error', 'critical'] },
@@ -461,7 +461,7 @@ class SchemaValidationService {
       },
       {
         name: 'user',
-        namespace: 'com.alertaid.users',
+        namespace: 'com.rescueping.users',
         properties: {
           id: { type: 'string' as DataType, format: 'uuid' },
           email: { type: 'string' as DataType, format: 'email' },
@@ -474,7 +474,7 @@ class SchemaValidationService {
       },
       {
         name: 'notification',
-        namespace: 'com.alertaid.notifications',
+        namespace: 'com.rescueping.notifications',
         properties: {
           id: { type: 'string' as DataType, format: 'uuid' },
           userId: { type: 'string' as DataType, format: 'uuid' },
@@ -488,7 +488,7 @@ class SchemaValidationService {
       },
       {
         name: 'incident',
-        namespace: 'com.alertaid.incidents',
+        namespace: 'com.rescueping.incidents',
         properties: {
           id: { type: 'string' as DataType, format: 'uuid' },
           title: { type: 'string' as DataType, minLength: 5, maxLength: 200 },
@@ -503,7 +503,7 @@ class SchemaValidationService {
       },
       {
         name: 'metric',
-        namespace: 'com.alertaid.metrics',
+        namespace: 'com.rescueping.metrics',
         properties: {
           name: { type: 'string' as DataType, pattern: '^[a-z][a-z0-9_]*$' },
           value: { type: 'number' as DataType },
@@ -516,7 +516,7 @@ class SchemaValidationService {
       },
       {
         name: 'auditLog',
-        namespace: 'com.alertaid.audit',
+        namespace: 'com.rescueping.audit',
         properties: {
           id: { type: 'string' as DataType, format: 'uuid' },
           action: { type: 'string' as DataType, enum: ['create', 'read', 'update', 'delete'] },
@@ -531,7 +531,7 @@ class SchemaValidationService {
       },
       {
         name: 'configuration',
-        namespace: 'com.alertaid.config',
+        namespace: 'com.rescueping.config',
         properties: {
           key: { type: 'string' as DataType, pattern: '^[a-z][a-z0-9._]*$' },
           value: { type: 'any' as DataType },
@@ -544,7 +544,7 @@ class SchemaValidationService {
       },
       {
         name: 'integration',
-        namespace: 'com.alertaid.integrations',
+        namespace: 'com.rescueping.integrations',
         properties: {
           id: { type: 'string' as DataType, format: 'uuid' },
           name: { type: 'string' as DataType },
@@ -570,7 +570,7 @@ class SchemaValidationService {
         description: `Schema for ${s.name} data validation`,
         schema: {
           $schema: 'http://json-schema.org/draft-07/schema#',
-          $id: `https://alertaid.com/schemas/${s.name}.json`,
+          $id: `https://rescueping.com/schemas/${s.name}.json`,
           title: s.name.charAt(0).toUpperCase() + s.name.slice(1),
           description: `${s.name} schema definition`,
           type: 'object',
@@ -710,9 +710,9 @@ class SchemaValidationService {
     // Initialize Schema Registry
     const registry: SchemaRegistry = {
       id: 'registry-0001',
-      name: 'AlertAid Schema Registry',
-      description: 'Central schema registry for AlertAid platform',
-      url: 'https://schema-registry.alertaid.internal',
+      name: 'RescuePing Schema Registry',
+      description: 'Central schema registry for RescuePing platform',
+      url: 'https://schema-registry.rescueping.internal',
       type: 'confluent',
       status: 'connected',
       auth: {
@@ -739,9 +739,9 @@ class SchemaValidationService {
 
     // Initialize Validation Policies
     const policiesData = [
-      { name: 'strict-production', target: { schemas: [], namespaces: ['com.alertaid.events'], tags: ['core'] } },
-      { name: 'warn-only-staging', target: { schemas: [], namespaces: ['com.alertaid.users'], tags: [] } },
-      { name: 'audit-compliance', target: { schemas: [], namespaces: ['com.alertaid.audit'], tags: [] } },
+      { name: 'strict-production', target: { schemas: [], namespaces: ['com.rescueping.events'], tags: ['core'] } },
+      { name: 'warn-only-staging', target: { schemas: [], namespaces: ['com.rescueping.users'], tags: [] } },
+      { name: 'audit-compliance', target: { schemas: [], namespaces: ['com.rescueping.audit'], tags: [] } },
     ];
 
     policiesData.forEach((p, idx) => {

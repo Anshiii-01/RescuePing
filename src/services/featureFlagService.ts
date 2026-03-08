@@ -445,7 +445,7 @@ class FeatureFlagService {
             id: `rule-${idx}-1`,
             attribute: s.key === 'internal-users' ? 'email' : s.key === 'new-users' ? 'created_at' : 'plan',
             operator: s.key === 'internal-users' ? 'ends_with' : s.key === 'new-users' ? 'greater_than' : 'equals',
-            value: s.key === 'internal-users' ? '@alertaid.com' : s.key === 'new-users' ? new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString() : s.key.replace('-users', ''),
+            value: s.key === 'internal-users' ? '@rescueping.com' : s.key === 'new-users' ? new Date(Date.now() - 30 * 24 * 60 * 60 * 1000).toISOString() : s.key.replace('-users', ''),
           },
         ],
         includedUsers: s.key === 'beta-users' ? ['user-001', 'user-002', 'user-003'] : [],
@@ -476,9 +476,9 @@ class FeatureFlagService {
     ];
 
     const usersData = [
-      { name: 'John Smith', email: 'john.smith@alertaid.com' },
-      { name: 'Sarah Johnson', email: 'sarah.johnson@alertaid.com' },
-      { name: 'Mike Chen', email: 'mike.chen@alertaid.com' },
+      { name: 'John Smith', email: 'john.smith@rescueping.com' },
+      { name: 'Sarah Johnson', email: 'sarah.johnson@rescueping.com' },
+      { name: 'Mike Chen', email: 'mike.chen@rescueping.com' },
     ];
 
     flagsData.forEach((f, idx) => {
@@ -550,7 +550,7 @@ class FeatureFlagService {
           userName: user.name,
           email: user.email,
         },
-        project: 'alertaid-core',
+        project: 'rescueping-core',
         prerequisites: f.key === 'notification-v2' ? [{ flagKey: 'new-dashboard', variation: 'on' }] : [],
         variations,
         metrics: {

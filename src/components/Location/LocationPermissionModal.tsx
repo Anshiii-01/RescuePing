@@ -196,7 +196,7 @@ export const LocationPermissionModal: React.FC<LocationPermissionModalProps> = (
       }
 
       // Store location in localStorage
-      localStorage.setItem('alertaid-location', JSON.stringify(locationData));
+      localStorage.setItem('rescueping-location', JSON.stringify(locationData));
 
       console.log('✅ Location obtained successfully:', locationData);
       onLocationGranted(locationData);
@@ -208,7 +208,7 @@ export const LocationPermissionModal: React.FC<LocationPermissionModalProps> = (
       
       switch (error.code) {
         case GeolocationPositionError.PERMISSION_DENIED:
-          errorMessage = 'Location permission denied. You can still use Alert Aid by entering your location manually.';
+          errorMessage = 'Location permission denied. You can still use Rescue Ping by entering your location manually.';
           break;
         case GeolocationPositionError.POSITION_UNAVAILABLE:
           errorMessage = 'Location information is unavailable. Please try manual entry.';
@@ -261,7 +261,7 @@ export const LocationPermissionModal: React.FC<LocationPermissionModalProps> = (
         </ModalTitle>
         
         <ModalDescription id="location-modal-description">
-          Alert Aid needs your location to provide accurate disaster predictions, weather alerts, and emergency response information for your area. 
+          Rescue Ping needs your location to provide accurate disaster predictions, weather alerts, and emergency response information for your area. 
           Your location data stays on your device and is only used for disaster predictions.
         </ModalDescription>
 

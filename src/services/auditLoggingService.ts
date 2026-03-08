@@ -525,7 +525,7 @@ class AuditLoggingService {
   private listeners: ((event: string, data: unknown) => void)[] = [];
   private context: Partial<AuditContext> = {
     environment: 'production',
-    service: 'alert-aid',
+    service: 'rescue-ping',
     version: '1.0.0',
   };
 

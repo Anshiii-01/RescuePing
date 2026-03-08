@@ -12,7 +12,7 @@ from sentry_sdk.integrations.logging import LoggingIntegration
 if os.getenv("SENTRY_DSN"):
     sentry_sdk.init(
         dsn=os.getenv("SENTRY_DSN"),
-        release="alert-aid-streamlit@1.0.0",
+        release="rescue-ping-streamlit@1.0.0",
         environment="production",
         traces_sample_rate=1.0,
         profiles_sample_rate=1.0,
@@ -23,13 +23,13 @@ if os.getenv("SENTRY_DSN"):
 
 # Set page config
 st.set_page_config(
-    page_title="Alert Aid - Disaster Prediction Dashboard",
+    page_title="Rescue Ping - Disaster Prediction Dashboard",
     page_icon="🚨",
     layout="wide"
 )
 
 # Title and Description
-st.title("🚨 Alert Aid - AI-Powered Disaster Prediction")
+st.title("🚨 Rescue Ping - AI-Powered Disaster Prediction")
 st.markdown("""
 This dashboard allows you to manually input environmental parameters and get real-time disaster risk predictions 
 using our trained Machine Learning models.

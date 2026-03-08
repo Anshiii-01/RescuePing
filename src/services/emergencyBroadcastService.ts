@@ -263,7 +263,7 @@ const sampleBroadcasts: EmergencyBroadcast[] = [
     id: 'broadcast-001',
     capAlert: {
       identifier: 'CAP-2026-001-FLOOD',
-      sender: 'alert-aid@emergency.gov',
+      sender: 'rescue-ping@emergency.gov',
       sent: new Date('2026-01-09T10:00:00Z'),
       status: 'actual',
       msgType: 'alert',
@@ -534,11 +534,11 @@ class EmergencyBroadcastService {
   async createCAPAlert(alertData: Partial<CAPAlert>): Promise<CAPAlert> {
     const alert: CAPAlert = {
       identifier: alertData.identifier || `CAP-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`,
-      sender: alertData.sender || 'alert-aid@emergency.gov',
+      sender: alertData.sender || 'rescue-ping@emergency.gov',
       sent: new Date(),
       status: alertData.status || 'draft',
       msgType: alertData.msgType || 'alert',
-      source: alertData.source || 'Alert-AID System',
+      source: alertData.source || 'Rescue Ping System',
       scope: alertData.scope || 'public',
       code: alertData.code || ['IPAWSv1.0'],
       info: alertData.info || []

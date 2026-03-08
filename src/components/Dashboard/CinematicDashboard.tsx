@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useGeolocation } from '../Location/GeolocationManager';
-import { AlertAidAPIService } from '../../services/apiService';
+import { RescuePingAPIService } from '../../services/apiService';
 import OpenWeatherMapService from '../../services/openWeatherMapService';
 import Header from './Header';
 import CinematicHero from './CinematicHero';
@@ -236,15 +236,15 @@ const CinematicDashboard: React.FC = () => {
       // Fetch only critical data in parallel (weather, prediction, alerts)
       // Skip location geocoding since we already have location from LocationContext
       const [weather, prediction, alerts] = await Promise.all([
-        AlertAidAPIService.getWeatherData(location.latitude, location.longitude).catch(err => {
+        RescuePingAPIService.getWeatherData(location.latitude, location.longitude).catch(err => {
           console.warn('Weather fetch failed, using fallback');
           return null;
         }),
-        AlertAidAPIService.getPredictions(location.latitude, location.longitude).catch(err => {
+        RescuePingAPIService.getPredictions(location.latitude, location.longitude).catch(err => {
           console.warn('Prediction fetch failed, using fallback');
           return null;
         }),
-        AlertAidAPIService.getAlerts(location.latitude, location.longitude).catch(err => {
+        RescuePingAPIService.getAlerts(location.latitude, location.longitude).catch(err => {
           console.warn('Alerts fetch failed, using fallback');
           return { alerts: [], count: 0 };
         })
@@ -392,7 +392,7 @@ const CinematicDashboard: React.FC = () => {
       alerts: dashboardData.alerts,
       systemStatus,
       lastUpdated,
-      dataSource: 'Alert Aid Dashboard v2.0'
+      dataSource: 'Rescue Ping Dashboard v2.0'
     };
     
     const blob = new Blob([JSON.stringify(exportData, null, 2)], {
@@ -402,7 +402,7 @@ const CinematicDashboard: React.FC = () => {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `alert-aid-report-${new Date().toISOString().split('T')[0]}.json`;
+    a.download = `rescue-ping-report-${new Date().toISOString().split('T')[0]}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

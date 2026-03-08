@@ -58,8 +58,8 @@ const LocationDebugTool: React.FC = () => {
   const { location, isLoading, error, clearLocation } = useGeolocation();
   
   const clearLocalStorage = () => {
-    localStorage.removeItem('alertaid-location');
-    localStorage.removeItem('alertaid-location-prompted');
+    localStorage.removeItem('rescueping-location');
+    localStorage.removeItem('rescueping-location-prompted');
     clearLocation();
     console.log('Location data cleared from localStorage');
   };
@@ -144,7 +144,7 @@ const LocationDebugTool: React.FC = () => {
         </TestButton>
         
         <StatusText type="info">
-          Modal prompted: {localStorage.getItem('alertaid-location-prompted') || 'false'}
+          Modal prompted: {localStorage.getItem('rescueping-location-prompted') || 'false'}
         </StatusText>
       </TestContainer>
 

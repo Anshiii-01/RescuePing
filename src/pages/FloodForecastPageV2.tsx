@@ -1799,7 +1799,7 @@ const FloodForecastPageV2: React.FC = () => {
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '8px' }}>
             <Clock size={14} />
             Last updated: {lastUpdated.toLocaleTimeString()} • 
-            <Shield size={14} /> Powered by Alert-AID Ensemble ML (RF + LSTM + Physics)
+            <Shield size={14} /> Powered by Rescue Ping Ensemble ML (RF + LSTM + Physics)
           </div>
         </div>
       </Content>

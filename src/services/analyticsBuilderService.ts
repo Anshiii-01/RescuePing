@@ -438,7 +438,7 @@ class AnalyticsBuilderService {
         description: w.desc,
         type: w.type,
         category: w.category,
-        thumbnail: `https://cdn.alertaid.com/widgets/${w.type}-${idx + 1}.png`,
+        thumbnail: `https://cdn.rescueping.com/widgets/${w.type}-${idx + 1}.png`,
         defaultConfig: {
           chartType: w.type === 'chart' ? ['line', 'bar', 'pie', 'area'][idx % 4] as ChartVariant : undefined,
         },
@@ -512,8 +512,8 @@ class AnalyticsBuilderService {
         name: ds.name,
         type: ds.type as DashboardDataSource['type'],
         connection: {
-          host: ds.type === 'database' ? 'db.alertaid.com' : undefined,
-          apiUrl: ds.type !== 'database' ? `https://api.alertaid.com/${ds.name.toLowerCase().replace(' ', '-')}` : undefined,
+          host: ds.type === 'database' ? 'db.rescueping.com' : undefined,
+          apiUrl: ds.type !== 'database' ? `https://api.rescueping.com/${ds.name.toLowerCase().replace(' ', '-')}` : undefined,
         },
         schema: {
           fields: [
@@ -621,9 +621,9 @@ class AnalyticsBuilderService {
         },
         embedding: {
           enabled: d.status === 'published',
-          allowedDomains: ['alertaid.com', '*.alertaid.com'],
+          allowedDomains: ['rescueping.com', '*.rescueping.com'],
           type: 'iframe',
-          code: `<iframe src="https://analytics.alertaid.com/embed/dash-${idx + 1}" width="100%" height="600"></iframe>`,
+          code: `<iframe src="https://analytics.rescueping.com/embed/dash-${idx + 1}" width="100%" height="600"></iframe>`,
           options: {
             responsive: true,
             showHeader: true,
@@ -857,7 +857,7 @@ class AnalyticsBuilderService {
 
     const shareLink: ShareLink = {
       id: `share-${Date.now()}-${Math.random().toString(36).substr(2, 6)}`,
-      url: `https://analytics.alertaid.com/shared/${dashboardId}/${Math.random().toString(36).substr(2, 12)}`,
+      url: `https://analytics.rescueping.com/shared/${dashboardId}/${Math.random().toString(36).substr(2, 12)}`,
       type,
       permission,
       createdAt: new Date(),
@@ -891,7 +891,7 @@ class AnalyticsBuilderService {
     const dashboard = this.dashboards.get(dashboardId);
     if (!dashboard) throw new Error('Dashboard not found');
 
-    const baseUrl = `https://analytics.alertaid.com/embed/${dashboardId}`;
+    const baseUrl = `https://analytics.rescueping.com/embed/${dashboardId}`;
     const params = new URLSearchParams();
     
     if (options) {
@@ -907,11 +907,11 @@ class AnalyticsBuilderService {
       case 'iframe':
         return `<iframe src="${embedUrl}" width="100%" height="600" frameborder="0" allowfullscreen></iframe>`;
       case 'javascript':
-        return `<div id="alertaid-dashboard-${dashboardId}"></div>\n<script src="https://cdn.alertaid.com/embed.js" data-dashboard="${dashboardId}"></script>`;
+        return `<div id="rescueping-dashboard-${dashboardId}"></div>\n<script src="https://cdn.rescueping.com/embed.js" data-dashboard="${dashboardId}"></script>`;
       case 'api':
         return `GET ${embedUrl}/api/v1/data`;
       case 'oembed':
-        return `https://analytics.alertaid.com/oembed?url=${encodeURIComponent(embedUrl)}`;
+        return `https://analytics.rescueping.com/oembed?url=${encodeURIComponent(embedUrl)}`;
       default:
         return embedUrl;
     }

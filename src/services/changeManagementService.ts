@@ -744,13 +744,13 @@ class ChangeManagementService {
         requestor: {
           userId: `user-${(idx % 4 + 1).toString().padStart(4, '0')}`,
           userName: user.name,
-          email: `${user.name.toLowerCase().replace(' ', '.')}@alertaid.com`,
+          email: `${user.name.toLowerCase().replace(' ', '.')}@rescueping.com`,
           department: user.department,
         },
         assignee: ['in_progress', 'completed'].includes(change.status) ? {
           userId: 'user-0001',
           userName: usersData[0].name,
-          email: `${usersData[0].name.toLowerCase().replace(' ', '.')}@alertaid.com`,
+          email: `${usersData[0].name.toLowerCase().replace(' ', '.')}@rescueping.com`,
         } : undefined,
         riskAssessment: {
           level: change.risk as RiskLevel,

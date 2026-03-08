@@ -285,7 +285,7 @@ const Header: React.FC = () => {
     <HeaderContainer>
       <Logo>
         <LogoIcon><AlertTriangle size={16} /></LogoIcon>
-        <BrandName>Alert Aid</BrandName>
+        <BrandName>Rescue Ping</BrandName>
       </Logo>
       
       <Navigation>

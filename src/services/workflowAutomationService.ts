@@ -711,7 +711,7 @@ Configure the required integrations before using this template.`,
           logLevel: 'info',
           notifyOnFailure: true,
           notifyOnSuccess: false,
-          notificationRecipients: ['admin@alertaid.com'],
+          notificationRecipients: ['admin@rescueping.com'],
         },
         metadata: {
           createdBy: 'admin',

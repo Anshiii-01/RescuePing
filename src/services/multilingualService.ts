@@ -253,7 +253,7 @@ interface TranslationStatistics {
 // Sample translations
 const SAMPLE_TRANSLATIONS: Record<string, Record<LanguageCode, string>> = {
   'common.appName': {
-    en: 'Alert Aid',
+    en: 'Rescue Ping',
     hi: 'अलर्ट एड',
     mr: 'अलर्ट एड',
     gu: 'અલર્ટ એઇડ',

@@ -75,7 +75,7 @@ const TILE_SERVERS: Record<MapStyle, string> = {
 
 // Cache configuration
 const CACHE_CONFIG = {
-  dbName: 'AlertAidMapCache',
+  dbName: 'RescuePingMapCache',
   storeName: 'tiles',
   regionStoreName: 'regions',
   maxCacheSize: 500 * 1024 * 1024, // 500MB

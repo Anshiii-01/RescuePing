@@ -801,22 +801,22 @@ class SecretsManagementService {
 
     // Initialize Certificates
     const certificatesData = [
-      { name: 'Root CA', type: 'root_ca', cn: 'AlertAid Root CA' },
-      { name: 'Intermediate CA', type: 'intermediate_ca', cn: 'AlertAid Intermediate CA' },
-      { name: 'API Server Certificate', type: 'leaf', cn: 'api.alertaid.com' },
-      { name: 'Web Server Certificate', type: 'leaf', cn: '*.alertaid.com' },
+      { name: 'Root CA', type: 'root_ca', cn: 'RescuePing Root CA' },
+      { name: 'Intermediate CA', type: 'intermediate_ca', cn: 'RescuePing Intermediate CA' },
+      { name: 'API Server Certificate', type: 'leaf', cn: 'api.rescueping.com' },
+      { name: 'Web Server Certificate', type: 'leaf', cn: '*.rescueping.com' },
     ];
 
     certificatesData.forEach((c, idx) => {
       const cert: Certificate = {
         id: `cert-${(idx + 1).toString().padStart(4, '0')}`,
         name: c.name,
-        description: `${c.name} for AlertAid`,
+        description: `${c.name} for RescuePing`,
         type: c.type as Certificate['type'],
         status: 'active',
         subject: {
           commonName: c.cn,
-          organization: 'AlertAid Inc',
+          organization: 'RescuePing Inc',
           organizationalUnit: 'Engineering',
           country: 'US',
           state: 'California',

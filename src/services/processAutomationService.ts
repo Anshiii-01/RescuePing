@@ -493,7 +493,7 @@ class ProcessAutomationService {
           type: 'event',
           name: 'On Alert Created',
           enabled: true,
-          config: { eventType: 'alert.created', eventSource: 'alertaid' },
+          config: { eventType: 'alert.created', eventSource: 'rescueping' },
         },
         {
           id: `trigger-${idx}-2`,
@@ -511,7 +511,7 @@ class ProcessAutomationService {
         version: '1.0.0',
         status: w.status,
         category: w.category,
-        tags: [w.category.toLowerCase().replace(' ', '-'), 'automation', 'alertaid'],
+        tags: [w.category.toLowerCase().replace(' ', '-'), 'automation', 'rescueping'],
         nodes,
         edges,
         triggers,
@@ -545,7 +545,7 @@ class ProcessAutomationService {
           retentionDays: 30,
           logging: 'normal',
           notifications: {
-            onError: ['ops-team@alertaid.com'],
+            onError: ['ops-team@rescueping.com'],
           },
         },
         metadata: {

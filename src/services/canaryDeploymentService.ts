@@ -620,7 +620,7 @@ class CanaryDeploymentService {
         versions: {
           stable: {
             version: stableVersion,
-            image: `gcr.io/alertaid/${c.name.toLowerCase().replace(/\s/g, '-').replace('-canary', '')}`,
+            image: `gcr.io/rescueping/${c.name.toLowerCase().replace(/\s/g, '-').replace('-canary', '')}`,
             imageTag: stableVersion,
             commit: `abc${idx}${Math.random().toString(36).substr(2, 7)}`,
             buildNumber: 100 + idx,
@@ -639,7 +639,7 @@ class CanaryDeploymentService {
           },
           canary: {
             version: canaryVersion,
-            image: `gcr.io/alertaid/${c.name.toLowerCase().replace(/\s/g, '-').replace('-canary', '')}`,
+            image: `gcr.io/rescueping/${c.name.toLowerCase().replace(/\s/g, '-').replace('-canary', '')}`,
             imageTag: canaryVersion,
             commit: `def${idx}${Math.random().toString(36).substr(2, 7)}`,
             buildNumber: 110 + idx,
@@ -844,7 +844,7 @@ class CanaryDeploymentService {
         ],
         notifications: [
           { type: 'slack', channel: '#deployments', events: ['started', 'promoted', 'failed'], enabled: true },
-          { type: 'email', channel: 'platform-team@alertaid.io', events: ['failed', 'rolled_back'], enabled: true },
+          { type: 'email', channel: 'platform-team@rescueping.io', events: ['failed', 'rolled_back'], enabled: true },
         ],
         tags: ['production', c.name.toLowerCase().replace(/\s/g, '-').replace('-canary', '')],
         metadata: {

@@ -17,7 +17,7 @@ const TermsAndConditions: React.FC = () => (
     <p><strong>Last updated:</strong> 8 January 2026</p>
 
     <p>
-      Alert Aid provides AI-powered disaster prediction and emergency guidance
+      Rescue Ping provides AI-powered disaster prediction and emergency guidance
       for informational purposes only. Users must follow official advisories
       during emergencies.
     </p>
@@ -36,7 +36,7 @@ const TermsAndConditions: React.FC = () => (
 
     <h2>Limitation of Liability</h2>
     <p>
-      Alert Aid is not liable for losses or damages arising from reliance on
+      Rescue Ping is not liable for losses or damages arising from reliance on
       platform outputs.
     </p>
 

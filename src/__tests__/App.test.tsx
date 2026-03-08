@@ -22,10 +22,10 @@ describe('App', () => {
     expect(document.body).toBeInTheDocument();
   });
 
-  it('renders Alert Aid branding', () => {
+  it('renders Rescue Ping branding', () => {
     render(<App />);
     // Check for brand name in the document
-    const brandElements = screen.queryAllByText(/Alert Aid/i);
+    const brandElements = screen.queryAllByText(/Rescue Ping/i);
     expect(brandElements.length).toBeGreaterThan(0);
   });
 

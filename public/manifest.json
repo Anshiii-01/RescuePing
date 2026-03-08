@@ -1,6 +1,6 @@
 {
-  "short_name": "Alert Aid",
-  "name": "Alert-AID - AI-Powered Disaster Alert System",
+  "short_name": "Rescue Ping",
+  "name": "Rescue Ping - AI-Powered Disaster Alert System",
   "description": "A real-time disaster monitoring and emergency response application featuring ML-powered predictions, interactive evacuation maps, and live weather alerts.",
   "icons": [
     {

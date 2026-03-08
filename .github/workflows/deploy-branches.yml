@@ -32,7 +32,7 @@ jobs:
         run: npm run build
         env:
           CI: false
-          PUBLIC_URL: /alert-aid
+          PUBLIC_URL: /rescue-ping
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'

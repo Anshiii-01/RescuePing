@@ -1,5 +1,5 @@
 """
-Alert Aid - FastAPI Backend for Vercel
+Rescue Ping - FastAPI Backend for Vercel
 This is the main API entry point for Vercel deployment
 """
 
@@ -25,7 +25,7 @@ if not OPENWEATHER_API_KEY:
 USGS_EARTHQUAKE_URL = "https://earthquake.usgs.gov/fdsnws/event/1/query"
 
 app = FastAPI(
-    title="Alert Aid API",
+    title="Rescue Ping API",
     description="Disaster prediction and alert management API with AQI",
     version="2.0.1"
 )
@@ -45,7 +45,7 @@ app.add_middleware(
 def root():
     """API root endpoint"""
     return {
-        "message": "Alert Aid API",
+        "message": "Rescue Ping API",
         "version": "2.0.0",
         "endpoints": [
             "/api/health",
@@ -359,7 +359,7 @@ def fetch_alerts_data(lat: float, lon: float):
     return {
         "alerts": alerts,
         "count": len(alerts),
-        "source": "Alert_Aid_System",
+        "source": "Rescue_Ping_System",
         "is_real": len(alerts) > 0,
         "location": {"latitude": lat, "longitude": lon},
         "timestamp": datetime.now().isoformat()

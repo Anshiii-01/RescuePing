@@ -39,7 +39,7 @@ export const GeolocationProvider: React.FC<GeolocationProviderProps> = ({ childr
 
   // Load existing location from localStorage on mount
   useEffect(() => {
-    const savedLocation = localStorage.getItem('alertaid-location');
+    const savedLocation = localStorage.getItem('rescueping-location');
     if (savedLocation) {
       try {
         const locationData = JSON.parse(savedLocation);
@@ -54,7 +54,7 @@ export const GeolocationProvider: React.FC<GeolocationProviderProps> = ({ childr
     }
     
     // If no valid saved location, show permission modal on first visit
-    const hasSeenModal = localStorage.getItem('alertaid-location-prompted');
+    const hasSeenModal = localStorage.getItem('rescueping-location-prompted');
     if (!hasSeenModal) {
       // Show modal after a brief delay to let the app load
       setTimeout(() => {
@@ -74,7 +74,7 @@ export const GeolocationProvider: React.FC<GeolocationProviderProps> = ({ childr
     setError(null);
     
     // Mark that user has been prompted
-    localStorage.setItem('alertaid-location-prompted', 'true');
+    localStorage.setItem('rescueping-location-prompted', 'true');
     
     // Show success notification
     addNotification({
@@ -90,13 +90,13 @@ export const GeolocationProvider: React.FC<GeolocationProviderProps> = ({ childr
     setError('Location access denied');
     
     // Mark that user has been prompted
-    localStorage.setItem('alertaid-location-prompted', 'true');
+    localStorage.setItem('rescueping-location-prompted', 'true');
     
     // Show info about manual entry
     addNotification({
       type: 'info',
       title: 'Location Access Denied',
-      message: 'You can still use Alert Aid by entering your location manually in settings.',
+      message: 'You can still use Rescue Ping by entering your location manually in settings.',
       duration: 6000
     });
   }, [addNotification]);
@@ -110,15 +110,15 @@ export const GeolocationProvider: React.FC<GeolocationProviderProps> = ({ childr
     setShowManualInput(false);
     // If no location set and user closes manual input, mark as prompted
     if (!location) {
-      localStorage.setItem('alertaid-location-prompted', 'true');
+      localStorage.setItem('rescueping-location-prompted', 'true');
     }
   }, [location]);
 
   const clearLocation = useCallback(() => {
     setLocation(null);
     setError(null);
-    localStorage.removeItem('alertaid-location');
-    localStorage.removeItem('alertaid-location-prompted');
+    localStorage.removeItem('rescueping-location');
+    localStorage.removeItem('rescueping-location-prompted');
   }, []);
 
   const contextValue: GeolocationContextType = {

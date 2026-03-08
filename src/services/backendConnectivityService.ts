@@ -221,7 +221,7 @@ class BackendConnectivityService {
     if (diagnostics.backend.reachable) {
       healthyServices++;
     } else {
-      recommendations.push('Backend API server appears to be offline. Check if the Alert Aid backend service is running on port 8000.');
+      recommendations.push('Backend API server appears to be offline. Check if the Rescue Ping backend service is running on port 8000.');
     }
 
     // Assess endpoint availability
@@ -288,7 +288,7 @@ class BackendConnectivityService {
   async generateConnectivityReport(): Promise<string> {
     const diagnostics = await this.runComprehensiveDiagnostics();
     
-    let report = `# Alert Aid Connectivity Diagnostics Report\n\n`;
+    let report = `# Rescue Ping Connectivity Diagnostics Report\n\n`;
     report += `**Generated**: ${new Date(diagnostics.timestamp).toISOString()}\n`;
     report += `**Overall Status**: ${diagnostics.overall_status.toUpperCase()}\n\n`;
 

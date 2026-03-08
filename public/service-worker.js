@@ -1,5 +1,5 @@
-const CACHE_NAME = 'alert-aid-v1';
-const RUNTIME_CACHE = 'alert-aid-runtime';
+const CACHE_NAME = 'rescue-ping-v1';
+const RUNTIME_CACHE = 'rescue-ping-runtime';
 
 // Assets to cache on install
 const STATIC_ASSETS = [
@@ -143,7 +143,7 @@ async function getStoredAlerts() {
 // Push notifications
 self.addEventListener('push', (event) => {
   const data = event.data ? event.data.json() : {};
-  const title = data.title || 'Alert Aid Notification';
+  const title = data.title || 'Rescue Ping Notification';
   const options = {
     body: data.body || 'New disaster alert',
     icon: '/Gemini_Generated_Image_7c3uv87c3uv87c3u.png',

@@ -523,7 +523,7 @@ def main():
     args = parser.parse_args()
     
     print("\n" + "🌊" * 35)
-    print("   ALERT-AID: AI Flood Forecasting System")
+    print("   RESCUE-PING: AI Flood Forecasting System")
     print("   Hackathon Training Pipeline")
     print("🌊" * 35)
     
@@ -536,7 +536,7 @@ def main():
     
     print("\n✅ Training pipeline completed successfully!")
     print("   Run the backend server to test predictions via API:")
-    print("   cd Alert-AID && python backend/main.py")
+    print("   cd RescuePing && python backend/main.py")
     print("   Then visit: http://localhost:8000/docs")
     
 

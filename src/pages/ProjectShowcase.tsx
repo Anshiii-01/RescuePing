@@ -10,7 +10,7 @@ const ProjectShowcase: React.FC = () => {
 
       <FeatureSection
         title="AI-Powered Predictions"
-        description="Alert-AID leverages AI models to predict potential disaster scenarios early, enabling faster and smarter response planning."
+        description="Rescue Ping leverages AI models to predict potential disaster scenarios early, enabling faster and smarter response planning."
         icon="🤖"
       />
 

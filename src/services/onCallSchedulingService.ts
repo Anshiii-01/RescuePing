@@ -475,14 +475,14 @@ class OnCallSchedulingService {
   private initializeSampleData(): void {
     // Initialize Users for Availability
     const usersData = [
-      { name: 'John Smith', email: 'john.smith@alertaid.com', team: 'Platform' },
-      { name: 'Sarah Johnson', email: 'sarah.johnson@alertaid.com', team: 'Platform' },
-      { name: 'Mike Chen', email: 'mike.chen@alertaid.com', team: 'Infrastructure' },
-      { name: 'Emily Davis', email: 'emily.davis@alertaid.com', team: 'Platform' },
-      { name: 'Alex Wilson', email: 'alex.wilson@alertaid.com', team: 'Infrastructure' },
-      { name: 'Lisa Brown', email: 'lisa.brown@alertaid.com', team: 'Platform' },
-      { name: 'David Lee', email: 'david.lee@alertaid.com', team: 'Infrastructure' },
-      { name: 'Amanda Taylor', email: 'amanda.taylor@alertaid.com', team: 'Platform' },
+      { name: 'John Smith', email: 'john.smith@rescueping.com', team: 'Platform' },
+      { name: 'Sarah Johnson', email: 'sarah.johnson@rescueping.com', team: 'Platform' },
+      { name: 'Mike Chen', email: 'mike.chen@rescueping.com', team: 'Infrastructure' },
+      { name: 'Emily Davis', email: 'emily.davis@rescueping.com', team: 'Platform' },
+      { name: 'Alex Wilson', email: 'alex.wilson@rescueping.com', team: 'Infrastructure' },
+      { name: 'Lisa Brown', email: 'lisa.brown@rescueping.com', team: 'Platform' },
+      { name: 'David Lee', email: 'david.lee@rescueping.com', team: 'Infrastructure' },
+      { name: 'Amanda Taylor', email: 'amanda.taylor@rescueping.com', team: 'Platform' },
     ];
 
     usersData.forEach((u, idx) => {

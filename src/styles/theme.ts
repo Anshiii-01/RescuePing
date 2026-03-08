@@ -1,4 +1,4 @@
-// Professional Alert Aid Theme - Near-Black Specification
+// Professional Rescue Ping Theme - Near-Black Specification
 // Updated to match user requirements: #0F1115, #16181D, #1C1E24, #FFFFFF, #EF4444
 
 export const theme = {

@@ -174,7 +174,7 @@ const CreateButton = styled.button`
   }
 `;
 
-const STORAGE_KEY = 'alert-aid-safety-circles';
+const STORAGE_KEY = 'rescue-ping-safety-circles';
 
 const SafetyNetworkPage: React.FC = () => {
     const [activeTab, setActiveTab] = useState<'circles' | 'create' | 'settings'>('circles');

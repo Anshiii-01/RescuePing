@@ -557,7 +557,7 @@ class RollbackService {
             type: s.scope === 'database' ? 'database' : s.scope === 'configuration' ? 'config' : 'container',
             name: s.name.toLowerCase().replace(/\s/g, '-'),
             version: s.name.split('v')[1]?.split(' ')[0] || '1.0.0',
-            location: `s3://alertaid-snapshots/${s.name.toLowerCase().replace(/\s/g, '-')}`,
+            location: `s3://rescueping-snapshots/${s.name.toLowerCase().replace(/\s/g, '-')}`,
             checksum: `sha256:${Math.random().toString(36).substr(2, 64)}`,
             size: Math.floor(Math.random() * 500) * 1024 * 1024,
             encrypted: true,
@@ -712,7 +712,7 @@ class RollbackService {
               type: 'container',
               name: o.name.toLowerCase().replace(/\s/g, '-').replace('-rollback', ''),
               version: '2.0.0',
-              location: `gcr.io/alertaid/${o.name.toLowerCase().replace(/\s/g, '-').replace('-rollback', '')}:2.0.0`,
+              location: `gcr.io/rescueping/${o.name.toLowerCase().replace(/\s/g, '-').replace('-rollback', '')}:2.0.0`,
               checksum: `sha256:${Math.random().toString(36).substr(2, 64)}`,
               size: Math.floor(Math.random() * 200) * 1024 * 1024,
             },
@@ -813,7 +813,7 @@ class RollbackService {
         },
         notifications: [
           { id: `notif-${idx}-1`, type: 'started', channels: [{ type: 'slack', target: '#deployments' }], recipients: ['platform-team'], template: 'rollback_started', status: o.status !== 'pending' ? 'sent' : 'pending' },
-          { id: `notif-${idx}-2`, type: 'completed', channels: [{ type: 'slack', target: '#deployments' }, { type: 'email', target: 'platform-team@alertaid.io' }], recipients: ['platform-team', 'release-manager'], template: 'rollback_completed', status: o.status === 'completed' ? 'sent' : 'pending' },
+          { id: `notif-${idx}-2`, type: 'completed', channels: [{ type: 'slack', target: '#deployments' }, { type: 'email', target: 'platform-team@rescueping.io' }], recipients: ['platform-team', 'release-manager'], template: 'rollback_completed', status: o.status === 'completed' ? 'sent' : 'pending' },
         ],
         audit: [
           { id: `audit-${idx}-1`, timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000), action: 'rollback_created', actor: { type: 'user', id: 'admin', name: 'Admin User' }, details: { version: '2.0.0' }, result: 'success' },

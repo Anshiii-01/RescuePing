@@ -1,4 +1,4 @@
-// Enhanced Weather Data Types for Alert Aid
+// Enhanced Weather Data Types for Rescue Ping
 // Supports both backend API and OpenWeatherMap responses
 
 export interface BaseWeatherData {

@@ -18,13 +18,13 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           issue-message: |
-            👋 **Welcome to Alert-AID!** 
+            👋 **Welcome to Rescue Ping!** 
             
             Thank you for opening your first issue! We're excited to have you here. 🎉
             
             **Quick Links:**
-            - 📖 [README](https://github.com/Anshiii-01/alert-aid#readme)
-            - 🌐 [Live Demo](https://anshiii-01.github.io/alert-aid)
+            - 📖 [README](https://github.com/Anshiii-01/rescue-ping#readme)
+            - 🌐 [Live Demo](https://anshiii-01.github.io/rescue-ping)
             - 💬 Questions? Feel free to ask!
             
             Our team will review your issue soon. In the meantime:
@@ -36,7 +36,7 @@ jobs:
           pr-message: |
             🎉 **Thank you for your first Pull Request!**
             
-            Welcome to the Alert-AID community! We really appreciate your contribution. 💪
+            Welcome to the Rescue Ping community! We really appreciate your contribution. 💪
             
             **PR Checklist:**
             - [ ] Code follows our style guidelines
