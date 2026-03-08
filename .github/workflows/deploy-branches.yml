@@ -1,12 +1,10 @@
-# Deploy all branches to GitHub Pages with subpaths
-name: Deploy Branch Previews
+# Deploy main branch to GitHub Pages
+name: Deploy Production to GitHub Pages
 
 on:
   push:
     branches:
       - main
-      - devloper
-      - trial
 
 jobs:
   build-and-deploy:
@@ -32,10 +30,9 @@ jobs:
         run: npm run build
         env:
           CI: false
-          PUBLIC_URL: /rescue-ping
+          PUBLIC_URL: /RescuePing
 
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
