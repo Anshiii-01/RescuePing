@@ -2,7 +2,7 @@ import ProjectShowcase from "./pages/ProjectShowcase";
 
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useLocation as useRouterLocation } from 'react-router-dom';
-import { ThemeProvider as StyledThemeProvider } from 'styled-components';
+import { ThemeProvider as StyledThemeProvider, DefaultTheme } from 'styled-components';
 import styled from 'styled-components';
 import { theme } from './styles/theme';
 import { GlobalStyles } from './styles/GlobalStyles';
@@ -97,7 +97,7 @@ const AppContent: React.FC = () => {
   }, [navigate]);
   
   return (
-    <StyledThemeProvider theme={currentTheme as unknown as typeof theme}>
+    <StyledThemeProvider theme={currentTheme as unknown as DefaultTheme}>
       <SkipToContent href="#main-content">
         Skip to main content
       </SkipToContent>

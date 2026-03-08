@@ -57,9 +57,6 @@ type AuditStatus = 'success' | 'failure' | 'partial' | 'pending';
 
 // Compliance framework
 type ComplianceFramework = 'gdpr' | 'hipaa' | 'sox' | 'pci_dss' | 'iso27001' | 'nist' | 'it_act_india';
-/**
- * Comprehensive audit trail, security logging, and compliance tracking
- */
 
 // Log level
 type LogLevel = 'debug' | 'info' | 'warning' | 'error' | 'critical';
