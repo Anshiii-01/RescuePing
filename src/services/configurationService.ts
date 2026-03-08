@@ -497,13 +497,13 @@ class ConfigurationService {
 
     // Initialize Configuration Items
     const configsData = [
-      { key: 'app.name', name: 'Application Name', type: 'string', value: 'AlertAid', scope: 'global', category: 'application' },
+      { key: 'app.name', name: 'Application Name', type: 'string', value: 'RescuePing', scope: 'global', category: 'application' },
       { key: 'app.version', name: 'Application Version', type: 'string', value: '2.1.0', scope: 'global', category: 'application' },
       { key: 'app.debug', name: 'Debug Mode', type: 'boolean', value: false, scope: 'environment', category: 'application' },
       { key: 'app.log_level', name: 'Log Level', type: 'enum', value: 'info', scope: 'environment', category: 'logging' },
       { key: 'db.host', name: 'Database Host', type: 'string', value: 'localhost', scope: 'environment', category: 'database' },
       { key: 'db.port', name: 'Database Port', type: 'number', value: 5432, scope: 'environment', category: 'database' },
-      { key: 'db.name', name: 'Database Name', type: 'string', value: 'alertaid', scope: 'environment', category: 'database' },
+      { key: 'db.name', name: 'Database Name', type: 'string', value: 'rescueping', scope: 'environment', category: 'database' },
       { key: 'db.pool_size', name: 'Connection Pool Size', type: 'number', value: 20, scope: 'environment', category: 'database' },
       { key: 'cache.enabled', name: 'Cache Enabled', type: 'boolean', value: true, scope: 'global', category: 'cache' },
       { key: 'cache.ttl', name: 'Cache TTL', type: 'number', value: 3600, scope: 'global', category: 'cache' },
@@ -542,7 +542,7 @@ class ConfigurationService {
             scope: 'environment',
             scopeId: 'production',
             scopeName: 'Production',
-            value: c.key === 'app.debug' ? false : c.key === 'db.host' ? 'db.prod.alertaid.com' : c.value,
+            value: c.key === 'app.debug' ? false : c.key === 'db.host' ? 'db.prod.rescueping.com' : c.value,
             priority: 10,
             enabled: true,
             conditions: [],
@@ -626,14 +626,14 @@ class ConfigurationService {
         variables: [
           { id: `var-${idx}-1`, key: 'NODE_ENV', value: e.environment, type: 'string', sensitive: false, source: 'manual' },
           { id: `var-${idx}-2`, key: 'LOG_LEVEL', value: e.environment === 'production' ? 'warn' : 'debug', type: 'string', sensitive: false, source: 'manual' },
-          { id: `var-${idx}-3`, key: 'DATABASE_URL', value: `postgres://user:pass@db.${e.environment}.alertaid.com:5432/alertaid`, type: 'string', sensitive: true, source: 'secret_manager' },
-          { id: `var-${idx}-4`, key: 'REDIS_URL', value: `redis://cache.${e.environment}.alertaid.com:6379`, type: 'string', sensitive: false, source: 'manual' },
+          { id: `var-${idx}-3`, key: 'DATABASE_URL', value: `postgres://user:pass@db.${e.environment}.rescueping.com:5432/rescueping`, type: 'string', sensitive: true, source: 'secret_manager' },
+          { id: `var-${idx}-4`, key: 'REDIS_URL', value: `redis://cache.${e.environment}.rescueping.com:6379`, type: 'string', sensitive: false, source: 'manual' },
         ],
         secrets: ['secret-0001', 'secret-0002'],
         inheritsFrom: e.environment === 'staging' ? 'env-0001' : undefined,
         overrides: {
           'app.debug': e.environment === 'development',
-          'db.host': `db.${e.environment}.alertaid.com`,
+          'db.host': `db.${e.environment}.rescueping.com`,
           'api.rate_limit': e.environment === 'production' ? 5000 : 1000,
         },
         deployments: [
@@ -801,7 +801,7 @@ class ConfigurationService {
         patterns: w.keys,
         callback: {
           type: w.callback as ConfigWatch['callback']['type'],
-          url: w.callback === 'webhook' ? 'https://hooks.alertaid.com/config' : undefined,
+          url: w.callback === 'webhook' ? 'https://hooks.rescueping.com/config' : undefined,
           eventType: w.callback === 'event' ? 'config.changed' : undefined,
           functionName: w.callback === 'function' ? 'onConfigChange' : undefined,
         },
@@ -844,7 +844,7 @@ class ConfigurationService {
           createdAt: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000),
           lastHeartbeat: new Date(Date.now() - (idx === 3 ? 60 * 60 * 1000 : Math.random() * 60 * 1000)),
           ip: `10.0.${idx + 1}.${Math.floor(Math.random() * 255)}`,
-          host: `${c.service}-${idx + 1}.prod.alertaid.internal`,
+          host: `${c.service}-${idx + 1}.prod.rescueping.internal`,
         },
       };
       this.clients.set(client.id, client);

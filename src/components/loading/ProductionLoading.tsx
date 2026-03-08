@@ -252,7 +252,7 @@ export const FullScreenLoader: React.FC<{
   isVisible: boolean;
   title?: string;
   message?: string;
-}> = ({ isVisible, title = "Loading Alert Aid", message = "Please wait while we initialize your dashboard..." }) => (
+}> = ({ isVisible, title = "Loading Rescue Ping", message = "Please wait while we initialize your dashboard..." }) => (
   <LoadingOverlayContainer $isVisible={isVisible}>
     <LoadingContent>
       <LoadingIcon>

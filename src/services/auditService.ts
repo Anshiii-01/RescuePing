@@ -834,7 +834,7 @@ class AuditService {
           changes: eventType === 'update' ? [{ field: 'status', oldValue: 'active', newValue: 'inactive', sensitive: false }] : undefined,
         },
         context: {
-          application: 'alert-aid',
+          application: 'rescue-ping',
           environment: 'production',
           version: '1.0.0',
           component: 'api-gateway',
@@ -885,7 +885,7 @@ class AuditService {
       name: 'Production Security Trail',
       description: 'Comprehensive audit trail for production security events',
       scope: {
-        applications: ['alert-aid', 'api-gateway'],
+        applications: ['rescue-ping', 'api-gateway'],
         environments: ['production'],
         eventTypes: ['login', 'logout', 'access', 'permission', 'config', 'security'],
         categories: ['authentication', 'authorization', 'security'],
@@ -1050,7 +1050,7 @@ class AuditService {
       type: 'security',
       scope: {
         trails: ['trail-0001'],
-        applications: ['alert-aid'],
+        applications: ['rescue-ping'],
         environments: ['production'],
         eventTypes: ['login', 'logout', 'access', 'permission', 'security'],
       },

@@ -724,8 +724,8 @@ class IncidentManagementService {
     // Initialize Status Page
     const statusPage: StatusPage = {
       id: 'statuspage-0001',
-      name: 'AlertAid Status',
-      url: 'https://status.alertaid.com',
+      name: 'RescuePing Status',
+      url: 'https://status.rescueping.com',
       status: 'degraded',
       components: [
         { id: 'comp-1', name: 'API', description: 'Core API services', status: 'operational', order: 1, showHistory: true, uptimePercentage: 99.95 },

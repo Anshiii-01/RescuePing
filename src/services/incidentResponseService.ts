@@ -603,7 +603,7 @@ class IncidentResponseService {
         priority: ['critical', 'high'].includes(inc.severity) ? 1 : 2,
         source: {
           type: ['automated', 'manual', 'external'][idx % 3] as Incident['source']['type'],
-          system: 'Alert Aid Platform',
+          system: 'Rescue Ping Platform',
           reporter: idx % 2 === 0 ? `user-${idx}` : undefined,
         },
         detection: {
@@ -754,9 +754,9 @@ class IncidentResponseService {
       team: 'security',
       rotationType: 'weekly',
       members: [
-        { userId: 'user-1', name: 'Security Analyst 1', order: 1, phone: '+91XXXXXXXXXX', email: 'analyst1@alertaid.com' },
-        { userId: 'user-2', name: 'Security Analyst 2', order: 2, phone: '+91XXXXXXXXXX', email: 'analyst2@alertaid.com' },
-        { userId: 'user-3', name: 'Security Lead', order: 3, phone: '+91XXXXXXXXXX', email: 'lead@alertaid.com' },
+        { userId: 'user-1', name: 'Security Analyst 1', order: 1, phone: '+91XXXXXXXXXX', email: 'analyst1@rescueping.com' },
+        { userId: 'user-2', name: 'Security Analyst 2', order: 2, phone: '+91XXXXXXXXXX', email: 'analyst2@rescueping.com' },
+        { userId: 'user-3', name: 'Security Lead', order: 3, phone: '+91XXXXXXXXXX', email: 'lead@rescueping.com' },
       ],
       currentOnCall: 'user-1',
       nextRotation: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),

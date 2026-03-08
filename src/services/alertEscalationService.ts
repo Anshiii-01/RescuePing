@@ -408,14 +408,14 @@ class AlertEscalationService {
   private initializeSampleData(): void {
     // Initialize Responders
     const respondersData = [
-      { name: 'John Smith', email: 'john.smith@alertaid.com', role: 'SRE Lead', team: 'Platform' },
-      { name: 'Sarah Johnson', email: 'sarah.johnson@alertaid.com', role: 'Senior Engineer', team: 'Platform' },
-      { name: 'Mike Chen', email: 'mike.chen@alertaid.com', role: 'DevOps Engineer', team: 'Infrastructure' },
-      { name: 'Emily Davis', email: 'emily.davis@alertaid.com', role: 'SRE', team: 'Platform' },
-      { name: 'Alex Wilson', email: 'alex.wilson@alertaid.com', role: 'Engineering Manager', team: 'Platform' },
-      { name: 'Lisa Brown', email: 'lisa.brown@alertaid.com', role: 'VP Engineering', team: 'Executive' },
-      { name: 'David Lee', email: 'david.lee@alertaid.com', role: 'DevOps Lead', team: 'Infrastructure' },
-      { name: 'Amanda Taylor', email: 'amanda.taylor@alertaid.com', role: 'SRE', team: 'Infrastructure' },
+      { name: 'John Smith', email: 'john.smith@rescueping.com', role: 'SRE Lead', team: 'Platform' },
+      { name: 'Sarah Johnson', email: 'sarah.johnson@rescueping.com', role: 'Senior Engineer', team: 'Platform' },
+      { name: 'Mike Chen', email: 'mike.chen@rescueping.com', role: 'DevOps Engineer', team: 'Infrastructure' },
+      { name: 'Emily Davis', email: 'emily.davis@rescueping.com', role: 'SRE', team: 'Platform' },
+      { name: 'Alex Wilson', email: 'alex.wilson@rescueping.com', role: 'Engineering Manager', team: 'Platform' },
+      { name: 'Lisa Brown', email: 'lisa.brown@rescueping.com', role: 'VP Engineering', team: 'Executive' },
+      { name: 'David Lee', email: 'david.lee@rescueping.com', role: 'DevOps Lead', team: 'Infrastructure' },
+      { name: 'Amanda Taylor', email: 'amanda.taylor@rescueping.com', role: 'SRE', team: 'Infrastructure' },
     ];
 
     respondersData.forEach((r, idx) => {

@@ -611,7 +611,7 @@ class ComplianceAuditService {
           owner: {
             userId: `user-${(c % 4 + 1).toString().padStart(4, '0')}`,
             userName: user.name,
-            email: `${user.name.toLowerCase().replace(' ', '.')}@alertaid.com`,
+            email: `${user.name.toLowerCase().replace(' ', '.')}@rescueping.com`,
           },
           implementation: {
             description: `Implementation details for control ${c + 1}`,
@@ -702,7 +702,7 @@ class ComplianceAuditService {
           organization: a.type !== 'internal' ? 'External Audit Firm LLC' : undefined,
           leadAuditor: {
             name: a.type === 'internal' ? usersData[1].name : 'External Lead Auditor',
-            email: a.type === 'internal' ? 'sarah.johnson@alertaid.com' : 'auditor@external.com',
+            email: a.type === 'internal' ? 'sarah.johnson@rescueping.com' : 'auditor@external.com',
           },
           team: [
             { name: 'Auditor 1', role: 'Senior Auditor' },
@@ -796,7 +796,7 @@ class ComplianceAuditService {
       const policy: CompliancePolicy = {
         id: `policy-${(idx + 1).toString().padStart(4, '0')}`,
         name: p.name,
-        description: `${p.name} for AlertAid`,
+        description: `${p.name} for RescuePing`,
         type: p.type as CompliancePolicy['type'],
         status: 'approved',
         version: '1.0',
@@ -856,7 +856,7 @@ class ComplianceAuditService {
     const riskAssessment: RiskAssessment = {
       id: 'ra-0001',
       name: 'Annual Security Risk Assessment',
-      description: 'Annual security risk assessment for AlertAid platform',
+      description: 'Annual security risk assessment for RescuePing platform',
       type: 'security',
       status: 'completed',
       scope: {
@@ -951,7 +951,7 @@ class ComplianceAuditService {
         assignee: {
           userId: `user-${(idx % 4 + 1).toString().padStart(4, '0')}`,
           userName: usersData[idx % 4].name,
-          email: `${usersData[idx % 4].name.toLowerCase().replace(' ', '.')}@alertaid.com`,
+          email: `${usersData[idx % 4].name.toLowerCase().replace(' ', '.')}@rescueping.com`,
         },
         dueDate: new Date(Date.now() + (idx - 2) * 7 * 24 * 60 * 60 * 1000),
         completedDate: idx < 2 ? new Date(Date.now() - 7 * 24 * 60 * 60 * 1000) : undefined,

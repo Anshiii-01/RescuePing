@@ -1,5 +1,5 @@
 /**
- * ALERT AID - HEALTH CHECK SCRIPT
+ * RESCUE PING - HEALTH CHECK SCRIPT
  * Production health monitoring and verification
  */
 
@@ -18,7 +18,7 @@ class HealthChecker {
   }
 
   async runHealthChecks() {
-    console.log('🏥 Alert Aid Health Check - Production Readiness Verification');
+    console.log('🏥 Rescue Ping Health Check - Production Readiness Verification');
     console.log('=' .repeat(60));
     
     const results = [];
@@ -248,7 +248,7 @@ class HealthChecker {
     console.log(`\n🎯 Overall Status: ${overallHealth}`);
     
     if (overallHealth === 'HEALTHY') {
-      console.log('\n🚀 Alert Aid is READY for production deployment!');
+      console.log('\n🚀 Rescue Ping is READY for production deployment!');
     } else {
       console.log('\n⚠️  Please resolve issues before production deployment.');
     }

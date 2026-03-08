@@ -583,9 +583,9 @@ class SecretManagementService {
 
     // Initialize certificates
     const certsData = [
-      { name: 'api.alertaid.com', type: 'server', cn: 'api.alertaid.com' },
-      { name: 'alertaid.com', type: 'server', cn: '*.alertaid.com' },
-      { name: 'internal-ca', type: 'ca', cn: 'AlertAid Internal CA' },
+      { name: 'api.rescueping.com', type: 'server', cn: 'api.rescueping.com' },
+      { name: 'rescueping.com', type: 'server', cn: '*.rescueping.com' },
+      { name: 'internal-ca', type: 'ca', cn: 'RescuePing Internal CA' },
       { name: 'client-cert', type: 'client', cn: 'api-client' },
     ];
 
@@ -598,15 +598,15 @@ class SecretManagementService {
         status: daysRemaining > 30 ? 'active' : daysRemaining > 0 ? 'active' : 'expired',
         subject: {
           commonName: c.cn,
-          organization: 'AlertAid',
+          organization: 'RescuePing',
           organizationalUnit: 'Engineering',
           country: 'IN',
           state: 'Karnataka',
           locality: 'Bangalore',
         },
         issuer: {
-          commonName: c.type === 'ca' ? c.cn : 'AlertAid Internal CA',
-          organization: 'AlertAid',
+          commonName: c.type === 'ca' ? c.cn : 'RescuePing Internal CA',
+          organization: 'RescuePing',
         },
         serialNumber: this.generateHex(32),
         fingerprint: {

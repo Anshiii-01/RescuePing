@@ -31,4 +31,4 @@ Fixes #
 <!-- Describe your testing process -->
 
 ---
-**Thank you for contributing to Alert-AID! 🚨❤️**
+**Thank you for contributing to Rescue Ping! 🚨❤️**

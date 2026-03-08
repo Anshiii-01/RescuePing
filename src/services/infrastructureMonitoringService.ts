@@ -623,7 +623,7 @@ class InfrastructureMonitoringService {
         annotations: {
           summary: `${ar.name} detected`,
           description: `${ar.metric} has exceeded threshold of ${ar.threshold}`,
-          runbook: `https://runbooks.alertaid.com/alerts/${ar.name.toLowerCase().replace(/ /g, '-')}`,
+          runbook: `https://runbooks.rescueping.com/alerts/${ar.name.toLowerCase().replace(/ /g, '-')}`,
         },
         notifications: {
           channels: ['slack-alerts', 'pagerduty'],
@@ -676,12 +676,12 @@ class InfrastructureMonitoringService {
 
     // Initialize health checks
     const healthChecksData = [
-      { name: 'API Gateway Health', type: 'http', target: 'https://api.alertaid.com/health' },
-      { name: 'Web App Health', type: 'http', target: 'https://alertaid.com' },
-      { name: 'Database Health', type: 'tcp', target: 'db.alertaid.internal:5432' },
-      { name: 'Redis Health', type: 'tcp', target: 'redis.alertaid.internal:6379' },
-      { name: 'SSL Certificate', type: 'ssl', target: 'alertaid.com:443' },
-      { name: 'DNS Resolution', type: 'dns', target: 'alertaid.com' },
+      { name: 'API Gateway Health', type: 'http', target: 'https://api.rescueping.com/health' },
+      { name: 'Web App Health', type: 'http', target: 'https://rescueping.com' },
+      { name: 'Database Health', type: 'tcp', target: 'db.rescueping.internal:5432' },
+      { name: 'Redis Health', type: 'tcp', target: 'redis.rescueping.internal:6379' },
+      { name: 'SSL Certificate', type: 'ssl', target: 'rescueping.com:443' },
+      { name: 'DNS Resolution', type: 'dns', target: 'rescueping.com' },
     ];
 
     healthChecksData.forEach((hc, idx) => {
@@ -755,8 +755,8 @@ class InfrastructureMonitoringService {
         enabled: true,
         config: {
           url: ch.type === 'slack' ? 'https://hooks.slack.com/services/xxx' :
-               ch.type === 'webhook' ? 'https://webhooks.alertaid.com/alerts' : '',
-          email: ch.type === 'email' ? 'alerts@alertaid.com' : '',
+               ch.type === 'webhook' ? 'https://webhooks.rescueping.com/alerts' : '',
+          email: ch.type === 'email' ? 'alerts@rescueping.com' : '',
         },
         sendResolved: true,
         metadata: {

@@ -1,6 +1,6 @@
 ### Contributing Guidelines
 ---
-Thank you for your interest in contributing to **Alert-Aid**
+Thank you for your interest in contributing to **Rescue Ping**
 
 This project exists to make coding feel clearer, less frustrating, and more collaborative. Every contribution, big or small, helps move us closer to that goal.
 
@@ -36,8 +36,8 @@ If you’re unsure where to start, check the Issues tab for:
 **2️⃣ Clone Your Fork**
 
 ```bash
-git clone https://github.com/<your-username>/alert-aid.git
-cd alert-aid
+git clone https://github.com/<your-username>/rescue-ping.git
+cd rescue-ping
 
 ```
 

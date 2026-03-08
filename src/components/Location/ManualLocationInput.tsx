@@ -257,7 +257,7 @@ export const ManualLocationInput: React.FC<ManualLocationInputProps> = ({
         `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}&addressdetails=1&limit=10&countrycodes=us,ca,mx,gb,au,de,fr,jp,in`, // Added India
         {
           headers: {
-            'User-Agent': 'AlertAid-DisasterManagement/1.0'
+            'User-Agent': 'RescuePing-DisasterManagement/1.0'
           }
         }
       );
@@ -303,7 +303,7 @@ export const ManualLocationInput: React.FC<ManualLocationInputProps> = ({
     };
 
     // Store location in localStorage
-    localStorage.setItem('alertaid-location', JSON.stringify(locationData));
+    localStorage.setItem('rescueping-location', JSON.stringify(locationData));
     
     onLocationSelected(locationData);
   };

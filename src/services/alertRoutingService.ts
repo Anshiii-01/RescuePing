@@ -793,10 +793,10 @@ class AlertRoutingService {
     switch (type) {
       case 'slack': return { webhookUrl: 'https://hooks.slack.com/services/xxx', channel: '#alerts', username: 'AlertBot', iconEmoji: ':warning:' };
       case 'email': return { emailAddresses: ['team@example.com'], smtpServer: 'smtp.example.com', smtpPort: 587, useTLS: true, from: 'alerts@example.com' };
-      case 'pagerduty': return { serviceKey: 'pagerduty-service-key', routingKey: 'routing-key', severity: 'critical', client: 'AlertAid', clientUrl: 'https://alertaid.example.com' };
+      case 'pagerduty': return { serviceKey: 'pagerduty-service-key', routingKey: 'routing-key', severity: 'critical', client: 'RescuePing', clientUrl: 'https://rescueping.example.com' };
       case 'opsgenie': return { apiKey: 'opsgenie-api-key', apiUrl: 'https://api.opsgenie.com', teams: ['platform'], responders: [] };
       case 'sms': return { phoneNumbers: ['+15551234567'], provider: 'twilio', accountSid: 'twilio-sid', authToken: 'twilio-token' };
-      case 'voice': return { phoneNumbers: ['+15551234567'], voiceProvider: 'twilio', callbackUrl: 'https://alertaid.example.com/voice/callback' };
+      case 'voice': return { phoneNumbers: ['+15551234567'], voiceProvider: 'twilio', callbackUrl: 'https://rescueping.example.com/voice/callback' };
       case 'webhook': return { url: 'https://webhook.example.com/alerts', method: 'POST', headers: { 'Content-Type': 'application/json' } };
       case 'teams': return { teamsWebhookUrl: 'https://outlook.office.com/webhook/xxx' };
       case 'discord': return { discordWebhookUrl: 'https://discord.com/api/webhooks/xxx' };

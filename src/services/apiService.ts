@@ -72,7 +72,7 @@ export interface ActiveAlert {
 export interface AlertsResponse {
   alerts: ActiveAlert[];
   count: number;
-  source: string;       // "Alert_Aid_System"
+  source: string;       // "Rescue_Ping_System"
   is_real: boolean;     // Whether from real alert system
 }
 
@@ -187,7 +187,7 @@ async function retryWithExponentialBackoff<T>(
 }
 
 // API Service Class
-export class AlertAidAPIService {
+export class RescuePingAPIService {
   
   // Health check - matches /api/health
   static async checkHealth(): Promise<{ status: string; services: any }> {
@@ -220,7 +220,7 @@ export class AlertAidAPIService {
 
     // Step 1: Try backend API with retries
     try {
-      console.log('🌤️ Attempting to fetch weather from Alert Aid backend with retries...');
+      console.log('🌤️ Attempting to fetch weather from Rescue Ping backend with retries...');
       
       weatherData = await retryWithExponentialBackoff(
         async () => {
@@ -236,7 +236,7 @@ export class AlertAidAPIService {
       dataSource = 'backend';
       weatherData = { 
         ...weatherData, 
-        source: 'Alert Aid Backend', 
+        source: 'Rescue Ping Backend', 
         is_real: true,
         temperature_feels_like: weatherData.temperature_feels_like || weatherData.temperature + 2
       };
@@ -599,7 +599,7 @@ class CacheManager {
 }
 
 // Enhanced API service with caching
-export class CachedAPIService extends AlertAidAPIService {
+export class CachedAPIService extends RescuePingAPIService {
   
   static async getEnhancedWeatherDataCached(lat: number, lon: number): Promise<WeatherData> {
     const cacheKey = `weather_${lat.toFixed(2)}_${lon.toFixed(2)}`;

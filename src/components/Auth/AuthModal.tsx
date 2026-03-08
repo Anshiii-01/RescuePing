@@ -390,7 +390,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ isOpen, onClose, defaultTa
         </CloseButton>
         
         <ModalHeader>
-          <Title>Welcome to Alert Aid</Title>
+          <Title>Welcome to Rescue Ping</Title>
           <Subtitle>
             {activeTab === 'login' ? 'Sign in to access your profile' : 'Create your emergency profile'}
           </Subtitle>

@@ -579,7 +579,7 @@ class ContainerOrchestrationService {
           labels: { app: depData.name },
           containers: [{
             name: depData.name,
-            image: `alertaid/${depData.name}`,
+            image: `rescueping/${depData.name}`,
             imageTag: '1.0.0',
             ports: [{ containerPort: 8080, protocol: 'TCP' }],
             environment: { NODE_ENV: depData.namespace },
@@ -621,7 +621,7 @@ class ContainerOrchestrationService {
           containers: [{
             id: `container-${idx}-${p + 1}`,
             name: depData.name,
-            image: `alertaid/${depData.name}`,
+            image: `rescueping/${depData.name}`,
             imageTag: '1.0.0',
             status: 'running',
             ports: [{ containerPort: 8080, protocol: 'TCP' }],
@@ -701,7 +701,7 @@ class ContainerOrchestrationService {
 
     // Initialize ConfigMaps
     const configMapsData = [
-      { name: 'app-config', namespace: 'production', data: { API_URL: 'https://api.alertaid.com', LOG_LEVEL: 'info' } },
+      { name: 'app-config', namespace: 'production', data: { API_URL: 'https://api.rescueping.com', LOG_LEVEL: 'info' } },
       { name: 'nginx-config', namespace: 'production', data: { 'nginx.conf': 'server { listen 80; }' } },
     ];
 
@@ -775,10 +775,10 @@ class ContainerOrchestrationService {
       name: 'main-ingress',
       namespace: 'production',
       ingressClassName: 'nginx',
-      tls: [{ hosts: ['alertaid.com', 'api.alertaid.com'], secretName: 'tls-secret' }],
+      tls: [{ hosts: ['rescueping.com', 'api.rescueping.com'], secretName: 'tls-secret' }],
       rules: [
-        { host: 'alertaid.com', http: { paths: [{ path: '/', pathType: 'Prefix', backend: { service: { name: 'web-frontend', port: { number: 80 } } } }] } },
-        { host: 'api.alertaid.com', http: { paths: [{ path: '/', pathType: 'Prefix', backend: { service: { name: 'api-gateway', port: { number: 80 } } } }] } },
+        { host: 'rescueping.com', http: { paths: [{ path: '/', pathType: 'Prefix', backend: { service: { name: 'web-frontend', port: { number: 80 } } } }] } },
+        { host: 'api.rescueping.com', http: { paths: [{ path: '/', pathType: 'Prefix', backend: { service: { name: 'api-gateway', port: { number: 80 } } } }] } },
       ],
       status: { loadBalancer: { ingress: [{ ip: '34.123.0.100' }] } },
       metadata: { createdAt: new Date(Date.now() - 60 * 24 * 60 * 60 * 1000), uid: this.generateUid() },

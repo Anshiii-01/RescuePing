@@ -356,8 +356,8 @@ class AssetManagementService {
         file: {
           originalName: `${a.name.toLowerCase().replace(/\s+/g, '_')}.${a.mimeType.split('/')[1]}`,
           storagePath: `/assets/${a.folderId}/${idx + 1}`,
-          storageUrl: `https://storage.alertaid.com/assets/${idx + 1}`,
-          cdnUrl: `https://cdn.alertaid.com/assets/${idx + 1}`,
+          storageUrl: `https://storage.rescueping.com/assets/${idx + 1}`,
+          cdnUrl: `https://cdn.rescueping.com/assets/${idx + 1}`,
           mimeType: a.mimeType,
           extension: a.mimeType.split('/')[1],
           size: a.size,
@@ -377,7 +377,7 @@ class AssetManagementService {
           file: {
             originalName: `${a.name.toLowerCase().replace(/\s+/g, '_')}.${a.mimeType.split('/')[1]}`,
             storagePath: `/assets/${a.folderId}/${idx + 1}/v1`,
-            storageUrl: `https://storage.alertaid.com/assets/${idx + 1}/v1`,
+            storageUrl: `https://storage.rescueping.com/assets/${idx + 1}/v1`,
             mimeType: a.mimeType,
             extension: a.mimeType.split('/')[1],
             size: a.size,
@@ -390,10 +390,10 @@ class AssetManagementService {
         }],
         currentVersionId: `ver-${idx + 1}-1`,
         thumbnails: a.type === 'image' || a.type === 'video' ? [
-          { id: `thumb-${idx}-xs`, size: 'xs', width: 50, height: 50, url: `https://cdn.alertaid.com/thumbs/${idx}/xs.jpg`, format: 'jpeg' },
-          { id: `thumb-${idx}-sm`, size: 'sm', width: 150, height: 150, url: `https://cdn.alertaid.com/thumbs/${idx}/sm.jpg`, format: 'jpeg' },
-          { id: `thumb-${idx}-md`, size: 'md', width: 300, height: 300, url: `https://cdn.alertaid.com/thumbs/${idx}/md.jpg`, format: 'jpeg' },
-          { id: `thumb-${idx}-lg`, size: 'lg', width: 600, height: 600, url: `https://cdn.alertaid.com/thumbs/${idx}/lg.jpg`, format: 'jpeg' },
+          { id: `thumb-${idx}-xs`, size: 'xs', width: 50, height: 50, url: `https://cdn.rescueping.com/thumbs/${idx}/xs.jpg`, format: 'jpeg' },
+          { id: `thumb-${idx}-sm`, size: 'sm', width: 150, height: 150, url: `https://cdn.rescueping.com/thumbs/${idx}/sm.jpg`, format: 'jpeg' },
+          { id: `thumb-${idx}-md`, size: 'md', width: 300, height: 300, url: `https://cdn.rescueping.com/thumbs/${idx}/md.jpg`, format: 'jpeg' },
+          { id: `thumb-${idx}-lg`, size: 'lg', width: 600, height: 600, url: `https://cdn.rescueping.com/thumbs/${idx}/lg.jpg`, format: 'jpeg' },
         ] : [],
         tags: ['disaster-management', a.type, a.folderId?.replace('folder-', 'cat-') || 'uncategorized'],
         categories: [a.folderId?.replace('folder-', '') || 'general'],
@@ -452,7 +452,7 @@ class AssetManagementService {
       { name: 'Web Thumbnail', type: 'image', transforms: [{ action: 'resize', params: { width: 300, height: 200, fit: 'cover' } }, { action: 'compress', params: { quality: 80 } }] },
       { name: 'Social Media Square', type: 'image', transforms: [{ action: 'crop', params: { aspectRatio: '1:1' } }, { action: 'resize', params: { width: 1080, height: 1080 } }] },
       { name: 'Mobile Video', type: 'video', transforms: [{ action: 'resize', params: { width: 720, height: 1280 } }, { action: 'compress', params: { bitrate: '2M' } }] },
-      { name: 'PDF Watermark', type: 'document', transforms: [{ action: 'watermark', params: { text: 'ALERT AID', opacity: 0.3 } }] },
+      { name: 'PDF Watermark', type: 'document', transforms: [{ action: 'watermark', params: { text: 'RESCUE PING', opacity: 0.3 } }] },
       { name: 'Audio Compress', type: 'audio', transforms: [{ action: 'compress', params: { bitrate: '128k', format: 'mp3' } }] },
     ];
 
@@ -595,7 +595,7 @@ class AssetManagementService {
       file: {
         originalName: file.name,
         storagePath: `/assets/${Date.now()}/${file.name}`,
-        storageUrl: `https://storage.alertaid.com/assets/${Date.now()}`,
+        storageUrl: `https://storage.rescueping.com/assets/${Date.now()}`,
         mimeType: file.mimeType,
         extension,
         size: file.size,

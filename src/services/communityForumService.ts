@@ -312,7 +312,7 @@ const CATEGORY_INFO: CategoryInfo[] = [
   {
     id: 'technical_help',
     name: 'Technical Help',
-    description: 'Help with using the Alert-Aid platform',
+    description: 'Help with using the Rescue Ping platform',
     icon: '🔧',
     color: '#607D8B',
     postCount: 0,
@@ -410,7 +410,7 @@ class CommunityForumService {
     const samplePosts: Omit<ForumPost, 'reactions'>[] = [
       {
         id: 'post-1',
-        title: 'Welcome to Alert-Aid Community Forum',
+        title: 'Welcome to Rescue Ping Community Forum',
         content: 'Welcome to our community forum! This is a space for disaster preparedness discussion, sharing resources, and supporting each other during emergencies. Please read the community guidelines before posting.',
         contentType: 'text',
         category: 'announcements',

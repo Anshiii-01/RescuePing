@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: alert-aid-backend
+    name: rescue-ping-backend
     runtime: python
     region: singapore
     plan: free

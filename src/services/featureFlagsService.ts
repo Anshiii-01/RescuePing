@@ -312,7 +312,7 @@ class FeatureFlagsService {
     const segmentsData = [
       { key: 'beta_users', name: 'Beta Users', description: 'Users who opted into beta features', rules: { operator: 'and' as const, conditions: [{ attribute: 'isBetaUser', operator: 'equals' as const, value: true }] } },
       { key: 'premium_users', name: 'Premium Users', description: 'Users with premium subscription', rules: { operator: 'and' as const, conditions: [{ attribute: 'subscriptionTier', operator: 'equals' as const, value: 'premium' }] } },
-      { key: 'internal_users', name: 'Internal Users', description: 'Alert Aid employees', rules: { operator: 'and' as const, conditions: [{ attribute: 'email', operator: 'ends_with' as const, value: '@alertaid.com' }] } },
+      { key: 'internal_users', name: 'Internal Users', description: 'Rescue Ping employees', rules: { operator: 'and' as const, conditions: [{ attribute: 'email', operator: 'ends_with' as const, value: '@rescueping.com' }] } },
       { key: 'mobile_users', name: 'Mobile Users', description: 'Users on mobile devices', rules: { operator: 'and' as const, conditions: [{ attribute: 'platform', operator: 'in' as const, value: ['ios', 'android'] }] } },
       { key: 'govt_agencies', name: 'Government Agencies', description: 'Government agency accounts', rules: { operator: 'and' as const, conditions: [{ attribute: 'accountType', operator: 'equals' as const, value: 'government' }] } },
     ];

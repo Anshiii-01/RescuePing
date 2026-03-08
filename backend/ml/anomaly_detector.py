@@ -1,5 +1,5 @@
 """
-Anomaly Detection Module for Alert-AID
+Anomaly Detection Module for Rescue Ping
 Implements Isolation Forest and Autoencoder-style detection
 for early warning of sudden flood onset
 """

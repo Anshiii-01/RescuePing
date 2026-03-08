@@ -587,7 +587,7 @@ class NotificationEngineService {
         subject: 'Your verification code: {{otp}}',
         title: 'Verification Code',
         body: 'Your verification code is {{otp}}. Valid for {{validityMinutes}} minutes. Do not share this code.',
-        shortMessage: 'Your Alert Aid OTP is {{otp}}. Valid for {{validityMinutes}} min.',
+        shortMessage: 'Your Rescue Ping OTP is {{otp}}. Valid for {{validityMinutes}} min.',
         variables: [
           { name: 'otp', type: 'string', required: true },
           { name: 'validityMinutes', type: 'number', required: true, defaultValue: 10 },
@@ -611,7 +611,7 @@ class NotificationEngineService {
 
     // Create sample providers
     const sampleProviders: Omit<ProviderConfig, 'createdAt' | 'updatedAt'>[] = [
-      { id: 'prov-firebase', name: 'Firebase Cloud Messaging', channel: 'push', provider: 'firebase', isDefault: true, isActive: true, priority: 1, config: { projectId: 'alert-aid-prod' }, healthStatus: 'healthy', lastHealthCheck: new Date(), failureCount: 0 },
+      { id: 'prov-firebase', name: 'Firebase Cloud Messaging', channel: 'push', provider: 'firebase', isDefault: true, isActive: true, priority: 1, config: { projectId: 'rescue-ping-prod' }, healthStatus: 'healthy', lastHealthCheck: new Date(), failureCount: 0 },
       { id: 'prov-twilio-sms', name: 'Twilio SMS', channel: 'sms', provider: 'twilio', isDefault: true, isActive: true, priority: 1, config: { accountSid: 'ACxxx' }, healthStatus: 'healthy', lastHealthCheck: new Date(), failureCount: 0 },
       { id: 'prov-msg91', name: 'MSG91', channel: 'sms', provider: 'msg91', isDefault: false, isActive: true, priority: 2, config: { authKey: 'xxx' }, healthStatus: 'healthy', lastHealthCheck: new Date(), failureCount: 0 },
       { id: 'prov-sendgrid', name: 'SendGrid', channel: 'email', provider: 'sendgrid', isDefault: true, isActive: true, priority: 1, config: { apiKey: 'SG.xxx' }, healthStatus: 'healthy', lastHealthCheck: new Date(), failureCount: 0 },

@@ -581,7 +581,7 @@ const HomePage: React.FC = () => {
     <HomeContainer>
       <HeroSection>
         <HeroContent>
-          <Title>Alert Aid</Title>
+          <Title>Rescue Ping</Title>
           <Subtitle>
             AI-powered disaster prediction and emergency response system.
             Real-time monitoring, intelligent forecasting, and life-saving alerts.

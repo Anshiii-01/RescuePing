@@ -1012,11 +1012,11 @@ class ApiGatewayService {
         security: {
           requireHttps: true,
           validateOrigin: true,
-          allowedOrigins: ['https://alertaid.com', 'https://app.alertaid.com'],
+          allowedOrigins: ['https://rescueping.com', 'https://app.rescueping.com'],
         },
         documentation: {
           enabled: true,
-          url: `https://docs.alertaid.com/${api.basePath.split('/')[3]}`,
+          url: `https://docs.rescueping.com/${api.basePath.split('/')[3]}`,
         },
         metadata: {
           createdAt: new Date(Date.now() - 180 * 24 * 60 * 60 * 1000),
@@ -1254,7 +1254,7 @@ class ApiGatewayService {
         path: `/api/v1/${['alerts', 'shelters', 'resources', 'users', 'analytics'][apiIdx]}`,
         method: ['GET', 'POST', 'PUT', 'DELETE'][i % 4] as HttpMethod,
         clientIp: `192.168.${Math.floor(Math.random() * 255)}.${Math.floor(Math.random() * 255)}`,
-        userAgent: 'Mozilla/5.0 (compatible; AlertAid/1.0)',
+        userAgent: 'Mozilla/5.0 (compatible; RescuePing/1.0)',
         apiKeyId: `key-${((i % 5) + 1).toString().padStart(4, '0')}`,
         request: {
           headers: { 'Content-Type': 'application/json' },

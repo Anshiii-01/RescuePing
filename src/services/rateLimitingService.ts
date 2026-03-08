@@ -802,7 +802,7 @@ class RateLimitingService {
             type: 'notify',
             config: {
               channels: ['slack', 'email'],
-              recipients: ['ops-team@alertaid.com'],
+              recipients: ['ops-team@rescueping.com'],
             },
           },
         ],
@@ -840,9 +840,9 @@ class RateLimitingService {
       syncInterval: 1000,
       failoverMode: 'local',
       nodes: [
-        { host: 'redis-1.alertaid.local', port: 6379, weight: 100, status: 'active' },
-        { host: 'redis-2.alertaid.local', port: 6379, weight: 100, status: 'active' },
-        { host: 'redis-3.alertaid.local', port: 6379, weight: 50, status: 'draining' },
+        { host: 'redis-1.rescueping.local', port: 6379, weight: 100, status: 'active' },
+        { host: 'redis-2.rescueping.local', port: 6379, weight: 100, status: 'active' },
+        { host: 'redis-3.rescueping.local', port: 6379, weight: 50, status: 'draining' },
       ],
       consistency: 'eventual',
     };

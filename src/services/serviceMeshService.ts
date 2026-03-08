@@ -566,8 +566,8 @@ class ServiceMeshService {
 
     // Initialize gateways
     const gatewaysData = [
-      { name: 'Main Ingress', type: 'ingress', hosts: ['api.alertaid.com', 'www.alertaid.com'] },
-      { name: 'Admin Ingress', type: 'ingress', hosts: ['admin.alertaid.com'] },
+      { name: 'Main Ingress', type: 'ingress', hosts: ['api.rescueping.com', 'www.rescueping.com'] },
+      { name: 'Admin Ingress', type: 'ingress', hosts: ['admin.rescueping.com'] },
       { name: 'External Egress', type: 'egress', hosts: ['*.external-service.com'] },
     ];
 

@@ -516,8 +516,8 @@ interface WidgetStyles {
 const sampleThemes: Theme[] = [
   {
     id: 'theme-light',
-    name: 'Alert Aid Light',
-    description: 'Default light theme for Alert Aid',
+    name: 'Rescue Ping Light',
+    description: 'Default light theme for Rescue Ping',
     version: '1.0.0',
     type: 'light',
     isSystem: true,
@@ -744,7 +744,7 @@ const sampleThemes: Theme[] = [
       }
     },
     metadata: {
-      author: 'Alert Aid Team',
+      author: 'Rescue Ping Team',
       license: 'MIT',
       tags: ['light', 'default', 'professional'],
       accessibility: { wcagLevel: 'AA', colorContrast: true, reducedMotion: true },

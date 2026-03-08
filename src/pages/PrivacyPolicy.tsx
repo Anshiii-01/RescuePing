@@ -21,7 +21,7 @@ const PrivacyPolicy: React.FC = () => (
     <p><strong>Last updated:</strong> 8 January 2026</p>
 
     <p>
-      Alert Aid is committed to protecting user privacy while delivering
+      Rescue Ping is committed to protecting user privacy while delivering
       real-time disaster intelligence. This policy explains how data is
       collected, processed, and safeguarded.
     </p>

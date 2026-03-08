@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { 
-  AlertAidAPIService, 
+  RescuePingAPIService, 
   DisasterRiskPrediction, 
   WeatherData, 
   AlertsResponse, 
@@ -110,7 +110,7 @@ export const useDisasterData = (location: LocationData | null) => {
     clearError('riskPrediction');
 
     try {
-      const prediction = await AlertAidAPIService.predictDisasterRisk(locationData, true);
+      const prediction = await RescuePingAPIService.predictDisasterRisk(locationData, true);
       setData(prev => ({ ...prev, riskPrediction: prediction }));
       
       // Only show notification if this is real data (backend is working)
@@ -139,7 +139,7 @@ export const useDisasterData = (location: LocationData | null) => {
     clearError('weather');
 
     try {
-      const weatherResponse = await AlertAidAPIService.getEnhancedWeatherData(lat, lon);
+      const weatherResponse = await RescuePingAPIService.getEnhancedWeatherData(lat, lon);
       setData(prev => ({ ...prev, weather: weatherResponse.data }));
     } catch (error) {
       handleApiError(error, 'weather');
@@ -154,7 +154,7 @@ export const useDisasterData = (location: LocationData | null) => {
     clearError('alerts');
 
     try {
-      const alerts = await AlertAidAPIService.getActiveAlerts(lat, lon);
+      const alerts = await RescuePingAPIService.getActiveAlerts(lat, lon);
       setData(prev => ({ ...prev, alerts }));
       
       // Trigger notifications for new critical alerts
@@ -316,7 +316,7 @@ export const useApiHealth = () => {
   const checkHealth = useCallback(async () => {
     try {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      const health = await AlertAidAPIService.checkHealth();
+      const health = await RescuePingAPIService.checkHealth();
       setIsHealthy(true);
       setLastHealthCheck(new Date().toISOString());
     } catch (error) {

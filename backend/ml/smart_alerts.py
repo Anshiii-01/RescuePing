@@ -1,5 +1,5 @@
 """
-Smart Alert Engine for Alert-AID
+Smart Alert Engine for Rescue Ping
 Implements ML-triggered alerts with multi-condition logic
 Not simple thresholds - intelligent alert generation
 """
@@ -478,7 +478,7 @@ class SmartAlertEngine:
         templates = {
             AlertSeverity.CRITICAL: f"🚨CRITICAL:{district} FLOOD ALERT! Risk:{prob_pct}%. EVACUATE NOW to high ground. Call 1078 for help.",
             AlertSeverity.SEVERE: f"⛔SEVERE:{district} flood risk {prob_pct}%. Prepare evacuation. Monitor updates. Emergency:1078",
-            AlertSeverity.WARNING: f"⚠️WARNING:{district} flood risk {prob_pct}%. Stay alert, avoid low areas. Updates:alertaid.in",
+            AlertSeverity.WARNING: f"⚠️WARNING:{district} flood risk {prob_pct}%. Stay alert, avoid low areas. Updates:rescueping.in",
             AlertSeverity.WATCH: f"👁️WATCH:{district} elevated flood risk. Monitor conditions. Stay informed.",
             AlertSeverity.INFO: f"ℹ️{district}: Normal conditions. Stay prepared."
         }

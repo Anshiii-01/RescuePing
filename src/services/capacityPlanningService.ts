@@ -519,7 +519,7 @@ class CapacityPlanningService {
           enabled: true,
           notifications: {
             channels: ['email', 'slack'],
-            recipients: ['platform-team@alertaid.com'],
+            recipients: ['platform-team@rescueping.com'],
           },
           actions: [
             { type: 'alert', config: { severity: t.type } },

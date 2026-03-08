@@ -562,7 +562,7 @@ class DisasterRecoveryService {
         connectivity: {
           primaryLink: { type: 'MPLS', bandwidth: '10Gbps', status: 'active' },
           backupLink: { type: 'Internet VPN', bandwidth: '1Gbps', status: 'standby' },
-          vpn: { endpoint: `vpn.${s.region}.alertaid.com`, status: 'connected' },
+          vpn: { endpoint: `vpn.${s.region}.rescueping.com`, status: 'connected' },
         },
         readiness: {
           score: 95 - idx * 5,
@@ -707,7 +707,7 @@ class DisasterRecoveryService {
         destination: {
           type: idx % 2 === 0 ? 's3' : 'gcs',
           location: idx % 2 === 0 ? 'aws-backup-bucket' : 'gcs-backup-bucket',
-          bucket: `alertaid-backups-${idx % 2 === 0 ? 'aws' : 'gcs'}`,
+          bucket: `rescueping-backups-${idx % 2 === 0 ? 'aws' : 'gcs'}`,
           path: `/backups/${b.source}/${new Date().toISOString().split('T')[0]}`,
         },
         schedule: {
@@ -769,7 +769,7 @@ class DisasterRecoveryService {
           location: 'primary-site',
         },
         storage: {
-          location: i % 2 === 0 ? 's3://alertaid-backups' : 'gs://alertaid-backups',
+          location: i % 2 === 0 ? 's3://rescueping-backups' : 'gs://rescueping-backups',
           size: Math.floor(Math.random() * 50000000000) + 1000000000,
           format: 'tar.gz.enc',
           checksum: this.generateChecksum(),
@@ -936,7 +936,7 @@ class DisasterRecoveryService {
         source: {
           recoveryPointId: `rp-${((i % 50) + 1).toString().padStart(6, '0')}`,
           timestamp: new Date(Date.now() - i * 24 * 60 * 60 * 1000),
-          location: 's3://alertaid-backups',
+          location: 's3://rescueping-backups',
         },
         target: {
           type: ['database', 'filesystem', 'application'][i % 3],

@@ -418,12 +418,12 @@ class DataWarehouseService {
         type: s.type,
         description: s.desc,
         connection: {
-          host: s.type === 'database' ? 'db.alertaid.com' : undefined,
+          host: s.type === 'database' ? 'db.rescueping.com' : undefined,
           port: s.type === 'database' ? 5432 : undefined,
-          database: s.type === 'database' ? 'alertaid_prod' : undefined,
-          url: s.type !== 'database' ? `https://api.alertaid.com/${s.name.toLowerCase().replace(' ', '-')}` : undefined,
+          database: s.type === 'database' ? 'rescueping_prod' : undefined,
+          url: s.type !== 'database' ? `https://api.rescueping.com/${s.name.toLowerCase().replace(' ', '-')}` : undefined,
           format: s.type === 'file' ? 'parquet' : undefined,
-          bootstrapServers: s.type === 'stream' ? 'kafka.alertaid.com:9092' : undefined,
+          bootstrapServers: s.type === 'stream' ? 'kafka.rescueping.com:9092' : undefined,
           topic: s.type === 'stream' ? 'events' : undefined,
         },
         schema: {

@@ -556,9 +556,9 @@ class DatabaseReplicationService {
           role: nodeIdx === 0 ? 'primary' : 'standby',
           status: nodeIdx < 2 ? 'active' : idx === 3 ? 'catching_up' : 'active',
           connection: {
-            host: `db-${idx + 1}-${nodeIdx === 0 ? 'primary' : `standby-${nodeIdx}`}.alertaid.internal`,
+            host: `db-${idx + 1}-${nodeIdx === 0 ? 'primary' : `standby-${nodeIdx}`}.rescueping.internal`,
             port: c.type === 'postgresql' ? 5432 : c.type === 'mysql' ? 3306 : c.type === 'mongodb' ? 27017 : 6379,
-            database: 'alertaid',
+            database: 'rescueping',
             ssl: true,
             sslMode: 'verify-full',
           },
@@ -678,7 +678,7 @@ class DatabaseReplicationService {
         status: i < 15 ? 'resolved' : i < 18 ? 'pending' : 'escalated',
         source: {
           nodeId: `node-${(i % 4) + 1}-primary`,
-          database: 'alertaid',
+          database: 'rescueping',
           table: ['users', 'alerts', 'incidents'][i % 3],
           primaryKey: `row-${i + 1}`,
           data: { id: i + 1, value: `source-value-${i}`, updated_at: new Date() },
@@ -686,7 +686,7 @@ class DatabaseReplicationService {
         },
         target: {
           nodeId: `node-${(i % 4) + 1}-standby-1`,
-          database: 'alertaid',
+          database: 'rescueping',
           table: ['users', 'alerts', 'incidents'][i % 3],
           primaryKey: `row-${i + 1}`,
           data: { id: i + 1, value: `target-value-${i}`, updated_at: new Date(Date.now() - 5000) },
@@ -719,12 +719,12 @@ class DatabaseReplicationService {
         priority: ['high', 'medium', 'low'][i % 3] as ReplicationTask['priority'],
         source: {
           nodeId: `node-${(i % 4) + 1}-primary`,
-          database: 'alertaid',
+          database: 'rescueping',
           tables: ['users', 'alerts', 'incidents'],
         },
         target: {
           nodeId: `node-${(i % 4) + 1}-standby-1`,
-          database: 'alertaid',
+          database: 'rescueping',
         },
         progress: {
           phase: i < 10 ? 'Completed' : i < 12 ? 'Syncing data' : 'Waiting',
@@ -769,7 +769,7 @@ class DatabaseReplicationService {
         nodeId: `node-${(i % 4) + 1}-primary`,
         timestamp: new Date(Date.now() - i * 2 * 24 * 60 * 60 * 1000),
         type: ['alter_table', 'create_index', 'create_table'][i % 3] as SchemaChange['type'],
-        database: 'alertaid',
+        database: 'rescueping',
         table: ['users', 'alerts', 'incidents', 'notifications'][i % 4],
         change: {
           ddlStatement: i % 3 === 0 ? 'ALTER TABLE users ADD COLUMN preferences JSONB' : i % 3 === 1 ? 'CREATE INDEX idx_alerts_created ON alerts(created_at)' : 'CREATE TABLE audit_log (id SERIAL PRIMARY KEY, action TEXT)',

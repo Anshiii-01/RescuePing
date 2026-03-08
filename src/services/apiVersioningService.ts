@@ -648,7 +648,7 @@ class APIVersioningService {
         apiType: 'rest',
         status: v.status as VersionStatus,
         title: v.title,
-        description: `${v.title} - AlertAid REST API`,
+        description: `${v.title} - RescuePing REST API`,
         baseUrl: `/api/v${major}`,
         endpoints: createEndpoints(v.version),
         schemas: createSchemas(v.version),
@@ -735,7 +735,7 @@ class APIVersioningService {
         },
         documentation: {
           enabled: true,
-          baseUrl: `https://docs.alertaid.com/api/v${major}`,
+          baseUrl: `https://docs.rescueping.com/api/v${major}`,
           format: 'openapi',
           interactive: true,
           changelog: true,
@@ -771,7 +771,7 @@ class APIVersioningService {
           migrationDeadline: new Date(Date.now() - 30 * 24 * 60 * 60 * 1000),
           reason: 'Replaced by newer version with improved features',
           replacementVersion: '2.0.0',
-          migrationGuide: 'https://docs.alertaid.com/migration/v1-to-v2',
+          migrationGuide: 'https://docs.rescueping.com/migration/v1-to-v2',
           affectedConsumers: 50,
           migratedConsumers: 48,
           notifications: [
@@ -794,8 +794,8 @@ class APIVersioningService {
 
     // Initialize API Consumers
     const consumersData = [
-      { name: 'Mobile App', org: 'AlertAid' },
-      { name: 'Web Dashboard', org: 'AlertAid' },
+      { name: 'Mobile App', org: 'RescuePing' },
+      { name: 'Web Dashboard', org: 'RescuePing' },
       { name: 'Partner Integration', org: 'TechPartner Inc' },
       { name: 'Analytics Service', org: 'DataCorp' },
       { name: 'Third Party App', org: 'ExtApp LLC' },
@@ -867,10 +867,10 @@ class APIVersioningService {
             description: 'Update to the latest SDK version',
             type: 'code_change',
             status: m.status === 'completed' ? 'completed' : m.status === 'in_progress' ? 'completed' : 'pending',
-            instructions: 'npm install @alertaid/sdk@latest',
+            instructions: 'npm install @rescueping/sdk@latest',
             codeExample: {
-              before: 'import { Client } from "@alertaid/sdk"',
-              after: 'import { AlertAidClient } from "@alertaid/sdk"',
+              before: 'import { Client } from "@rescueping/sdk"',
+              after: 'import { RescuePingClient } from "@rescueping/sdk"',
               language: 'typescript',
             },
             validations: [{ name: 'SDK Version Check', expected: 'v2.0.0+' }],
@@ -952,9 +952,9 @@ class APIVersioningService {
     // Initialize API Gateway
     const gateway: APIGatewayConfig = {
       id: 'gateway-0001',
-      name: 'AlertAid API Gateway',
+      name: 'RescuePing API Gateway',
       type: 'kong',
-      baseUrl: 'https://api.alertaid.com',
+      baseUrl: 'https://api.rescueping.com',
       versions: [
         { version: '1.0.0', path: '/v1', upstream: 'http://api-v1:8080', enabled: false },
         { version: '1.1.0', path: '/v1', upstream: 'http://api-v1:8080', enabled: false },
@@ -1055,7 +1055,7 @@ class APIVersioningService {
       sunsetDate,
       migrationDeadline: new Date(sunsetDate.getTime() - 30 * 24 * 60 * 60 * 1000),
       reason,
-      migrationGuide: `https://docs.alertaid.com/migration/${version.version}`,
+      migrationGuide: `https://docs.rescueping.com/migration/${version.version}`,
       affectedConsumers: version.metrics.adoption.activeConsumers,
       migratedConsumers: 0,
       notifications: [],

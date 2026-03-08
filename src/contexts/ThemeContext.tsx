@@ -22,7 +22,7 @@ interface ThemeProviderProps {
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   // Initialize theme from localStorage or system preference
   const [theme, setThemeState] = useState<ThemeMode>(() => {
-    const stored = localStorage.getItem('alert-aid-theme') as ThemeMode | null;
+    const stored = localStorage.getItem('rescue-ping-theme') as ThemeMode | null;
     if (stored) return stored;
     
     // Check system preference
@@ -34,7 +34,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   // Update localStorage when theme changes
   useEffect(() => {
-    localStorage.setItem('alert-aid-theme', theme);
+    localStorage.setItem('rescue-ping-theme', theme);
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
@@ -42,7 +42,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (e: MediaQueryListEvent) => {
-      if (!localStorage.getItem('alert-aid-theme')) {
+      if (!localStorage.getItem('rescue-ping-theme')) {
         setThemeState(e.matches ? 'dark' : 'light');
       }
     };

@@ -347,9 +347,9 @@ class ReportBuilderService {
     const dataSourcesData = [
       { name: 'Alerts Database', type: 'database', table: 'alerts' },
       { name: 'User Analytics', type: 'warehouse', table: 'user_analytics' },
-      { name: 'Weather API', type: 'api', apiUrl: 'https://api.weather.alertaid.com' },
+      { name: 'Weather API', type: 'api', apiUrl: 'https://api.weather.rescueping.com' },
       { name: 'Incident Reports', type: 'database', table: 'incidents' },
-      { name: 'Performance Metrics', type: 'realtime', apiUrl: 'wss://metrics.alertaid.com' },
+      { name: 'Performance Metrics', type: 'realtime', apiUrl: 'wss://metrics.rescueping.com' },
     ];
 
     dataSourcesData.forEach((ds, idx) => {
@@ -358,8 +358,8 @@ class ReportBuilderService {
         name: ds.name,
         type: ds.type as DataSourceType,
         connection: {
-          host: ds.type === 'database' ? 'db.alertaid.com' : undefined,
-          database: ds.type === 'database' ? 'alertaid_prod' : undefined,
+          host: ds.type === 'database' ? 'db.rescueping.com' : undefined,
+          database: ds.type === 'database' ? 'rescueping_prod' : undefined,
           table: ds.table,
           apiUrl: ds.apiUrl,
         },
@@ -404,7 +404,7 @@ class ReportBuilderService {
         description: `${t.name} template for ${t.category.toLowerCase()} reporting`,
         category: t.category,
         type: t.type as ReportType,
-        thumbnail: `https://cdn.alertaid.com/templates/thumb-${idx + 1}.png`,
+        thumbnail: `https://cdn.rescueping.com/templates/thumb-${idx + 1}.png`,
         layout: {
           orientation: t.type === 'executive' ? 'landscape' : 'portrait',
           pageSize: 'a4',
@@ -450,10 +450,10 @@ class ReportBuilderService {
           theme: 'professional',
           colors: ['#4A90D9', '#2ECC71', '#E74C3C', '#9B59B6', '#F39C12'],
           fonts: { heading: 'Inter', body: 'Open Sans' },
-          logo: 'https://cdn.alertaid.com/logo.png',
+          logo: 'https://cdn.rescueping.com/logo.png',
         },
         metadata: {
-          author: 'AlertAid Team',
+          author: 'RescuePing Team',
           version: '1.0.0',
           tags: [t.category.toLowerCase(), t.type, 'template'],
           createdAt: new Date(Date.now() - 90 * 24 * 60 * 60 * 1000),
@@ -523,7 +523,7 @@ class ReportBuilderService {
             method: 'email',
             enabled: true,
             config: {
-              recipients: ['team@alertaid.com', 'reports@alertaid.com'],
+              recipients: ['team@rescueping.com', 'reports@rescueping.com'],
             },
             format: 'pdf',
             template: {
@@ -575,7 +575,7 @@ class ReportBuilderService {
           endDate: new Date(),
         },
         output: i < 15 ? {
-          url: `https://cdn.alertaid.com/reports/gen-${i + 1}.pdf`,
+          url: `https://cdn.rescueping.com/reports/gen-${i + 1}.pdf`,
           size: Math.floor(Math.random() * 5000000) + 100000,
           pages: Math.floor(Math.random() * 20) + 5,
           expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
@@ -796,7 +796,7 @@ class ReportBuilderService {
     generated.timing.completedAt = new Date();
     generated.timing.duration = (generated.timing.completedAt.getTime() - generated.timing.startedAt!.getTime()) / 1000;
     generated.output = {
-      url: `https://cdn.alertaid.com/reports/${generated.id}.${generated.format}`,
+      url: `https://cdn.rescueping.com/reports/${generated.id}.${generated.format}`,
       size: Math.floor(Math.random() * 5000000) + 100000,
       pages: Math.floor(Math.random() * 20) + 5,
       expiresAt: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),

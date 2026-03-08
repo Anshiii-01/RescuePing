@@ -231,20 +231,20 @@ const Footer: React.FC = () => (
   <FooterWrapper>
     <FooterGrid>
       <FooterColumn>
-        <h4>Alert Aid</h4>
+        <h4>Rescue Ping</h4>
         <p>
           AI-powered disaster prediction and emergency response platform
           delivering early warnings, real-time risk analysis, and evacuation
           guidance to protect lives.
         </p>
         <SocialLinks>
-          <a href="https://twitter.com/alertaid" target="_blank" rel="noopener noreferrer">
+          <a href="https://twitter.com/rescueping" target="_blank" rel="noopener noreferrer">
             <Twitter size={16} />
           </a>
-          <a href="https://github.com/Anshiii-01/alert-aid" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Anshiii-01/rescue-ping" target="_blank" rel="noopener noreferrer">
             <Github size={16} />
           </a>
-          <a href="https://alertaid.org" target="_blank" rel="noopener noreferrer">
+          <a href="https://rescueping.org" target="_blank" rel="noopener noreferrer">
             <Globe size={16} />
           </a>
         </SocialLinks>
@@ -290,7 +290,7 @@ const Footer: React.FC = () => (
 
     <FooterBottom>
       <CopyrightNotice>
-        <span>© {new Date().getFullYear()} Alert Aid. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} Rescue Ping. All rights reserved.</span>
       </CopyrightNotice>
 
       <FooterLinks>

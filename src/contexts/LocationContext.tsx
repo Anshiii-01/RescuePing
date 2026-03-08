@@ -54,8 +54,8 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) 
 
     const checkExistingLocation = async () => {
       try {
-        const savedLocation = localStorage.getItem('alertaid-location');
-        const locationPrompted = localStorage.getItem('alertaid-location-prompted');
+        const savedLocation = localStorage.getItem('rescueping-location');
+        const locationPrompted = localStorage.getItem('rescueping-location-prompted');
         
         // If we have a saved location that's less than 1 hour old, use it
         if (savedLocation) {
@@ -109,9 +109,9 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) 
               setShowLocationModal(false);
               
               // Save to BOTH localStorage locations
-              localStorage.setItem('alertaid-location', JSON.stringify(locationData));
+              localStorage.setItem('rescueping-location', JSON.stringify(locationData));
               localStorage.setItem('enhanced-location-cache', JSON.stringify(locationData));
-              localStorage.setItem('alertaid-location-prompted', 'granted');
+              localStorage.setItem('rescueping-location-prompted', 'granted');
               
               // Trigger custom event
               console.log('📡 LocationContext: Broadcasting location-changed event');
@@ -126,7 +126,7 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) 
               console.warn('❌ LocationContext: Geolocation denied or failed:', error.message);
               
               // Mark as denied
-              localStorage.setItem('alertaid-location-prompted', 'denied');
+              localStorage.setItem('rescueping-location-prompted', 'denied');
               
               // Fallback: use saved location if available
               if (savedLocation) {
@@ -149,7 +149,7 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) 
                   console.log('📍 LocationContext: Using default location (New Delhi)');
                   setCurrentLocation(defaultLocation);
                   setIsLocationLoaded(true);
-                  localStorage.setItem('alertaid-location', JSON.stringify(defaultLocation));
+                  localStorage.setItem('rescueping-location', JSON.stringify(defaultLocation));
                 }
               } else {
                 // Use default location (New Delhi, India) instead of showing modal
@@ -165,7 +165,7 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) 
                 console.log('📍 LocationContext: Using default location (New Delhi)');
                 setCurrentLocation(defaultLocation);
                 setIsLocationLoaded(true);
-                localStorage.setItem('alertaid-location', JSON.stringify(defaultLocation));
+                localStorage.setItem('rescueping-location', JSON.stringify(defaultLocation));
               }
             },
             {
@@ -196,7 +196,7 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) 
             console.log('📍 LocationContext: Using default location (New Delhi)');
             setCurrentLocation(defaultLocation);
             setIsLocationLoaded(true);
-            localStorage.setItem('alertaid-location', JSON.stringify(defaultLocation));
+            localStorage.setItem('rescueping-location', JSON.stringify(defaultLocation));
           }
         }
       } catch (error) {
@@ -214,7 +214,7 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) 
         console.log('📍 LocationContext: Using default location due to error');
         setCurrentLocation(defaultLocation);
         setIsLocationLoaded(true);
-        localStorage.setItem('alertaid-location', JSON.stringify(defaultLocation));
+        localStorage.setItem('rescueping-location', JSON.stringify(defaultLocation));
       }
     };
 
@@ -226,7 +226,7 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) 
           `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&addressdetails=1`,
           {
             headers: {
-              'User-Agent': 'AlertAid-DisasterApp/1.0'
+              'User-Agent': 'RescuePing-DisasterApp/1.0'
             }
           }
         );
@@ -356,8 +356,8 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) 
     setShowLocationModal(false);
     
     // Save to localStorage
-    localStorage.setItem('alertaid-location', JSON.stringify(locationWithTimestamp));
-    localStorage.setItem('alertaid-location-prompted', 'granted');
+    localStorage.setItem('rescueping-location', JSON.stringify(locationWithTimestamp));
+    localStorage.setItem('rescueping-location-prompted', 'granted');
     
     // Trigger custom event for other components to refresh data
     console.log('📡 Broadcasting location-changed event');

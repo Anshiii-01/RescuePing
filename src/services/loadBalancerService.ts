@@ -531,7 +531,7 @@ class LoadBalancerService {
         deletionProtection: true,
         accessLogs: {
           enabled: true,
-          bucket: 'alertaid-lb-logs',
+          bucket: 'rescueping-lb-logs',
           prefix: lb.name,
           interval: 5,
         },
@@ -818,13 +818,13 @@ class LoadBalancerService {
     });
 
     // Initialize SSL Certificates
-    const certDomains = ['*.alertaid.com', 'api.alertaid.com', 'admin.alertaid.com'];
+    const certDomains = ['*.rescueping.com', 'api.rescueping.com', 'admin.rescueping.com'];
     certDomains.forEach((domain, idx) => {
       const cert: SSLCertificate = {
         id: `cert-${(idx + 1).toString().padStart(4, '0')}`,
         name: `${domain.replace('*.', 'wildcard-').replace('.', '-')}-cert`,
         domain,
-        sans: idx === 0 ? ['alertaid.com', 'www.alertaid.com'] : [],
+        sans: idx === 0 ? ['rescueping.com', 'www.rescueping.com'] : [],
         type: 'acm',
         status: 'active',
         issuer: 'Amazon',

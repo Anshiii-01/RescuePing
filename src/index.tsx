@@ -7,7 +7,7 @@ import logger from './utils/logger';
 import { registerServiceWorker } from './serviceWorkerRegistration';
 
 // Log app startup
-logger.log('🌟 Alert Aid v2.1.0 - Optimized Build');
+logger.log('🌟 Rescue Ping v2.1.0 - Optimized Build');
 logger.log('📅 Build Date:', new Date().toLocaleString());
 
 // Register service worker for PWA support

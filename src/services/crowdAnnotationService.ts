@@ -700,8 +700,8 @@ class CrowdAnnotationService {
 
     const config = ANNOTATION_CONFIG[annotation.type];
     return {
-      url: `https://alertaid.app/annotation/${annotationId}`,
-      text: `${config.icon} ${annotation.title}\n📍 ${annotation.location.address || 'Location'}\n${annotation.description}\n\n#AlertAid #DisasterResponse`,
+      url: `https://rescueping.app/annotation/${annotationId}`,
+      text: `${config.icon} ${annotation.title}\n📍 ${annotation.location.address || 'Location'}\n${annotation.description}\n\n#RescuePing #DisasterResponse`,
     };
   }
 

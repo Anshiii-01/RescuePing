@@ -398,7 +398,7 @@ const SystemDiagnostics: React.FC = () => {
           <ServiceHeader>
             <ServiceName>
               {getServiceIcon('backend')}
-              Alert Aid Backend
+              Rescue Ping Backend
             </ServiceName>
             <ServiceStatus status={diagnostics.backend.reachable ? 'connected' : 'offline'}>
               {getStatusIcon(diagnostics.backend.reachable ? 'connected' : 'offline')}

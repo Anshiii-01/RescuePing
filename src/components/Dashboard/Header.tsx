@@ -376,7 +376,7 @@ const Header: React.FC<HeaderProps> = ({
           <div className="icon">
             <AlertTriangle size={18} />
           </div>
-          <span>Alert Aid</span>
+          <span>Rescue Ping</span>
         </Logo>
         
         <Navigation>

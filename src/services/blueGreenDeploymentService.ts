@@ -626,7 +626,7 @@ class BlueGreenDeploymentService {
         health: d.state === 'failed' && isTarget ? 'unhealthy' : 'healthy',
         deployment: {
           id: `deploy-${color}-${idx}`,
-          image: `gcr.io/alertaid/${d.name.toLowerCase().replace(/\s/g, '-').replace('-blue-green', '')}`,
+          image: `gcr.io/rescueping/${d.name.toLowerCase().replace(/\s/g, '-').replace('-blue-green', '')}`,
           imageTag: isTarget ? '2.1.0' : '2.0.0',
           commit: `${color}${idx}${Math.random().toString(36).substr(2, 7)}`,
           buildNumber: isTarget ? 110 + idx : 100 + idx,
@@ -642,7 +642,7 @@ class BlueGreenDeploymentService {
         },
         endpoints: [
           { name: 'http', type: 'internal', url: `http://${d.name.toLowerCase().replace(/\s/g, '-').replace('-blue-green', '')}-${color}.prod.svc.cluster.local`, port: 8080, protocol: 'http' },
-          { name: 'external', type: 'external', url: `https://${d.name.toLowerCase().replace(/\s/g, '-').replace('-blue-green', '')}-${color}.alertaid.io`, port: 443, protocol: 'https', tls: { enabled: true } },
+          { name: 'external', type: 'external', url: `https://${d.name.toLowerCase().replace(/\s/g, '-').replace('-blue-green', '')}-${color}.rescueping.io`, port: 443, protocol: 'https', tls: { enabled: true } },
         ],
         instances: Array.from({ length: isActive ? 5 : 3 }, (_, i) => ({
           id: `instance-${color}-${idx}-${i}`,
@@ -676,7 +676,7 @@ class BlueGreenDeploymentService {
           cluster: 'prod-cluster-1',
           type: 'kubernetes',
           repository: {
-            url: `https://github.com/alertaid/${d.name.toLowerCase().replace(/\s/g, '-').replace('-blue-green', '')}`,
+            url: `https://github.com/rescueping/${d.name.toLowerCase().replace(/\s/g, '-').replace('-blue-green', '')}`,
             branch: 'main',
           },
           services: {
@@ -706,7 +706,7 @@ class BlueGreenDeploymentService {
               { id: `pre-${idx}-3`, name: 'Smoke Tests', type: 'smoke-test', status: d.state === 'idle' || d.state === 'completed' ? 'passed' : 'pending', configuration: {}, timeout: 300, required: true },
             ],
             hooks: [
-              { id: `hook-${idx}-1`, name: 'Pre-switch webhook', url: 'https://hooks.alertaid.io/pre-switch', method: 'POST', timeout: 30, continueOnFailure: false },
+              { id: `hook-${idx}-1`, name: 'Pre-switch webhook', url: 'https://hooks.rescueping.io/pre-switch', method: 'POST', timeout: 30, continueOnFailure: false },
             ],
             warmup: {
               enabled: true,
@@ -862,7 +862,7 @@ class BlueGreenDeploymentService {
         ],
         notifications: [
           { id: `notif-${idx}-1`, name: 'Slack', events: ['deployment_started', 'switch_complete', 'failure'], channels: [{ type: 'slack', target: '#deployments' }], enabled: true },
-          { id: `notif-${idx}-2`, name: 'Email', events: ['failure', 'rollback'], channels: [{ type: 'email', target: 'platform-team@alertaid.io' }], enabled: true },
+          { id: `notif-${idx}-2`, name: 'Email', events: ['failure', 'rollback'], channels: [{ type: 'email', target: 'platform-team@rescueping.io' }], enabled: true },
         ],
         tags: ['production', d.name.toLowerCase().replace(/\s/g, '-').replace('-blue-green', '')],
         metadata: {

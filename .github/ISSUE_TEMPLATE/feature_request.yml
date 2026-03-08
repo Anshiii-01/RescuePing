@@ -7,7 +7,7 @@ body:
     attributes:
       value: |
         Thanks for suggesting a feature! 💡
-        Your ideas help make Alert-AID better for everyone.
+        Your ideas help make Rescue Ping better for everyone.
 
   - type: textarea
     id: problem

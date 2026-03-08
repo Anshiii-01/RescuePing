@@ -565,7 +565,7 @@ const EmergencyResponsePanel: React.FC = () => {
     const accuracyText = location.accuracy ? ` (±${Math.round(location.accuracy)}m)` : '';
     const locationText = location.address || `${location.lat.toFixed(6)}, ${location.lon.toFixed(6)}`;
     
-    const emergencyMessage = `🚨 EMERGENCY ALERT from Alert Aid App
+    const emergencyMessage = `🚨 EMERGENCY ALERT from Rescue Ping App
     
 Time: ${timestamp}
 I need immediate assistance at:

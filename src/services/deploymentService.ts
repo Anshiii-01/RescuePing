@@ -610,7 +610,7 @@ class DeploymentService {
             name: `${e.type}-cluster-1`,
             provider: idx % 3 === 0 ? 'aws' : idx % 3 === 1 ? 'gcp' : 'azure',
             region: ['us-east-1', 'us-west-2', 'eu-west-1'][idx % 3],
-            endpoint: `https://k8s.${e.type}.alertaid.io`,
+            endpoint: `https://k8s.${e.type}.rescueping.io`,
             status: 'connected',
           },
         ],
@@ -715,7 +715,7 @@ class DeploymentService {
           name: d.name.split(' v')[0],
           type: d.name.includes('API') ? 'api' : d.name.includes('Web') ? 'frontend' : d.name.includes('Worker') ? 'worker' : 'service',
           repository: {
-            url: `https://github.com/alertaid/${d.name.toLowerCase().replace(/\s/g, '-').replace(/[^\w-]/g, '')}`,
+            url: `https://github.com/rescueping/${d.name.toLowerCase().replace(/\s/g, '-').replace(/[^\w-]/g, '')}`,
             branch: 'main',
             commit: `abc${idx}${Math.random().toString(36).substr(2, 7)}`,
             tag: `v${d.name.split('v')[1] || '1.0.0'}`,
@@ -731,14 +731,14 @@ class DeploymentService {
             version: d.name.split('v')[1] || '1.0.0',
             source: {
               type: 'registry',
-              location: `gcr.io/alertaid/${d.name.toLowerCase().replace(/\s/g, '-').replace(/[^\w-]/g, '')}`,
+              location: `gcr.io/rescueping/${d.name.toLowerCase().replace(/\s/g, '-').replace(/[^\w-]/g, '')}`,
             },
             checksum: { algorithm: 'sha256', value: `sha256:${Math.random().toString(36).substr(2, 64)}` },
             size: Math.floor(Math.random() * 500) * 1024 * 1024,
             buildInfo: {
               buildId: `build-${idx + 1}`,
               buildNumber: 100 + idx,
-              buildUrl: `https://ci.alertaid.io/builds/${100 + idx}`,
+              buildUrl: `https://ci.rescueping.io/builds/${100 + idx}`,
               buildTime: new Date(Date.now() - idx * 24 * 60 * 60 * 1000),
             },
             metadata: {},
@@ -781,7 +781,7 @@ class DeploymentService {
             ],
             ingress: d.env === 'production' ? {
               enabled: true,
-              host: `${d.name.toLowerCase().replace(/\s/g, '-').replace(/[^\w-]/g, '')}.alertaid.io`,
+              host: `${d.name.toLowerCase().replace(/\s/g, '-').replace(/[^\w-]/g, '')}.rescueping.io`,
               path: '/',
               tls: true,
               annotations: {},
@@ -884,7 +884,7 @@ class DeploymentService {
           parallelStages: false,
           failFast: true,
           hooks: [
-            { type: 'pre-deploy', action: { type: 'webhook', content: 'https://hooks.alertaid.io/pre-deploy', timeout: 30 }, continueOnFailure: false },
+            { type: 'pre-deploy', action: { type: 'webhook', content: 'https://hooks.rescueping.io/pre-deploy', timeout: 30 }, continueOnFailure: false },
             { type: 'post-deploy', action: { type: 'script', content: 'notify.sh', timeout: 30 }, continueOnFailure: true },
           ],
         },
@@ -1029,7 +1029,7 @@ class DeploymentService {
         type: d.status === 'completed' ? 'completed' : d.status === 'failed' ? 'failed' : 'started',
         channels: [
           { type: 'slack', target: '#deployments', template: 'deployment-update' },
-          { type: 'email', target: 'platform-team@alertaid.io', template: 'deployment-email' },
+          { type: 'email', target: 'platform-team@rescueping.io', template: 'deployment-email' },
         ],
         recipients: ['platform-lead', 'release-manager'],
         sentAt: new Date(),

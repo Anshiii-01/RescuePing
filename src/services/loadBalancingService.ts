@@ -627,7 +627,7 @@ class LoadBalancingService {
             enabled: idx === 0,
             type: 'cookie',
             duration: 86400,
-            cookieName: 'ALERTAID_SESSION',
+            cookieName: 'RESCUEPING_SESSION',
           },
           ipAddresses: {
             primary: `10.0.${idx}.10`,
@@ -635,8 +635,8 @@ class LoadBalancingService {
             elastic: idx < 2 ? `52.1.${idx}.${idx + 100}` : undefined,
           },
           dns: {
-            name: `${lb.name.toLowerCase().replace(/\s/g, '-')}.alertaid.io`,
-            hostedZone: 'alertaid.io',
+            name: `${lb.name.toLowerCase().replace(/\s/g, '-')}.rescueping.io`,
+            hostedZone: 'rescueping.io',
             ttl: 300,
           },
         },
@@ -670,7 +670,7 @@ class LoadBalancingService {
               certificate: {
                 id: `cert-${idx}`,
                 arn: `arn:aws:acm:us-east-1:123456789:certificate/cert-${idx}`,
-                domain: '*.alertaid.io',
+                domain: '*.rescueping.io',
                 issuer: 'Amazon',
                 expiresAt: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000),
                 autoRenew: true,
@@ -721,24 +721,24 @@ class LoadBalancingService {
             ],
           },
           ddos: { enabled: true, protection: 'advanced' },
-          accessLogs: { enabled: true, bucket: 'alertaid-lb-logs', prefix: `${lb.name.toLowerCase().replace(/\s/g, '-')}/` },
+          accessLogs: { enabled: true, bucket: 'rescueping-lb-logs', prefix: `${lb.name.toLowerCase().replace(/\s/g, '-')}/` },
         },
         logging: {
           accessLog: {
             enabled: true,
             format: 'json',
-            destination: 's3://alertaid-lb-logs',
+            destination: 's3://rescueping-lb-logs',
             fields: ['timestamp', 'client_ip', 'request_url', 'response_code', 'response_time'],
           },
           errorLog: {
             enabled: true,
             level: 'warn',
-            destination: 's3://alertaid-lb-logs/errors',
+            destination: 's3://rescueping-lb-logs/errors',
           },
           slowLog: {
             enabled: true,
             threshold: 2000,
-            destination: 's3://alertaid-lb-logs/slow',
+            destination: 's3://rescueping-lb-logs/slow',
           },
         },
         monitoring: {

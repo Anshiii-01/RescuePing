@@ -400,26 +400,26 @@ class DataMigrationService {
   private initializeSampleData(): void {
     // Initialize Migrations
     const migrationsData = [
-      { name: 'create_users_table', type: 'schema', version: '001', database: 'alertaid' },
-      { name: 'create_alerts_table', type: 'schema', version: '002', database: 'alertaid' },
-      { name: 'add_user_preferences', type: 'schema', version: '003', database: 'alertaid' },
-      { name: 'create_notifications_table', type: 'schema', version: '004', database: 'alertaid' },
-      { name: 'add_alert_severity_index', type: 'schema', version: '005', database: 'alertaid' },
-      { name: 'create_incidents_table', type: 'schema', version: '006', database: 'alertaid' },
-      { name: 'add_user_roles', type: 'schema', version: '007', database: 'alertaid' },
-      { name: 'seed_default_roles', type: 'seed', version: '008', database: 'alertaid' },
-      { name: 'create_audit_logs_table', type: 'schema', version: '009', database: 'alertaid' },
-      { name: 'add_incident_timeline', type: 'schema', version: '010', database: 'alertaid' },
-      { name: 'create_integrations_table', type: 'schema', version: '011', database: 'alertaid' },
-      { name: 'add_alert_tags', type: 'schema', version: '012', database: 'alertaid' },
-      { name: 'migrate_legacy_alerts', type: 'data', version: '013', database: 'alertaid' },
-      { name: 'add_fulltext_search', type: 'schema', version: '014', database: 'alertaid' },
-      { name: 'create_metrics_table', type: 'schema', version: '015', database: 'alertaid' },
-      { name: 'add_alert_correlation', type: 'schema', version: '016', database: 'alertaid' },
-      { name: 'create_schedules_table', type: 'schema', version: '017', database: 'alertaid' },
-      { name: 'add_user_sessions', type: 'schema', version: '018', database: 'alertaid' },
-      { name: 'create_webhooks_table', type: 'schema', version: '019', database: 'alertaid' },
-      { name: 'add_notification_templates', type: 'schema', version: '020', database: 'alertaid' },
+      { name: 'create_users_table', type: 'schema', version: '001', database: 'rescueping' },
+      { name: 'create_alerts_table', type: 'schema', version: '002', database: 'rescueping' },
+      { name: 'add_user_preferences', type: 'schema', version: '003', database: 'rescueping' },
+      { name: 'create_notifications_table', type: 'schema', version: '004', database: 'rescueping' },
+      { name: 'add_alert_severity_index', type: 'schema', version: '005', database: 'rescueping' },
+      { name: 'create_incidents_table', type: 'schema', version: '006', database: 'rescueping' },
+      { name: 'add_user_roles', type: 'schema', version: '007', database: 'rescueping' },
+      { name: 'seed_default_roles', type: 'seed', version: '008', database: 'rescueping' },
+      { name: 'create_audit_logs_table', type: 'schema', version: '009', database: 'rescueping' },
+      { name: 'add_incident_timeline', type: 'schema', version: '010', database: 'rescueping' },
+      { name: 'create_integrations_table', type: 'schema', version: '011', database: 'rescueping' },
+      { name: 'add_alert_tags', type: 'schema', version: '012', database: 'rescueping' },
+      { name: 'migrate_legacy_alerts', type: 'data', version: '013', database: 'rescueping' },
+      { name: 'add_fulltext_search', type: 'schema', version: '014', database: 'rescueping' },
+      { name: 'create_metrics_table', type: 'schema', version: '015', database: 'rescueping' },
+      { name: 'add_alert_correlation', type: 'schema', version: '016', database: 'rescueping' },
+      { name: 'create_schedules_table', type: 'schema', version: '017', database: 'rescueping' },
+      { name: 'add_user_sessions', type: 'schema', version: '018', database: 'rescueping' },
+      { name: 'create_webhooks_table', type: 'schema', version: '019', database: 'rescueping' },
+      { name: 'add_notification_templates', type: 'schema', version: '020', database: 'rescueping' },
     ];
 
     migrationsData.forEach((m, idx) => {
@@ -452,7 +452,7 @@ class DataMigrationService {
           completedAt: isCompleted ? new Date(Date.now() - (20 - idx) * 24 * 60 * 60 * 1000 + 30000) : undefined,
           duration: isCompleted ? Math.floor(Math.random() * 5000) + 500 : undefined,
           executedBy: 'admin',
-          host: 'db-primary.alertaid.internal',
+          host: 'db-primary.rescueping.internal',
           changes: [
             {
               type: m.type === 'schema' ? 'create' : 'insert',
@@ -529,10 +529,10 @@ class DataMigrationService {
 
     // Initialize Database States
     const databasesData = [
-      { name: 'alertaid', type: 'postgresql', host: 'db-primary.alertaid.internal' },
-      { name: 'alertaid_replica', type: 'postgresql', host: 'db-replica.alertaid.internal' },
-      { name: 'alertaid_analytics', type: 'postgresql', host: 'db-analytics.alertaid.internal' },
-      { name: 'alertaid_cache', type: 'redis', host: 'redis.alertaid.internal' },
+      { name: 'rescueping', type: 'postgresql', host: 'db-primary.rescueping.internal' },
+      { name: 'rescueping_replica', type: 'postgresql', host: 'db-replica.rescueping.internal' },
+      { name: 'rescueping_analytics', type: 'postgresql', host: 'db-analytics.rescueping.internal' },
+      { name: 'rescueping_cache', type: 'redis', host: 'redis.rescueping.internal' },
     ];
 
     databasesData.forEach((db, idx) => {
@@ -630,8 +630,8 @@ class DataMigrationService {
         description: `Snapshot before migration batch ${Math.ceil((i + 1) / 2)}`,
         database: {
           type: 'postgresql',
-          name: 'alertaid',
-          host: 'db-primary.alertaid.internal',
+          name: 'rescueping',
+          host: 'db-primary.rescueping.internal',
         },
         version: `0${10 + i}`,
         type: i % 3 === 0 ? 'full' : 'schema',
@@ -639,7 +639,7 @@ class DataMigrationService {
         size: Math.floor(Math.random() * 5000000000) + 500000000,
         location: {
           type: 's3',
-          path: `s3://alertaid-backups/snapshots/snap-${(i + 1).toString().padStart(4, '0')}.tar.gz`,
+          path: `s3://rescueping-backups/snapshots/snap-${(i + 1).toString().padStart(4, '0')}.tar.gz`,
         },
         retention: {
           policy: 'standard',
@@ -702,7 +702,7 @@ class DataMigrationService {
         notifications: {
           enabled: true,
           channels: ['email', 'slack'],
-          recipients: ['dba-team@alertaid.com', 'on-call@alertaid.com'],
+          recipients: ['dba-team@rescueping.com', 'on-call@rescueping.com'],
         },
         approval: {
           required: true,
@@ -746,12 +746,12 @@ class DataMigrationService {
         type: idx % 2 === 0 ? 'etl' : 'batch',
         status: 'active',
         source: {
-          database: 'alertaid',
+          database: 'rescueping',
           table: t.source,
           query: `SELECT * FROM ${t.source} WHERE processed = false`,
         },
         target: {
-          database: 'alertaid',
+          database: 'rescueping',
           table: t.target,
           mode: 'upsert',
         },
@@ -888,7 +888,7 @@ class DataMigrationService {
       direction: 'up',
       startedAt: new Date(),
       executedBy: 'system',
-      host: 'db-primary.alertaid.internal',
+      host: 'db-primary.rescueping.internal',
       changes: [],
       errors: [],
     };
@@ -967,12 +967,12 @@ class DataMigrationService {
       id,
       name: `snapshot-${Date.now()}`,
       description: 'Manual snapshot',
-      database: { type: 'postgresql', name: database, host: 'db-primary.alertaid.internal' },
+      database: { type: 'postgresql', name: database, host: 'db-primary.rescueping.internal' },
       version: '000',
       type,
       status: 'creating',
       size: 0,
-      location: { type: 's3', path: `s3://alertaid-backups/snapshots/${id}.tar.gz` },
+      location: { type: 's3', path: `s3://rescueping-backups/snapshots/${id}.tar.gz` },
       retention: { policy: 'standard', expiresAt: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000) },
       execution: { startedAt: new Date(), tablesIncluded: 0, rowsCaptured: 0 },
       metadata: { createdAt: new Date(), createdBy: 'system', tags: [] },

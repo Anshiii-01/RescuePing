@@ -24,7 +24,7 @@ class AlertCreate(BaseModel):
     location: Dict[str, Any] = Field(default_factory=dict, description="Location coordinates")
     affected_areas: List[str] = Field(default_factory=list, description="List of affected areas")
     expires_at: Optional[str] = Field(None, description="Expiration timestamp")
-    source: str = Field("alert_aid_system", description="Source of the alert")
+    source: str = Field("rescue_ping_system", description="Source of the alert")
     emergency_contacts: List[Dict[str, str]] = Field(default_factory=list, description="Emergency contacts")
     recommended_actions: List[str] = Field(default_factory=list, description="Recommended actions")
 
@@ -391,7 +391,7 @@ async def create_emergency_alert(emergency_data: Dict[str, Any]):
             "emergency_contacts": [
                 {"service": "Emergency Services", "number": "911"},
                 {"service": "Local Emergency Management", "number": "emergency_line"},
-                {"service": "Alert Aid Support", "number": "alert_support"}
+                {"service": "Rescue Ping Support", "number": "alert_support"}
             ],
             "recommended_actions": emergency_data.get("recommended_actions", [
                 "follow_official_instructions",

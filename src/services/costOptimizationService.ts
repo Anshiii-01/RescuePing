@@ -611,9 +611,9 @@ class CostOptimizationService {
           providers: ['aws', 'gcp', 'azure'],
         },
         alerts: [
-          { threshold: 50, type: 'actual', recipients: ['finance@alertaid.com'], channels: ['email'] },
-          { threshold: 75, type: 'actual', recipients: ['finance@alertaid.com', 'platform@alertaid.com'], channels: ['email', 'slack'] },
-          { threshold: 90, type: 'forecasted', recipients: ['cto@alertaid.com'], channels: ['email', 'slack'] },
+          { threshold: 50, type: 'actual', recipients: ['finance@rescueping.com'], channels: ['email'] },
+          { threshold: 75, type: 'actual', recipients: ['finance@rescueping.com', 'platform@rescueping.com'], channels: ['email', 'slack'] },
+          { threshold: 90, type: 'forecasted', recipients: ['cto@rescueping.com'], channels: ['email', 'slack'] },
         ],
         tracking: {
           currentSpend: b.amount * (0.5 + Math.random() * 0.3),
@@ -880,8 +880,8 @@ class CostOptimizationService {
         },
         groupBy: ['service', 'region'],
         recipients: [
-          { email: 'finance@alertaid.com', name: 'Finance Team' },
-          { email: 'platform@alertaid.com', name: 'Platform Team' },
+          { email: 'finance@rescueping.com', name: 'Finance Team' },
+          { email: 'platform@rescueping.com', name: 'Platform Team' },
         ],
         lastGenerated: new Date(Date.now() - idx * 7 * 24 * 60 * 60 * 1000),
         metadata: {

@@ -461,7 +461,7 @@ class ComplianceManagementService {
             status: Math.random() > 0.2 ? 'implemented' : 'partially_implemented',
             implementation: {
               method: 'Automated system control',
-              system: 'Alert Aid Platform',
+              system: 'Rescue Ping Platform',
               automation: ['fully_automated', 'partially_automated', 'manual'][j - 1] as Control['implementation']['automation'],
               frequency: 'Continuous',
               lastTested: new Date(Date.now() - Math.random() * 30 * 24 * 60 * 60 * 1000),
@@ -497,7 +497,7 @@ class ComplianceManagementService {
         id: `policy-${(idx + 1).toString().padStart(4, '0')}`,
         name: p.name,
         shortName: p.name.split(' ').map((w) => w[0]).join(''),
-        description: `Official ${p.name.toLowerCase()} for Alert Aid platform`,
+        description: `Official ${p.name.toLowerCase()} for Rescue Ping platform`,
         category: p.category,
         type: p.type as Policy['type'],
         status: 'active',
@@ -557,7 +557,7 @@ class ComplianceManagementService {
         type: a.type as ComplianceAssessment['type'],
         status: ['completed', 'in_progress', 'scheduled', 'completed'][idx] as AssessmentStatus,
         scope: {
-          systems: ['Alert Aid Platform', 'Mobile App', 'Admin Dashboard'],
+          systems: ['Rescue Ping Platform', 'Mobile App', 'Admin Dashboard'],
           processes: ['Data Collection', 'User Management', 'Donations'],
           departments: ['IT', 'Operations', 'Finance'],
           dataTypes: ['Personal Data', 'Financial Data'],

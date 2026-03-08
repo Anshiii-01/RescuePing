@@ -1,5 +1,5 @@
 """
-Alert Aid - Production FastAPI Backend
+Rescue Ping - Production FastAPI Backend
 Real APIs, Live Data, ML Predictions
 """
 
@@ -45,7 +45,7 @@ if SENTRY_AVAILABLE:
     
     sentry_sdk.init(
         dsn=SENTRY_DSN,
-        release="alert-aid-backend@1.0.0",
+        release="rescue-ping-backend@1.0.0",
         environment=os.getenv("ENVIRONMENT", "production"),
         integrations=[sentry_logging],
         traces_sample_rate=1.0,
@@ -77,7 +77,7 @@ OPENSTREETMAP_URL = "https://nominatim.openstreetmap.org/reverse"
 
 # Initialize FastAPI app
 app = FastAPI(
-    title="Alert Aid API",
+    title="Rescue Ping API",
     description="Real-time disaster management with live APIs and ML predictions",
     version="2.0.0",
     docs_url="/docs",
@@ -212,7 +212,7 @@ if INDIA_RIVERS_AVAILABLE:
 async def root():
     """Root endpoint with API information"""
     return {
-        "message": "Alert Aid API - Disaster Management System  🚀",
+        "message": "Rescue Ping API - Disaster Management System  🚀",
         "status": "operational",
         "version": "1.0.2-cors-fixed",  # Updated version to verify deployment
         "timestamp": datetime.now().isoformat(),
@@ -233,7 +233,7 @@ async def root():
 @app.on_event("startup")
 async def startup_event():
     """Initialize the application on startup"""
-    logger.info("🚀 Alert Aid Backend Starting...")
+    logger.info("🚀 Rescue Ping Backend Starting...")
     logger.info("✅ Server running on http://localhost:8000")
     logger.info("📊 API documentation: http://localhost:8000/docs")
     logger.info("🔧 Interactive docs: http://localhost:8000/redoc")
@@ -244,7 +244,7 @@ async def startup_event():
 @app.on_event("shutdown")
 async def shutdown_event():
     """Clean up on shutdown"""
-    logger.info("🛑 Alert Aid Backend Shutting Down...")
+    logger.info("🛑 Rescue Ping Backend Shutting Down...")
 
 # Global exception handler
 @app.exception_handler(Exception)
@@ -259,7 +259,7 @@ async def global_exception_handler(request, exc):
 
 # Main entry point
 if __name__ == "__main__":
-    logger.info("🚀 Starting Alert Aid Backend Server...")
+    logger.info("🚀 Starting Rescue Ping Backend Server...")
     uvicorn.run(
         "main:app",
         host="0.0.0.0",

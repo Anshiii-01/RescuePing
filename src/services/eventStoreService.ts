@@ -361,7 +361,7 @@ class EventStoreService {
             },
             metadata: {
               userId: `user-${(e % 5) + 1}`,
-              source: 'alertaid-core',
+              source: 'rescueping-core',
               tags: [st.type, eventTypes[e % eventTypes.length].toLowerCase()],
               custom: {},
             },
@@ -417,7 +417,7 @@ class EventStoreService {
         handler: {
           type: 'http',
           config: {
-            url: `https://api.alertaid.com/webhooks/${s.name.toLowerCase().replace(' ', '-')}`,
+            url: `https://api.rescueping.com/webhooks/${s.name.toLowerCase().replace(' ', '-')}`,
             timeout: 30000,
           },
         },

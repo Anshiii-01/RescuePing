@@ -23,9 +23,9 @@ export const productionColors = {
     disabled: '#6B7280',     // Disabled text - dark gray
   },
   
-  // Alert Aid Brand Colors
+  // Rescue Ping Brand Colors
   brand: {
-    primary: '#EF4444',      // Alert Aid red - primary brand
+    primary: '#EF4444',      // Rescue Ping red - primary brand
     secondary: '#DC2626',    // Darker red for accents
     light: '#FEE2E2',       // Light red for backgrounds
     dark: '#991B1B',        // Dark red for pressed states

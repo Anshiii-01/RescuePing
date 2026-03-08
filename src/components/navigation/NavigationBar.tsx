@@ -386,10 +386,10 @@ export const NavigationBar: React.FC<NavigationBarProps> = ({
       <Brand>
         <img 
           src="./public/Gemini_Generated_Image_7c3uv87c3uv87c3u.png" 
-          alt="Alert Aid Logo" 
+          alt="Rescue Ping Logo" 
           className="brand-logo"
         />
-        <span>Alert Aid</span>
+        <span>Rescue Ping</span>
       </Brand>
 
       <NavigationItems $isOpen={isMobileMenuOpen}>

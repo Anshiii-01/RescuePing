@@ -574,7 +574,7 @@ class LogAggregationService {
         connection: {
           type: s.connection as LogSource['connection']['type'],
           config: {
-            host: `log-collector-${idx + 1}.alertaid.internal`,
+            host: `log-collector-${idx + 1}.rescueping.internal`,
             port: 5514 + idx,
             ssl: true,
           },
@@ -693,7 +693,7 @@ class LogAggregationService {
         status: idx < 3 ? 'active' : 'error',
         connection: {
           config: {
-            endpoint: `${type}.alertaid.internal`,
+            endpoint: `${type}.rescueping.internal`,
             index: 'logs-*',
           },
         },

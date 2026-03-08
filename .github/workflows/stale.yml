@@ -24,7 +24,7 @@ jobs:
             - If this is still relevant, please comment or update the issue
             - It will be closed in 7 days if no further activity occurs
             
-            Thank you for your contribution to Alert-AID! 🚨
+            Thank you for your contribution to Rescue Ping! 🚨
             
           stale-issue-label: 'stale'
           days-before-issue-stale: 30

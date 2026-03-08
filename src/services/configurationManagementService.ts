@@ -378,17 +378,17 @@ class ConfigurationManagementService {
 
     // Initialize configs
     const configsData = [
-      { key: 'app.name', name: 'Application Name', category: 'app', type: 'string', value: 'Alert Aid' },
+      { key: 'app.name', name: 'Application Name', category: 'app', type: 'string', value: 'Rescue Ping' },
       { key: 'app.version', name: 'Application Version', category: 'app', type: 'string', value: '2.0.0' },
       { key: 'app.debug', name: 'Debug Mode', category: 'app', type: 'boolean', value: false, sensitive: false },
       { key: 'app.logLevel', name: 'Log Level', category: 'app', type: 'string', value: 'info' },
       { key: 'app.maxUploadSize', name: 'Max Upload Size', category: 'app', type: 'number', value: 10485760 },
       { key: 'database.host', name: 'Database Host', category: 'database', type: 'string', value: 'localhost' },
       { key: 'database.port', name: 'Database Port', category: 'database', type: 'number', value: 5432 },
-      { key: 'database.name', name: 'Database Name', category: 'database', type: 'string', value: 'alertaid' },
+      { key: 'database.name', name: 'Database Name', category: 'database', type: 'string', value: 'rescueping' },
       { key: 'database.pool.min', name: 'Min Pool Size', category: 'database', type: 'number', value: 5 },
       { key: 'database.pool.max', name: 'Max Pool Size', category: 'database', type: 'number', value: 20 },
-      { key: 'api.baseUrl', name: 'API Base URL', category: 'api', type: 'url', value: 'https://api.alertaid.com' },
+      { key: 'api.baseUrl', name: 'API Base URL', category: 'api', type: 'url', value: 'https://api.rescueping.com' },
       { key: 'api.timeout', name: 'API Timeout', category: 'api', type: 'number', value: 30000 },
       { key: 'api.rateLimit', name: 'Rate Limit', category: 'api', type: 'number', value: 1000 },
       { key: 'notifications.email.enabled', name: 'Email Notifications', category: 'notifications', type: 'boolean', value: true },
@@ -449,13 +449,13 @@ class ConfigurationManagementService {
       }
       if (cfg.key === 'database.host') {
         config.values.development = { value: 'localhost', encrypted: false, overridden: false, source: 'default' };
-        config.values.staging = { value: 'db-staging.alertaid.com', encrypted: false, overridden: true, source: 'env' };
-        config.values.production = { value: 'db-prod.alertaid.com', encrypted: false, overridden: true, source: 'env' };
+        config.values.staging = { value: 'db-staging.rescueping.com', encrypted: false, overridden: true, source: 'env' };
+        config.values.production = { value: 'db-prod.rescueping.com', encrypted: false, overridden: true, source: 'env' };
       }
       if (cfg.key === 'api.baseUrl') {
         config.values.development = { value: 'http://localhost:3000/api', encrypted: false, overridden: true, source: 'env' };
-        config.values.staging = { value: 'https://staging-api.alertaid.com', encrypted: false, overridden: true, source: 'env' };
-        config.values.production = { value: 'https://api.alertaid.com', encrypted: false, overridden: true, source: 'env' };
+        config.values.staging = { value: 'https://staging-api.rescueping.com', encrypted: false, overridden: true, source: 'env' };
+        config.values.production = { value: 'https://api.rescueping.com', encrypted: false, overridden: true, source: 'env' };
       }
 
       this.configs.set(config.id, config);
@@ -537,15 +537,15 @@ class ConfigurationManagementService {
           {
             name: 'Primary Database',
             type: 'postgresql',
-            host: env === 'production' ? 'db-prod.alertaid.com' : 'localhost',
+            host: env === 'production' ? 'db-prod.rescueping.com' : 'localhost',
             port: 5432,
-            database: 'alertaid',
+            database: 'rescueping',
             ssl: env === 'production',
           },
           {
             name: 'Cache',
             type: 'redis',
-            host: env === 'production' ? 'cache-prod.alertaid.com' : 'localhost',
+            host: env === 'production' ? 'cache-prod.rescueping.com' : 'localhost',
             port: 6379,
             ssl: env === 'production',
           },
@@ -553,7 +553,7 @@ class ConfigurationManagementService {
         endpoints: [
           {
             name: 'API Gateway',
-            url: env === 'production' ? 'https://api.alertaid.com' : `https://${env}.alertaid.com`,
+            url: env === 'production' ? 'https://api.rescueping.com' : `https://${env}.rescueping.com`,
             timeout: 30000,
             retries: 3,
           },
@@ -614,7 +614,7 @@ class ConfigurationManagementService {
         description: `Deployment: ${d.name}`,
         environment: d.environment as Environment,
         configs: [
-          { configId: 'cfg-0001', key: 'app.name', previousValue: 'Alert Aid', newValue: 'Alert Aid v2' },
+          { configId: 'cfg-0001', key: 'app.name', previousValue: 'Rescue Ping', newValue: 'Rescue Ping v2' },
           { configId: 'cfg-0003', key: 'app.debug', previousValue: true, newValue: false },
         ],
         status: d.status as ConfigDeployment['status'],

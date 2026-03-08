@@ -313,7 +313,7 @@ export const EnhancedLocationPermissionModal: React.FC<EnhancedLocationPermissio
       };
 
       // Store in localStorage
-      localStorage.setItem('alertaid-location', JSON.stringify(locationData));
+      localStorage.setItem('rescueping-location', JSON.stringify(locationData));
       
       setPermissionState('granted');
       onLocationGranted(locationData);
@@ -394,7 +394,7 @@ export const EnhancedLocationPermissionModal: React.FC<EnhancedLocationPermissio
       };
 
       // Store in localStorage
-      localStorage.setItem('alertaid-location', JSON.stringify(locationData));
+      localStorage.setItem('rescueping-location', JSON.stringify(locationData));
 
       setPermissionState('completed');
       onLocationGranted(locationData);
@@ -440,7 +440,7 @@ export const EnhancedLocationPermissionModal: React.FC<EnhancedLocationPermissio
           </IconContainer>
           <ModalTitle>Enable Location for Better Alerts</ModalTitle>
           <ModalDescription>
-            Alert Aid works best with your location to provide accurate, hyperlocal disaster risk predictions and emergency alerts for your area. You can skip this for now and use a default location, or enable location access anytime from settings.
+            Rescue Ping works best with your location to provide accurate, hyperlocal disaster risk predictions and emergency alerts for your area. You can skip this for now and use a default location, or enable location access anytime from settings.
           </ModalDescription>
         </ModalHeader>
 

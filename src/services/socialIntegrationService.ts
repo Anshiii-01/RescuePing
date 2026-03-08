@@ -458,11 +458,11 @@ class SocialIntegrationService {
       displayName: string;
       followers: number;
     }[] = [
-      { platform: 'facebook', username: 'alertaid.official', displayName: 'AlertAid Official', followers: 125000 },
-      { platform: 'twitter', username: 'AlertAidApp', displayName: 'AlertAid', followers: 89000 },
-      { platform: 'instagram', username: 'alertaid', displayName: 'AlertAid Emergency', followers: 156000 },
-      { platform: 'linkedin', username: 'alertaid-inc', displayName: 'AlertAid Inc', followers: 45000 },
-      { platform: 'youtube', username: 'AlertAidChannel', displayName: 'AlertAid Channel', followers: 234000 },
+      { platform: 'facebook', username: 'rescueping.official', displayName: 'RescuePing Official', followers: 125000 },
+      { platform: 'twitter', username: 'RescuePingApp', displayName: 'RescuePing', followers: 89000 },
+      { platform: 'instagram', username: 'rescueping', displayName: 'RescuePing Emergency', followers: 156000 },
+      { platform: 'linkedin', username: 'rescueping-inc', displayName: 'RescuePing Inc', followers: 45000 },
+      { platform: 'youtube', username: 'RescuePingChannel', displayName: 'RescuePing Channel', followers: 234000 },
     ];
 
     connectionsData.forEach((conn, idx) => {
@@ -474,7 +474,7 @@ class SocialIntegrationService {
         platformUsername: conn.username,
         displayName: conn.displayName,
         profileUrl: `https://${conn.platform}.com/${conn.username}`,
-        avatarUrl: `https://cdn.alertaid.com/social/${conn.platform}-avatar.jpg`,
+        avatarUrl: `https://cdn.rescueping.com/social/${conn.platform}-avatar.jpg`,
         status: 'connected',
         accessToken: `token-${conn.platform}-${Math.random().toString(36).substr(2, 20)}`,
         refreshToken: `refresh-${conn.platform}-${Math.random().toString(36).substr(2, 20)}`,
@@ -511,8 +511,8 @@ class SocialIntegrationService {
         content: {
           type: 'post',
           text: share.text,
-          url: `https://alertaid.com/alert/${idx + 1}`,
-          hashtags: ['Emergency', 'Safety', 'AlertAid', 'DisasterPreparedness'],
+          url: `https://rescueping.com/alert/${idx + 1}`,
+          hashtags: ['Emergency', 'Safety', 'RescuePing', 'DisasterPreparedness'],
         },
         options: {
           crossPost: true,
@@ -525,7 +525,7 @@ class SocialIntegrationService {
           platform: platform as SocialPlatform,
           status: idx < 3 ? 'success' : 'pending',
           postId: idx < 3 ? `post-${platform}-${idx + 1}` : undefined,
-          postUrl: idx < 3 ? `https://${platform}.com/alertaid/post/${idx + 1}` : undefined,
+          postUrl: idx < 3 ? `https://${platform}.com/rescueping/post/${idx + 1}` : undefined,
           publishedAt: idx < 3 ? new Date(Date.now() - idx * 24 * 60 * 60 * 1000) : undefined,
           analytics: idx < 3 ? {
             impressions: Math.floor(Math.random() * 50000) + 10000,
@@ -557,7 +557,7 @@ class SocialIntegrationService {
         direction: sync.direction,
         contentTypes: ['post', 'image', 'video'],
         filters: {
-          hashtags: ['AlertAid', 'Emergency'],
+          hashtags: ['RescuePing', 'Emergency'],
         },
         schedule: {
           frequency: 'hourly',
@@ -672,7 +672,7 @@ class SocialIntegrationService {
       platformUsername: `user_${session.platform}`,
       displayName: `User on ${session.platform}`,
       profileUrl: `https://${session.platform}.com/user`,
-      avatarUrl: `https://cdn.alertaid.com/avatars/default.jpg`,
+      avatarUrl: `https://cdn.rescueping.com/avatars/default.jpg`,
       status: 'connected',
       accessToken: `token-${Math.random().toString(36).substr(2, 20)}`,
       refreshToken: `refresh-${Math.random().toString(36).substr(2, 20)}`,
@@ -799,7 +799,7 @@ class SocialIntegrationService {
       
       result.status = 'success';
       result.postId = `post-${result.platform}-${Date.now()}`;
-      result.postUrl = `https://${result.platform}.com/alertaid/post/${result.postId}`;
+      result.postUrl = `https://${result.platform}.com/rescueping/post/${result.postId}`;
       result.publishedAt = new Date();
     }
 

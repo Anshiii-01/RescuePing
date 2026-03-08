@@ -639,7 +639,7 @@ class IncidentTimelineService {
         incidentId,
         userId: `user-${(uIdx + 1).toString().padStart(4, '0')}`,
         userName: u.name,
-        email: `${u.name.toLowerCase().replace(' ', '.')}@alertaid.com`,
+        email: `${u.name.toLowerCase().replace(' ', '.')}@rescueping.com`,
         role: u.role as TimelineParticipant['role'],
         status: 'active',
         joinedAt: new Date(startTime.getTime() + uIdx * 5 * 60 * 1000),

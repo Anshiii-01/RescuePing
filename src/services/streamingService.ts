@@ -519,9 +519,9 @@ class StreamingService {
       name: 'Multi-DRM Protection',
       enabled: true,
       providers: [
-        { provider: 'widevine', enabled: true, licenseUrl: 'https://drm.alertaid.com/widevine' },
-        { provider: 'fairplay', enabled: true, licenseUrl: 'https://drm.alertaid.com/fairplay', certificateUrl: 'https://drm.alertaid.com/fairplay/cert' },
-        { provider: 'playready', enabled: true, licenseUrl: 'https://drm.alertaid.com/playready' },
+        { provider: 'widevine', enabled: true, licenseUrl: 'https://drm.rescueping.com/widevine' },
+        { provider: 'fairplay', enabled: true, licenseUrl: 'https://drm.rescueping.com/fairplay', certificateUrl: 'https://drm.rescueping.com/fairplay/cert' },
+        { provider: 'playready', enabled: true, licenseUrl: 'https://drm.rescueping.com/playready' },
       ],
       settings: {
         persistentLicense: false,
@@ -533,7 +533,7 @@ class StreamingService {
       },
       restrictions: {
         maxConcurrentStreams: 3,
-        allowedDomains: ['alertaid.com', '*.alertaid.com'],
+        allowedDomains: ['rescueping.com', '*.rescueping.com'],
         geoRestrictions: [],
         deviceRestrictions: [],
       },
@@ -576,14 +576,14 @@ class StreamingService {
         encodingProfiles: Array.from(this.qualityProfiles.values()).slice(1, 5),
         abrConfig,
         publishing: {
-          rtmpUrl: `rtmp://ingest.alertaid.com/live`,
+          rtmpUrl: `rtmp://ingest.rescueping.com/live`,
           streamKey: `sk-${idx + 1}-${Math.random().toString(36).substr(2, 12)}`,
           playbackUrls: {
-            hls: `https://stream.alertaid.com/hls/stream-${idx + 1}/master.m3u8`,
-            dash: `https://stream.alertaid.com/dash/stream-${idx + 1}/manifest.mpd`,
-            webrtc: `wss://stream.alertaid.com/webrtc/stream-${idx + 1}`,
+            hls: `https://stream.rescueping.com/hls/stream-${idx + 1}/master.m3u8`,
+            dash: `https://stream.rescueping.com/dash/stream-${idx + 1}/manifest.mpd`,
+            webrtc: `wss://stream.rescueping.com/webrtc/stream-${idx + 1}`,
           },
-          embedCode: `<iframe src="https://player.alertaid.com/embed/stream-${idx + 1}" allowfullscreen></iframe>`,
+          embedCode: `<iframe src="https://player.rescueping.com/embed/stream-${idx + 1}" allowfullscreen></iframe>`,
         },
         settings: {
           latencyMode: 'low',
@@ -636,7 +636,7 @@ class StreamingService {
           ],
         },
         metadata: {
-          thumbnail: `https://cdn.alertaid.com/streams/thumb-${idx + 1}.jpg`,
+          thumbnail: `https://cdn.rescueping.com/streams/thumb-${idx + 1}.jpg`,
           category: 'Emergency',
           tags: ['emergency', 'alert', 'live', 'broadcast'],
           visibility: 'public',
@@ -664,7 +664,7 @@ class StreamingService {
         type: vod.type as VODContent['type'],
         status: 'ready',
         source: {
-          originalFile: `https://storage.alertaid.com/originals/vod-${idx + 1}.mp4`,
+          originalFile: `https://storage.rescueping.com/originals/vod-${idx + 1}.mp4`,
           duration: vod.duration,
           size: vod.duration * 500000,
           format: 'mp4',
@@ -676,22 +676,22 @@ class StreamingService {
         },
         playback: {
           urls: {
-            hls: `https://stream.alertaid.com/hls/vod-${idx + 1}/master.m3u8`,
-            dash: `https://stream.alertaid.com/dash/vod-${idx + 1}/manifest.mpd`,
+            hls: `https://stream.rescueping.com/hls/vod-${idx + 1}/master.m3u8`,
+            dash: `https://stream.rescueping.com/dash/vod-${idx + 1}/manifest.mpd`,
             progressive: {
-              '1080p': `https://cdn.alertaid.com/vod/vod-${idx + 1}-1080p.mp4`,
-              '720p': `https://cdn.alertaid.com/vod/vod-${idx + 1}-720p.mp4`,
-              '480p': `https://cdn.alertaid.com/vod/vod-${idx + 1}-480p.mp4`,
-              '360p': `https://cdn.alertaid.com/vod/vod-${idx + 1}-360p.mp4`,
-              '240p': `https://cdn.alertaid.com/vod/vod-${idx + 1}-240p.mp4`,
+              '1080p': `https://cdn.rescueping.com/vod/vod-${idx + 1}-1080p.mp4`,
+              '720p': `https://cdn.rescueping.com/vod/vod-${idx + 1}-720p.mp4`,
+              '480p': `https://cdn.rescueping.com/vod/vod-${idx + 1}-480p.mp4`,
+              '360p': `https://cdn.rescueping.com/vod/vod-${idx + 1}-360p.mp4`,
+              '240p': `https://cdn.rescueping.com/vod/vod-${idx + 1}-240p.mp4`,
               '4k': '',
               'audio_only': '',
             },
           },
           thumbnails: {
-            default: `https://cdn.alertaid.com/vod/thumb-${idx + 1}.jpg`,
-            sprite: `https://cdn.alertaid.com/vod/sprite-${idx + 1}.jpg`,
-            preview: Array.from({ length: 10 }, (_, i) => `https://cdn.alertaid.com/vod/preview-${idx + 1}-${i}.jpg`),
+            default: `https://cdn.rescueping.com/vod/thumb-${idx + 1}.jpg`,
+            sprite: `https://cdn.rescueping.com/vod/sprite-${idx + 1}.jpg`,
+            preview: Array.from({ length: 10 }, (_, i) => `https://cdn.rescueping.com/vod/preview-${idx + 1}-${i}.jpg`),
           },
           chapters: [
             { time: 0, title: 'Introduction' },
@@ -699,8 +699,8 @@ class StreamingService {
             { time: Math.floor(vod.duration * 0.7), title: 'Summary' },
           ],
           subtitles: [
-            { language: 'en', url: `https://cdn.alertaid.com/vod/sub-${idx + 1}-en.vtt`, format: 'vtt' },
-            { language: 'hi', url: `https://cdn.alertaid.com/vod/sub-${idx + 1}-hi.vtt`, format: 'vtt' },
+            { language: 'en', url: `https://cdn.rescueping.com/vod/sub-${idx + 1}-en.vtt`, format: 'vtt' },
+            { language: 'hi', url: `https://cdn.rescueping.com/vod/sub-${idx + 1}-hi.vtt`, format: 'vtt' },
           ],
         },
         monetization: {
@@ -732,8 +732,8 @@ class StreamingService {
           })),
         },
         metadata: {
-          thumbnail: `https://cdn.alertaid.com/vod/thumb-${idx + 1}.jpg`,
-          poster: `https://cdn.alertaid.com/vod/poster-${idx + 1}.jpg`,
+          thumbnail: `https://cdn.rescueping.com/vod/thumb-${idx + 1}.jpg`,
+          poster: `https://cdn.rescueping.com/vod/poster-${idx + 1}.jpg`,
           category: 'Education',
           tags: ['safety', 'emergency', 'training', 'preparedness'],
           rating: 'G',
@@ -756,7 +756,7 @@ class StreamingService {
           type: ['desktop', 'mobile', 'tablet', 'tv'][i % 4] as ViewerSession['deviceInfo']['type'],
           os: ['Windows', 'macOS', 'iOS', 'Android', 'Linux'][i % 5],
           browser: ['Chrome', 'Safari', 'Firefox', 'Edge'][i % 4],
-          player: 'AlertAid Player v2.0',
+          player: 'RescuePing Player v2.0',
         },
         network: {
           ip: `192.168.${Math.floor(i / 256)}.${i % 256}`,
@@ -834,13 +834,13 @@ class StreamingService {
       encodingProfiles: Array.from(this.qualityProfiles.values()).slice(1, 5),
       abrConfig: this.abrConfigs.get('abr-0001')!,
       publishing: {
-        rtmpUrl: 'rtmp://ingest.alertaid.com/live',
+        rtmpUrl: 'rtmp://ingest.rescueping.com/live',
         streamKey: `sk-${Date.now()}-${Math.random().toString(36).substr(2, 12)}`,
         playbackUrls: {
-          hls: `https://stream.alertaid.com/hls/${id}/master.m3u8`,
-          dash: `https://stream.alertaid.com/dash/${id}/manifest.mpd`,
+          hls: `https://stream.rescueping.com/hls/${id}/master.m3u8`,
+          dash: `https://stream.rescueping.com/dash/${id}/manifest.mpd`,
         },
-        embedCode: `<iframe src="https://player.alertaid.com/embed/${id}" allowfullscreen></iframe>`,
+        embedCode: `<iframe src="https://player.rescueping.com/embed/${id}" allowfullscreen></iframe>`,
       },
       settings: {
         latencyMode: 'low',
