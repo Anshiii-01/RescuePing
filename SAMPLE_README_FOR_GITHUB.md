@@ -1,11 +1,10 @@
-# 🚨 Rescue Ping
+# 🚨 RescuePing
 
 <div align="center">
 
-![Rescue Ping Banner](https://img.shields.io/badge/🚨_Rescue--Ping-AI_Disaster_Management-red?style=for-the-badge)
+![RescuePing Banner](https://img.shields.io/badge/🚨_RescuePing-AI_Disaster_Management-red?style=for-the-badge)
 
 [![Status](https://img.shields.io/badge/Status-In_Development-yellow?style=flat-square)]()
-[![Hackathon](https://img.shields.io/badge/Hackathon-AI_for_Disaster_Management-blue?style=flat-square)]()
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 
 **🌊 AI-Powered Flood Forecasting & Disaster Warning System**
@@ -18,10 +17,9 @@
 
 ## 🎯 About
 
-**Rescue Ping** is an intelligent disaster prediction and emergency response platform that leverages advanced machine learning to provide early warnings for natural disasters including floods, earthquakes, storms, and wildfires.
+**RescuePing** is an intelligent disaster prediction and emergency response platform that leverages advanced machine learning to provide early warnings for natural disasters including floods, earthquakes, storms, and wildfires.
 
-> 🚧 **This repository is currently under development for a hackathon submission.**  
-> Full code will be released after the competition.
+> 💡 **Idea credit:** This project was inspired by [**Alert-AID**](https://github.com/sameezy667/Alert-AID) by [**Sameer Dhir (@sameezy667)**](https://github.com/sameezy667).
 
 ---
 
@@ -48,21 +46,6 @@ APIs:        OpenWeatherMap • USGS • OpenStreetMap
 
 ---
 
-## 📸 Preview
-
-<div align="center">
-
-| Dashboard | Predictions | Evacuation |
-|:---------:|:-----------:|:----------:|
-| 📊 | 🤖 | 🗺️ |
-| Live Monitoring | AI Analysis | Route Planning |
-
-*Screenshots coming soon*
-
-</div>
-
----
-
 ## 🚀 Problem We're Solving
 
 - 🌊 **100,000+ lives** lost annually to natural disasters
@@ -78,13 +61,19 @@ APIs:        OpenWeatherMap • USGS • OpenStreetMap
 
 ---
 
-## 📋 Hackathon
+## 💡 Idea & Credits
 
-**Competition:** Flood Forecasting and Disaster Warning – AI for Disaster Management
+| | |
+|---|---|
+| 💡 **Original Idea** | [Alert-AID](https://github.com/sameezy667/Alert-AID) |
+| 👤 **Original Author** | [Sameer Dhir (@sameezy667)](https://github.com/sameezy667) |
+| 🛠️ **Built & Maintained By** | [Anshiii-01](https://github.com/Anshiii-01) |
 
-**Team:** Ayush
+---
 
-**Submission:** December 2025
+## 🌐 Live Demo
+
+[https://anshiii-01.github.io/RescuePing](https://anshiii-01.github.io/RescuePing)
 
 ---
 
@@ -94,11 +83,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📬 Contact
+## 🤝 Contributing
 
-- **Developer:** Ayush
-- **Project:** Rescue Ping
-- **Email:** [Contact via GitHub]
+See [Contributing.md](Contributing.md) for guidelines.
+
+---
+
+## 🛡️ Code of Conduct
+
+See [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ---
 

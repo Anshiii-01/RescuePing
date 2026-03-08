@@ -1,24 +1,33 @@
-# 🚨 Rescue Ping - AI-Powered Disaster Alert System
+# 🚨 RescuePing — AI-Powered Disaster Alert & Emergency Response System
 
 <div align="center">
 
-![Rescue Ping](https://img.shields.io/badge/🚨_Rescue--Ping-Disaster_Prediction_System-red?style=for-the-badge)
+![RescuePing](https://img.shields.io/badge/🚨_RescuePing-Disaster_Prediction_System-red?style=for-the-badge)
 
-[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-GitHub_Pages-blue?style=for-the-badge)](https://anshiii-01.github.io/rescue-ping)
-
-[![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=flat-square)](https://github.com/Anshiii-01/rescue-ping)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-GitHub_Pages-blue?style=for-the-badge)](https://anshiii-01.github.io/RescuePing)
+[![Status](https://img.shields.io/badge/Status-Production%20Ready-success?style=flat-square)](https://github.com/Anshiii-01/RescuePing)
 [![React](https://img.shields.io/badge/React-19.x-61dafb?style=flat-square&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Python](https://img.shields.io/badge/Python-3.10+-3776ab?style=flat-square&logo=python)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Contributor%20Covenant-purple?style=flat-square)](CODE_OF_CONDUCT.md)
+[![Contributing](https://img.shields.io/badge/Contributing-Welcome-brightgreen?style=flat-square)](Contributing.md)
 
 **A real-time disaster monitoring and emergency response application featuring ML-powered predictions, interactive evacuation maps, and live weather alerts.**
 
-### 🌐 [Live Demo: https://anshiii-01.github.io/rescue-ping](https://anshiii-01.github.io/rescue-ping)
+### 🌐 [Live Demo: https://anshiii-01.github.io/RescuePing](https://anshiii-01.github.io/RescuePing)
 
-[🚀 Quick Start](#-quick-start) • [✨ Features](#-features) • [🛠️ Tech Stack](#-tech-stack)
+[🚀 Quick Start](#-quick-start) • [✨ Features](#-features) • [🛠️ Tech Stack](#-tech-stack) • [💡 Credits](#-idea--credits) • [🤝 Contributing](#-contributing) • [📄 License](#-license)
 
 </div>
+
+---
+
+## 🎯 About
+
+**RescuePing** is an intelligent disaster prediction and emergency response platform that leverages advanced machine learning to provide early warnings for natural disasters including floods, earthquakes, storms, and wildfires. It delivers real-time risk analysis, interactive evacuation maps with shelter locations, and multi-channel emergency alerts.
+
+> 💡 **Idea & Inspiration:** This project was inspired by and builds upon the concept of [**Alert-AID**](https://github.com/sameezy667/Alert-AID) by [**Sameer Dhir (@sameezy667)**](https://github.com/sameezy667). Full credit for the original idea goes to them. See [💡 Credits](#-idea--credits) for more.
 
 ---
 
@@ -45,8 +54,17 @@
 |---------|-------------|
 | 📊 **Risk Scoring** | Multi-factor disaster risk assessment |
 | 🧠 **Ensemble Models** | Multiple ML models for accuracy |
-| 🔮 **Predictive Alerts** | Early warning system |
+| 🔮 **Predictive Alerts** | Early warning system (24-72 hour advance warnings) |
 | 📈 **Trend Analysis** | Historical pattern recognition |
+
+### 📱 Additional Features
+| Feature | Description |
+|---------|-------------|
+| 🔔 **Push Notifications** | Browser-native alert delivery |
+| 🌐 **Multi-language** | i18n support via react-i18next |
+| 🌙 **Dark/Light Mode** | Full theme support |
+| 📴 **Offline Support** | Service worker with offline fallback |
+| ♿ **Accessibility** | WCAG-compliant UI with skip links |
 
 ---
 
@@ -63,7 +81,7 @@ npm or yarn
 
 ```bash
 # Clone the repository
-git clone https://github.com/ayushap18/congenial-waddle.git
+git clone https://github.com/Anshiii-01/RescuePing.git
 cd RescuePing
 
 # Install frontend dependencies
@@ -89,32 +107,42 @@ npm start
 
 🌐 Open [http://localhost:3000](http://localhost:3000)
 
+### Frontend Only (Static Demo)
+
+```bash
+npm start
+```
+
+The app gracefully falls back to public APIs when the backend is not running.
+
 ---
 
 ## 🏗️ Project Structure
 
 ```
-Rescue Ping/
+RescuePing/
 ├── 📁 src/                     # React Frontend
 │   ├── 📁 components/          # UI Components
 │   │   ├── Dashboard/          # Main dashboard widgets
 │   │   ├── Map/                # Leaflet evacuation maps
 │   │   ├── Emergency/          # Emergency response
-│   │   └── Safety/             # Safety modules
-│   ├── 📁 services/            # API services
-│   ├── 📁 hooks/               # Custom hooks
-│   ├── 📁 contexts/            # React contexts
-│   ├── 📁 pages/               # Page components
-│   └── 📁 styles/              # Global styles
+│   │   ├── AI/                 # AI/ML analysis cards
+│   │   └── Layout/             # Navigation & footer
+│   ├── 📁 services/            # API & backend services
+│   ├── 📁 hooks/               # Custom React hooks
+│   ├── 📁 contexts/            # React contexts (theme, location)
+│   ├── 📁 pages/               # Route-level page components
+│   └── 📁 styles/              # Global styles & themes
 │
 ├── 📁 backend/                 # FastAPI Backend
 │   ├── 📁 routes/              # API endpoints
 │   ├── 📁 ml/                  # ML models
-│   └── 📁 models/              # Trained models
+│   └── 📁 models/              # Trained model files
 │
-├── 📁 public/                  # Static assets
-├── 📁 build/                   # Production build
-└── 📄 package.json
+├── 📁 api/                     # Serverless API (Vercel/Render)
+├── 📁 public/                  # Static assets & PWA manifest
+├── 📄 package.json             # Frontend dependencies
+└── 📄 render.yaml              # Render deployment config
 ```
 
 ---
@@ -126,22 +154,23 @@ Rescue Ping/
 <td>
 
 ### Frontend
-- ⚛️ **React 18** - UI Library
-- 📘 **TypeScript** - Type Safety
-- 💅 **Styled Components** - CSS-in-JS
-- 🗺️ **Leaflet** - Interactive Maps
-- 📊 **Recharts** - Data Viz
-- 🎨 **Lucide Icons** - Icons
+- ⚛️ **React 19** — UI Library
+- 📘 **TypeScript 5** — Type Safety
+- 💅 **Styled Components** — CSS-in-JS
+- 🗺️ **Leaflet / react-leaflet** — Interactive Maps
+- 📊 **Recharts** — Data Visualization
+- 🌐 **react-i18next** — Internationalization
+- 🎨 **Lucide Icons** — Icon set
 
 </td>
 <td>
 
 ### Backend
-- 🐍 **FastAPI** - Python API
-- ⚡ **Uvicorn** - ASGI Server
-- 🤖 **Scikit-learn** - ML
-- 🐼 **Pandas** - Data Processing
-- 📈 **NumPy** - Numerical
+- 🐍 **FastAPI** — Python REST API
+- ⚡ **Uvicorn** — ASGI Server
+- 🤖 **Scikit-learn** — ML models
+- 🐼 **Pandas** — Data Processing
+- 📈 **NumPy** — Numerical computation
 
 </td>
 </tr>
@@ -153,7 +182,7 @@ Rescue Ping/
 
 | Service | Purpose | Rate Limit |
 |---------|---------|------------|
-| 🌤️ **OpenWeatherMap** | Weather data | 1000/day |
+| 🌤️ **OpenWeatherMap** | Weather data | 1,000/day (free) |
 | 🌡️ **Open-Meteo** | Weather backup | Unlimited |
 | 🗺️ **OpenStreetMap** | Map tiles | Unlimited |
 | 🏥 **Overpass API** | Shelter locations | Unlimited |
@@ -173,6 +202,14 @@ REACT_APP_OPENWEATHER_API_KEY=your_api_key_here
 
 ## 🚢 Deployment
 
+### GitHub Pages (Frontend)
+```bash
+npm run predeploy   # builds the app
+npm run deploy      # deploys to gh-pages branch
+```
+
+Live at: **https://anshiii-01.github.io/RescuePing**
+
 ### Vercel (Frontend)
 ```bash
 npm run build
@@ -181,25 +218,6 @@ vercel deploy
 
 ### Render (Backend)
 Pre-configured with `render.yaml`
-
-### Docker
-```bash
-docker build -t rescue-ping .
-docker run -p 3000:3000 rescue-ping
-```
-
----
-
-## 🎨 UI Animations
-
-The app features **cinematic animations** throughout:
-
-- 🌀 **Fade In Up** - Page elements entrance
-- ✨ **Pulse Glow** - Active alerts & buttons
-- 🎭 **Scale In** - Cards and popups
-- 💫 **Float** - Icons and indicators
-- 🌈 **Shimmer** - Loading states
-- 🎪 **Bounce In** - Notifications
 
 ---
 
@@ -213,29 +231,52 @@ The app features **cinematic animations** throughout:
 
 ---
 
+## 💡 Idea & Credits
+
+> This project was **inspired by** and built upon the original concept of:
+
+| | |
+|---|---|
+| 💡 **Original Idea** | [Alert-AID](https://github.com/sameezy667/Alert-AID) |
+| 👤 **Original Author** | [Sameer Dhir (@sameezy667)](https://github.com/sameezy667) |
+
+Full credit for the foundational concept and original design goes to **Sameer Dhir**. RescuePing extends and reimagines that work as a fully open-source, production-ready disaster response platform.
+
+---
+
 ## 🤝 Contributing
 
+We welcome contributions of all kinds! Please read our full guidelines in [Contributing.md](Contributing.md).
+
 1. 🍴 Fork the repository
-2. 🌿 Create feature branch: `git checkout -b feature/amazing`
-3. 💾 Commit changes: `git commit -m 'Add amazing feature'`
-4. 📤 Push to branch: `git push origin feature/amazing`
+2. 🌿 Create a feature branch: `git checkout -b feature/amazing-feature`
+3. 💾 Commit your changes: `git commit -m 'Add amazing feature'`
+4. 📤 Push to the branch: `git push origin feature/amazing-feature`
 5. 🔀 Open a Pull Request
+
+Please follow our [Code of Conduct](CODE_OF_CONDUCT.md) in all interactions.
 
 ---
 
 ## 📄 License
 
-MIT License - see [LICENSE](LICENSE) file.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for full details.
 
 ---
 
-## 👤 Author
+## 🛡️ Code of Conduct
+
+This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+
+---
+
+## 👤 Maintainer
 
 <table>
 <tr>
 <td align="center">
-<strong>Ayush</strong><br>
-<a href="https://github.com/ayushap18">@ayushap18</a>
+<strong>Anshiii-01</strong><br>
+<a href="https://github.com/Anshiii-01">@Anshiii-01</a>
 </td>
 </tr>
 </table>
@@ -246,7 +287,7 @@ MIT License - see [LICENSE](LICENSE) file.
 
 ### 🙏 Acknowledgments
 
-OpenStreetMap • OpenWeatherMap • NASA EONET • USGS
+OpenStreetMap • OpenWeatherMap • NASA EONET • USGS • [Sameer Dhir (Alert-AID)](https://github.com/sameezy667/Alert-AID)
 
 ---
 
