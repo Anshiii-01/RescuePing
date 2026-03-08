@@ -6,18 +6,8 @@
 [context.production]
   command = "npm run build"
 
-# Deploy previews for all branches
+# Deploy previews for pull requests
 [context.deploy-preview]
-  command = "npm run build"
-
-# Branch-specific deploys
-[context.main]
-  command = "npm run build"
-
-[context.devloper]
-  command = "npm run build"
-
-[context.trial]
   command = "npm run build"
 
 [[redirects]]
