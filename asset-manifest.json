@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/RescuePing/static/css/main.8d8dfecf.css",
-    "main.js": "/RescuePing/static/js/main.79338eec.js",
+    "main.js": "/RescuePing/static/js/main.6b2c140b.js",
     "static/js/171.eda321ab.chunk.js": "/RescuePing/static/js/171.eda321ab.chunk.js",
-    "static/js/685.008f6e2c.chunk.js": "/RescuePing/static/js/685.008f6e2c.chunk.js",
+    "static/js/685.7ad7ee42.chunk.js": "/RescuePing/static/js/685.7ad7ee42.chunk.js",
     "index.html": "/RescuePing/index.html"
   },
   "entrypoints": [
     "static/css/main.8d8dfecf.css",
-    "static/js/main.79338eec.js"
+    "static/js/main.6b2c140b.js"
   ]
 }
