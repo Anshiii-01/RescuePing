@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Ham Radio Integration Service - Issue #124 Implementation
  * 

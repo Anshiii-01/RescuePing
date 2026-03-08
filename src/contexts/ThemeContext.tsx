@@ -26,8 +26,12 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     if (stored) return stored;
     
     // Check system preference
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return 'dark';
+    try {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)')?.matches) {
+        return 'dark';
+      }
+    } catch {
+      // Ignore matchMedia errors in non-browser environments
     }
     return 'light';
   });
@@ -40,7 +44,9 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 
   // Listen for system theme changes
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const mediaQuery = window.matchMedia?.('(prefers-color-scheme: dark)');
+    if (!mediaQuery) return;
+
     const handleChange = (e: MediaQueryListEvent) => {
       if (!localStorage.getItem('rescue-ping-theme')) {
         setThemeState(e.matches ? 'dark' : 'light');

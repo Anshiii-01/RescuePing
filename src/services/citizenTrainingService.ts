@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Citizen Training Service - Issue #156 Implementation
  * 

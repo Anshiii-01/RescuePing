@@ -10,7 +10,7 @@ import RiskTrendChart from '../components/Dashboard/RiskTrendChart';
 import EmergencySOS from '../components/Emergency/EmergencySOS';
 import EvacuationRoute from '../components/Emergency/EvacuationRoute';
 import { useLocation } from '../contexts/LocationContext';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend, AreaChart, Area } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 import { getAccessibleChartColor } from '../styles/colorblindAccessibility';
 
 // Enhanced Animations

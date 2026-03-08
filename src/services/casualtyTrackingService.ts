@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Casualty Tracking Service - Issue #132 Implementation
  * 

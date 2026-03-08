@@ -153,9 +153,9 @@ const EmergencySOS: React.FC<EmergencySOSProps> = ({
       emergencyContacts.length > 0
         ? emergencyContacts
         : [
-            { id: '1', name: 'Emergency Services', phone: '911', type: 'emergency' },
-            { id: '2', name: 'Family Contact', phone: '+1 555-0123', type: 'family' },
-            { id: '3', name: 'Medical Emergency', phone: '108', type: 'medical' },
+            { id: '1', name: 'Emergency Services', phone: '911', type: 'emergency' as const },
+            { id: '2', name: 'Family Contact', phone: '+1 555-0123', type: 'family' as const },
+            { id: '3', name: 'Medical Emergency', phone: '108', type: 'medical' as const },
           ],
     [emergencyContacts]
   );

@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { Target, Activity, Brain, Cpu, TrendingUp, Zap } from 'lucide-react';
 import { Card, Text, Flex } from '../../styles/components';
-import { colorblindSafePalette, getAccessibleChartColor } from '../../styles/colorblindAccessibility';
+import { getAccessibleChartColor } from '../../styles/colorblindAccessibility';
 
 // Enhanced animations
 const pulseGlow = keyframes`

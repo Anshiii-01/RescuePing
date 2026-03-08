@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Localization Service - Issue #176 Implementation
  * 

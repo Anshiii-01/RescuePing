@@ -11,6 +11,12 @@ describe('Starfield', () => {
       beginPath: jest.fn(),
       arc: jest.fn(),
       fill: jest.fn(),
+      setTransform: jest.fn(),
+      clearRect: jest.fn(),
+      scale: jest.fn(),
+      save: jest.fn(),
+      restore: jest.fn(),
+      translate: jest.fn(),
       createRadialGradient: jest.fn(() => ({
         addColorStop: jest.fn(),
       })),

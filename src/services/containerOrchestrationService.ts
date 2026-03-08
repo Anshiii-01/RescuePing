@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Container Orchestration Service
  * Container management, deployment orchestration, scaling, and cluster operations

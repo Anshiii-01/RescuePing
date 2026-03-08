@@ -6,7 +6,7 @@
 import React, { useState, useMemo } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import { productionColors } from '../../styles/production-ui-system';
-import { colorblindSafePalette, getAccessibleChartColor } from '../../styles/colorblindAccessibility';
+import { getAccessibleChartColor } from '../../styles/colorblindAccessibility';
 
 interface DataPoint {
   timestamp: Date;

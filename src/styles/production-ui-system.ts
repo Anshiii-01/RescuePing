@@ -51,6 +51,7 @@ export const productionColors = {
   border: {
     primary: 'rgba(255, 255, 255, 0.1)',    // Primary borders
     secondary: 'rgba(255, 255, 255, 0.05)', // Subtle borders
+    tertiary: 'rgba(255, 255, 255, 0.03)',  // Very subtle borders
     accent: 'rgba(239, 68, 68, 0.2)',       // Brand accent borders
     focus: 'rgba(59, 130, 246, 0.3)',       // Focus borders
   },

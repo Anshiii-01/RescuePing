@@ -10,6 +10,7 @@ import { TemperatureConverter } from '../../utils/temperatureConverter';
 // ANIMATIONS
 // =====================================================
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const pulse = keyframes`
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }

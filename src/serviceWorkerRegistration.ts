@@ -86,9 +86,8 @@ export const showNotification = (title: string, options?: NotificationOptions) =
         registration.showNotification(title, {
           icon: '/Gemini_Generated_Image_7c3uv87c3uv87c3u.png',
           badge: '/badge.png',
-          vibrate: [200, 100, 200],
-          ...options,
-        });
+          ...(options as NotificationOptions),
+        } as NotificationOptions);
       });
     }
   }
@@ -113,7 +112,7 @@ export const setupOfflineDetection = (
   };
 };
 
-export default {
+const serviceWorkerAPI = {
   register: registerServiceWorker,
   unregister: unregisterServiceWorker,
   isPWA,
@@ -122,3 +121,5 @@ export default {
   isOnline,
   setupOfflineDetection,
 };
+
+export default serviceWorkerAPI;

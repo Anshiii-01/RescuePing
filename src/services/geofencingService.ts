@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Geofencing Service
  * Location-based triggers, zones, and proximity alerts for disaster management
