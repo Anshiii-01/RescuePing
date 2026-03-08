@@ -241,7 +241,7 @@ const Footer: React.FC = () => (
           <a href="https://twitter.com/rescueping" target="_blank" rel="noopener noreferrer">
             <Twitter size={16} />
           </a>
-          <a href="https://github.com/Anshiii-01/rescue-ping" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Anshiii-01/RescuePing" target="_blank" rel="noopener noreferrer">
             <Github size={16} />
           </a>
           <a href="https://rescueping.org" target="_blank" rel="noopener noreferrer">

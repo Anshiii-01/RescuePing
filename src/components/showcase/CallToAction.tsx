@@ -9,7 +9,7 @@ const CallToAction: React.FC = () => {
 
       <div className="cta-buttons">
         <a
-          href="https://rescue-ping.netlify.app"
+          href="https://anshiii-01.github.io/RescuePing"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -17,7 +17,7 @@ const CallToAction: React.FC = () => {
         </a>
 
         <a
-          href="https://github.com/Anshiii-01/rescue-ping"
+          href="https://github.com/Anshiii-01/RescuePing"
           target="_blank"
           rel="noopener noreferrer"
         >

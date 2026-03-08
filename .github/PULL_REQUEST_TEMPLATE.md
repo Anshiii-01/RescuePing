@@ -31,4 +31,4 @@ Fixes #
 <!-- Describe your testing process -->
 
 ---
-**Thank you for contributing to Rescue Ping! 🚨❤️**
+**Thank you for contributing to RescuePing! 🚨❤️**

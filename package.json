@@ -1,10 +1,10 @@
 {
-  "name": "rescue-ping-enhanced",
+  "name": "rescueping",
   "version": "1.0.0",
   "private": true,
-  "homepage": ".",
-  "author": "Ayush",
-  "description": "Enhanced Disaster Management System with Real-time Alerts and ML Predictions",
+  "homepage": "https://anshiii-01.github.io/RescuePing",
+  "author": "Anshiii-01",
+  "description": "AI-Powered Disaster Alert & Emergency Response System. Idea credit: Sameer Dhir (@sameezy667) — https://github.com/sameezy667/Alert-AID",
   "dependencies": {
     "@react-google-maps/api": "^2.20.8",
     "@react-three/drei": "^10.7.6",
