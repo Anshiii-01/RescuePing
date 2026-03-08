@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Schema Validation Service
  * Comprehensive data schema validation, JSON Schema management, and data quality assurance

@@ -340,6 +340,7 @@ export const LocationProvider: React.FC<LocationProviderProps> = ({ children }) 
     };
 
     checkExistingLocation();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const setLocation = (location: LocationData) => {

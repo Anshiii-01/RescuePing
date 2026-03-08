@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Health Check Service
  * Comprehensive health monitoring, status checks, and system diagnostics

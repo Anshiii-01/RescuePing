@@ -167,7 +167,7 @@ const CurrentAlerts: React.FC<CurrentAlertsProps> = ({ onEmergencyClick }) => {
     if (displayAlerts && displayAlerts.length > 0) {
       displayAlerts.forEach(alert => {
         // Check if this is a new alert we haven't notified about
-        const alertId = alert.id || `${alert.event}-${alert.start}`;
+        const alertId = alert.id || `${alert.event}-${alert.onset}`;
         
         if (!previousAlertsRef.current.has(alertId)) {
           // This is a new alert - trigger notification

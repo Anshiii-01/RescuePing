@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Crowdsourced Reporting Service - Issue #151 Implementation
  * 

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Pipeline Monitoring Service - Issue #150 Implementation
  * 

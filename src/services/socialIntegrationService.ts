@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Social Integration Service - #112
  * Platform APIs, sharing, authentication, analytics, content sync

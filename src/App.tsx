@@ -76,7 +76,7 @@ const cleanupInvalidCaches = () => {
 
 // Main App Content Component with theme bridge
 const AppContent: React.FC = () => {
-  const { showLocationModal, setLocation, skipLocationPermission } = useLocation();
+  const { showLocationModal, setLocation } = useLocation();
   const { theme: themeMode } = useThemeContext();
   const navigate = useNavigate();
   const routerLocation = useRouterLocation();
@@ -97,7 +97,7 @@ const AppContent: React.FC = () => {
   }, [navigate]);
   
   return (
-    <StyledThemeProvider theme={currentTheme}>
+    <StyledThemeProvider theme={currentTheme as unknown as typeof theme}>
       <SkipToContent href="#main-content">
         Skip to main content
       </SkipToContent>
@@ -118,6 +118,7 @@ const AppContent: React.FC = () => {
             <Route path="/verify" element={<VerificationDashboard />} />
             <Route path="/terms" element={<TermsAndConditions />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/showcase" element={<ProjectShowcase />} />
           </Routes>
           <Footer />
         </ErrorBoundary>
@@ -148,8 +149,6 @@ function App() {
           <LocationProvider>
             <GeolocationProvider>
               <Router>
-                <Route path="/showcase" element={<ProjectShowcase />} />
-
                 {/* Global starfield sits behind everything */}
                 <Starfield />
                 <AppContent />

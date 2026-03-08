@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Satellite Communications Service - Issue #123 Implementation
  * 

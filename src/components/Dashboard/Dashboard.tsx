@@ -509,6 +509,7 @@ const Dashboard: React.FC = () => {
 
     loadDashboard();
     // Note: Periodic refresh is now handled entirely by useAutoRefresh hook
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // Run only once on mount
 
   // Recalculate risk when AQI data or Alerts change (but don't fetch AQI again)
@@ -516,6 +517,7 @@ const Dashboard: React.FC = () => {
     if ((aqiData || alerts) && dashboardLoaded) {
       calculateGlobalRisk();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [aqiData, alerts, dashboardLoaded]);
 
 

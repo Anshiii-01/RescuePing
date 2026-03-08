@@ -299,9 +299,8 @@ class AlertNotificationService {
           badge: '/logo192.png',
           tag: `alert-${level}-${Date.now()}`,
           requireInteraction: level === 'CRITICAL', // Stay on screen for critical alerts
-          vibrate: this.getHapticPattern(level),
           data: { level, urgency },
-        });
+        } as NotificationOptions);
         
         console.log(`🔔 [AlertNotification] Browser notification shown: ${title}`);
       }

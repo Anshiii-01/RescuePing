@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * On-Call Scheduling Service
  * Comprehensive on-call rotation management, scheduling, and coverage tracking

@@ -182,10 +182,10 @@ const ToastComponent: React.FC<{
     }
   };
 
-  const handleDismiss = () => {
+  const handleDismiss = useCallback(() => {
     setIsExiting(true);
     setTimeout(() => onDismiss(toast.id), 300);
-  };
+  }, [toast.id, onDismiss]);
 
   useEffect(() => {
     if (!toast.persistent && toast.duration) {

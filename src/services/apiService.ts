@@ -331,8 +331,6 @@ export class RescuePingAPIService {
         body: JSON.stringify(request),
       }, true); // Silent errors - backend expected to be unavailable
     } catch (error) {
-      // Simulate API failure for testing error handling
-      throw new APIError('Simulated API failure for testing', 500, `${API_PREFIX}/predict/disaster`);
       // Use fallback silently, log only once
       if (!this.hasLoggedFallback) {
         console.info('📍 Using calculated risk predictions (backend unavailable)');

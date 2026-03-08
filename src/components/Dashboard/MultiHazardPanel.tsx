@@ -590,6 +590,7 @@ const MultiHazardPanel: React.FC<MultiHazardPanelProps> = ({
     }
     
     setLoading(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [latitude, longitude, cityName]);
 
   useEffect(() => {

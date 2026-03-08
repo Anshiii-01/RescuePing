@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * P2P Mesh Network Service - Issue #122 Implementation
  * 

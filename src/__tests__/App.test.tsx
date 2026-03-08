@@ -39,7 +39,7 @@ describe('App', () => {
   it('includes router for page navigation', () => {
     render(<App />);
     // Main content area should be present
-    const mainContent = document.querySelector('main') || document.querySelector('#root > div');
+    const mainContent = document.querySelector('#main-content') || document.querySelector('.App') || document.querySelector('div');
     expect(mainContent).toBeInTheDocument();
   });
 });

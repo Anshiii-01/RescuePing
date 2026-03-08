@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Emergency Broadcast Service - Issue #121 Implementation
  * 

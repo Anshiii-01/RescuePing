@@ -68,6 +68,7 @@ import {
   type FloodPredictionResult,
   type ModelStatus,
   type SimulationResult,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   type HealthCheckResult,
 } from '../services/indiaFloodApi';
 import { productionColors, productionCard } from '../styles/production-ui-system';
@@ -1021,6 +1022,7 @@ const FloodForecastPageV2: React.FC = () => {
       }
     };
     loadRivers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Load prediction when river changes

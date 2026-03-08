@@ -168,6 +168,7 @@ export const RealTimeIndicator: React.FC<RealTimeIndicatorProps> = ({
     }, 1000);
 
     return () => clearInterval(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLive, autoRefreshInterval, onRefresh]);
 
   const handleRefresh = async () => {

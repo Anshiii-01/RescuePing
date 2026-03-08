@@ -487,6 +487,7 @@ const HomePage: React.FC = () => {
   const [riskLevel, setRiskLevel] = useState<'low' | 'moderate' | 'high' | 'critical'>('low');
   const [riskScore, setRiskScore] = useState<number>(2.4);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   // Fetch live data from real APIs

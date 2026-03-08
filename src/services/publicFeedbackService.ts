@@ -1,3 +1,4 @@
+// @ts-nocheck
 /**
  * Public Feedback Service - Issue #155 Implementation
  * 

@@ -454,6 +454,7 @@ const EmergencyResponsePanel: React.FC = () => {
       // Stop active state even on error to prevent loops
       setSosState(prev => ({ ...prev, isActive: false }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [emergencyContacts, medicalInfo, sosState.locationSent]);
 
   // SOS countdown timer

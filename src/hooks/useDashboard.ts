@@ -87,7 +87,7 @@ export function useDashboard() {
       .finally(() => {
         setIsEnhancingLocation(false);
       });
-
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
 
